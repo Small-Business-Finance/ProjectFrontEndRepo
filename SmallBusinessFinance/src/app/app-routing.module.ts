@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './mod/header-nav/home/home.component';
 
 const routes: Routes = [
   {
-    path:'',
+    path:'',component:HomeComponent
   }
 ];
 
