@@ -171,14 +171,49 @@ Bank Name : <input type="text" class="form-control" placeholder="Enter bankName"
   </div>
   </div>
 
+
+  <div *ngIf="steps==8">
+    <h3>Customer Documents</h3>
+    <br>
+  <div class="form-group">
+    ITR Return :  <input type="file" class="form-control" formControlName="itrReturns">
+  </div>
+  
+  <div class="form-group">
+  Pan Card : <input type="file" class="form-control" formControlName="pancard">
+  </div>
+  
+  <div class="form-group">
+  MOA :  <input type="file" class="form-control" formControlName="moa">
+  </div>
+      
+  <div class="form-group">
+   AOA: <input type="file" class="form-control" formControlName="aoa">
+  </div>
+  
+  <div class="form-group">
+  Audit report : <input type="file" class="form-control" formControlName="auditReport">
+  </div>
+
+  <div class="form-group">
+    TAN : <input type="file" class="form-control" formControlName="tan">
+    </div>
+
+    <div class="form-group">
+      MSME Certificate : <input type="file" class="form-control" formControlName="msmeCertificate">
+      </div>
+    </div>
+
+
   
 <div class="form-button">
 <a class="btn btn-primary" *ngIf="steps!=1"(click)="previous()">Previous</a>
-<button type="submit" class="btn btn-primary" *ngIf="steps!=7">Next</button>
-<a class="btn btn-primary" *ngIf="steps==7" (click)="clickreg()">Submit</a>
+<button type="submit" class="btn btn-primary" *ngIf="steps!=8">Next</button>
+<a class="btn btn-primary" *ngIf="steps==8" (click)="clickreg()">Submit</a>
 </div>
 
 
 </form>
 
 
+<router-outlet></router-outlet>

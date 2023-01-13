@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { HeaderNavRoutingModule } from './header-nav-routing.module';
 import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     CommonModule,
-    HeaderNavRoutingModule
+    HeaderNavRoutingModule,RouterModule
   ]
 })
 export class HeaderNavModule { }
