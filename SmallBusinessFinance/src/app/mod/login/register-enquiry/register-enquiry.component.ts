@@ -54,7 +54,6 @@ export class RegisterEnquiryComponent {
   clickreg()
   {
     this.cs.postEnquiry(this.enquiryForm.value).subscribe();
-  
   }
 
 }
