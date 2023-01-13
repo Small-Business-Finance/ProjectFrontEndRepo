@@ -1,0 +1,86 @@
+<p>register-enquiry works!</p>
+<h3 style="color: red; text-align: center;">Enquiry Registration Form </h3>
+
+<form [formGroup]="enquiryForm" (ngSubmit)="submit()">
+
+
+    <div *ngIf="steps==1">
+        <h3>Enquiry Details</h3>
+        <br>
+        <div class="form-group">
+            Customer Name : <input type="text" class="form-control" placeholder="Enter Customer Name"
+                formControlName="customerName">
+        </div>
+
+        <div class="form-group">
+            Company Name : <input type="text" class="form-control" placeholder="Enter Company Name"
+                formControlName="companyName">
+        </div>
+
+        <div class="form-group">
+            Types OF Business : <input type="text" class="form-control" placeholder="Enter Type Of Business "
+                formControlName="typesOfBusiness">
+        </div>
+
+        <div class="form-group">
+            Customer Address : <input type="text" class="form-control" placeholder="Enter Address"
+                formControlName="customerAddress">
+        </div>
+
+        <div class="form-group">
+            Customer Pancard Number: <input type="text" class="form-control" placeholder="Enter Customer Pancard Number"
+                formControlName="customerPancardNumber">
+        </div>
+
+        <div class="form-group">
+            Company Pancard Number : <input type="text" class="form-control" placeholder="Enter Company Pancard Number "
+                formControlName="companyPancardNumber">
+        </div>
+
+    </div>
+
+    <div *ngIf="steps==2">
+        <h3>Enquiry Details </h3>
+        <br>
+        <div class="form-group">
+            Mobile Number : <input type="text" class="form-control" placeholder="Enter Mobile Number"
+                formControlName="mobileNumber">
+        </div>
+
+        <div class="form-group">
+            Alternate Mobile Number : <input type="text" class="form-control"
+                placeholder="Enter Alternate Mobile Number" formControlName="alternateMobileNumber">
+        </div>
+
+        <div class="form-group">
+            Email Id : <input type="text" class="form-control" placeholder="Enter Email Id" formControlName="emailId">
+        </div>
+
+        <div class="form-group">
+            ITR Status : <input type="text" class="form-control" placeholder="Enter Itr Status"
+                formControlName="itrStatus">
+        </div>
+
+        <div class="form-group">
+            Enquiry Status : <input type="text" class="form-control" placeholder="Enter Enquiry Status"
+                formControlName="enquiryStatus">
+        </div>
+
+        <div class="form-group">
+            Registration Status : <input type="text" class="form-control" placeholder="Enter Registration Status"
+                formControlName="registrationStatus">
+        </div>
+
+        <div class="form-group">
+            Cibilscore Status : <input type="text" class="form-control" placeholder="Enter Cibilscore Status"
+                formControlName="cibilscore">
+        </div>
+    </div>
+
+    <div class="form-button">
+        <a class="btn btn-primary" *ngIf="steps!=1" (click)="previous()">Previous</a>
+        <button type="submit" class="btn btn-primary" *ngIf="steps!=2">Next</button>
+        <a class="btn btn-primary" *ngIf="steps==2" (click)="clickreg()">Submit</a>
+    </div>
+
+</form>
