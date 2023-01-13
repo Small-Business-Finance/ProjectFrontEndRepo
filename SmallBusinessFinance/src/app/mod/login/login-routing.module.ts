@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterCustomerApplicationComponent } from '../Employee/re/register-customer-application/register-customer-application.component';
 import { RegisterEnquiryComponent } from '../Employee/re/register-enquiry/register-enquiry.component';
+import { RegisterEmployeeComponent } from '../Employee/admin/register-employee/register-employee.component';
+import { ViewEmployeeComponent } from '../Employee/admin/view-employee/view-employee.component';
+import { UpdateEmployeeComponent } from '../Employee/admin/update-employee/update-employee.component';
 
 const routes: Routes = [
 
@@ -14,6 +17,15 @@ const routes: Routes = [
       },
       {
         path:'enquiry',component:RegisterEnquiryComponent
+      },
+      {
+        path:'regemployee',component:RegisterEmployeeComponent
+      },
+      {
+        path:'viewemployee',component:ViewEmployeeComponent
+      },
+      {
+        path:'updateemployee',component:UpdateEmployeeComponent
       }
     ]
   }
