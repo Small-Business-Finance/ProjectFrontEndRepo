@@ -13,7 +13,7 @@ export class Enquiry {
 	 alternateMobileNumber:number
 	 emailId:string
 	 itrStatus:string
-	 enuiryStatus:string
+	 enquiryStatus:string
 	 registrationStatus:string
      cibilscore:Cibilscore
 }

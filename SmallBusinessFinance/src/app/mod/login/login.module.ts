@@ -7,13 +7,15 @@ import { ViewCustomerApplicationComponent } from './view-customer-application/vi
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { RegisterEnquiryComponent } from './register-enquiry/register-enquiry.component';
 
 
 @NgModule({
   declarations: [
     RegisterCustomerApplicationComponent,
     ViewCustomerApplicationComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterEnquiryComponent
   ],
   imports: [
     CommonModule,
