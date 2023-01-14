@@ -1,0 +1,36 @@
+<p>login works!</p>
+<a routerLink="/registerCustomer">Register</a><br>
+<a routerLink="/enquiry">Enquiry</a>
+<br>
+<a routerLink="/regemployee">RegisterEmployee</a><br>
+<a routerLink="/updateemployee">UpdateEmployee</a><br>
+<a routerLink="/viewemployee">ViewEmployee</a>
+
+
+
+
+<br><br>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-4 login-sec">
+          <h2 class="text-center">Login Now</h2>
+          <form class="login-form">
+    <div class="form-group">
+      <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+      <input type="text" name="username" id="user" class="form-control" placeholder="Username" [(ngModel)]=u.username>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+       <input type="password" name="password" id="password" class="form-control" placeholder="Password" [(ngModel)]=u.password>
+    </div>
+    
+    
+      <div class="form-check">
+      <button type="submit" class="btn btn-login float-right"(click)="login(u)">Submit</button>
+    </div>
+    
+    </form>
+    
+      </div>
+<router-outlet></router-outlet>

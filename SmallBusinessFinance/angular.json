@@ -25,8 +25,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css","SmallBusinessFinance/node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "SmallBusinessFinance/node_modules/font-awesome/css/font-awesome.min.css"
+              "src/styles.css","node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css"
             ],
             "scripts": []
           },
@@ -95,5 +95,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './mod/header-nav/home/home.component';
+import { headerroutes } from './mod/header-nav/header-nav-routing.module';
+import { DashboardComponent } from './mod/header-nav/dashboard/dashboard.component';
 
 const routes: Routes = [
   {
-    path:'',component:HomeComponent
+    path:'',component:DashboardComponent,children:headerroutes
   }
 ];
 

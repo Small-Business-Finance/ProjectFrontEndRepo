@@ -1,0 +1,217 @@
+<h3 style="color: red; text-align: center;">Loan Application Form </h3>
+
+<form [formGroup]="registerForm" (ngSubmit)="submit()">
+
+
+<div *ngIf="steps==1"> 
+<h3>Customer Details</h3>
+<br>
+<div class="form-group">
+Customer Name : <input type="text" class="form-control" placeholder="Enter name" formControlName="customerName">
+</div>
+
+<div class="form-group">
+Pan Card Number : <input type="text" class="form-control" placeholder="Enter pan card number" formControlName="panCardNumber">
+</div>
+
+<div class="form-group">
+Date Of Birth : <input type="text" class="form-control" placeholder="Enter dob" formControlName="dateOfBirth">
+</div>
+
+<div class="form-group">
+Gender : <input type="text" class="form-control" placeholder="Enter gender" formControlName="gender">
+</div>
+</div>
+
+
+<div *ngIf="steps==2"> 
+<h3>Contact Details </h3>
+<br>
+<div class="form-group">
+Address : <input type="text" class="form-control" placeholder="Enter Address" formControlName="address">
+</div>
+
+<div class="form-group">
+Email Id : <input type="text" class="form-control" placeholder="Enter Email" formControlName="emailId">
+</div>
+
+<div class="form-group">
+Mobile no : <input type="text" class="form-control" placeholder="Enter Mobile" formControlName="mobileNumber">
+</div>
+
+<div class="form-group">
+Fax no : <input type="text" class="form-control" placeholder="Enter Fax" formControlName="faxNumber">
+</div>
+</div>
+    
+
+<div *ngIf="steps==3">
+  <h3>Company info</h3>
+  <br>
+<div class="form-group">
+Company Name :  <input type="text" class="form-control" placeholder="Enter Company" formControlName="companyName">
+</div>
+
+<div class="form-group">
+Company Owner : <input type="text" class="form-control" placeholder="Enter Owner" formControlName="companyOwnerName">
+</div>
+
+<div class="form-group">
+Type of business :  <input type="text" class="form-control" placeholder="Enter business Type" formControlName="typeOfBusiness">
+</div>
+    
+<div class="form-group">
+ Pan Card Number: <input type="text" class="form-control" placeholder="Enter  Pan Card" formControlName="PanCardNumber">
+</div>
+
+<div class="form-group">
+Company TurnOver : <input type="text" class="form-control" placeholder="Enter TurnOver" formControlName="companyTurnover">
+</div>
+</div>
+
+
+<div *ngIf="steps==4">
+    <h3>Bank Details</h3>
+    <br>
+  <div class="form-group">
+  Bank Name :  <input type="text" class="form-control" placeholder="Enter Bank Name" formControlName="bankName">
+  </div>
+  
+  <div class="form-group">
+  IFSC code : <input type="text" class="form-control" placeholder="Enter IFSC" formControlName="ifscCode">
+  </div>
+  
+  <div class="form-group">
+  Branch code :  <input type="text" class="form-control" placeholder="Enter code" formControlName="branchCode">
+  </div>
+      
+  <div class="form-group">
+  Branch address: <input type="text" class="form-control" placeholder="Enter address" formControlName="branchAddress">
+  </div>
+  </div>
+
+
+  <div *ngIf="steps==5">
+    <h3>Guarrantor details</h3>
+    <br>
+  <div class="form-group">
+    Guarrantor Name :  <input type="text" class="form-control" placeholder="Enter Name" formControlName="guarantorName">
+  </div>
+  
+  <div class="form-group">
+  pan card number : <input type="text" class="form-control" placeholder="Enter pan card" formControlName="guarantorPanCardNumber">
+  </div>
+  
+  <div class="form-group">
+  relation :  <input type="text" class="form-control" placeholder="Enter relation" formControlName="relation">
+  </div>
+      
+  <div class="form-group">
+   mobile no: <input type="text" class="form-control" placeholder="Enter mobile" formControlName="mobileNumber">
+  </div>
+  
+  <div class="form-group">
+  Occupation : <input type="text" class="form-control" placeholder="Enter Occupation" formControlName="occupation">
+  </div>
+  </div>
+
+
+  <div *ngIf="steps==6">
+    <h3>Previous Loan details</h3>
+    <br>
+  <div class="form-group">
+Loan Amount :  <input type="text" class="form-control" placeholder="Enter loanAmount" formControlName="loanAmount">
+  </div>
+  
+  <div class="form-group">
+  Loan tenure : <input type="text" class="form-control" placeholder="Enter loanTenure" formControlName="loanTenure">
+  </div>
+  
+  <div class="form-group">
+  paid amount :  <input type="text" class="form-control" placeholder="Enter paidAmount" formControlName="paidAmount">
+  </div>
+      
+  <div class="form-group">
+Remaining amout: <input type="text" class="form-control" placeholder="Enter remainingAmount" formControlName="remainingAmount">
+  </div>
+  
+  <div class="form-group">
+  Defaulter count: <input type="text" class="form-control" placeholder="Enter defaulterCount" formControlName="defaulterCount">
+  </div>
+
+  <div class="form-group">
+Bank Name : <input type="text" class="form-control" placeholder="Enter bankName" formControlName="bankName">
+    </div>
+</div>
+
+
+<div *ngIf="steps==7">
+    <h3>Customer Loan details</h3>
+    <br>
+  <div class="form-group">
+    expected Loan Amount :  <input type="text" class="form-control" placeholder="Enter expectedLoanAmount" formControlName="expectedLoanAmount">
+  </div>
+  
+  <div class="form-group">
+  expected Loan Tenure : <input type="text" class="form-control" placeholder="Enter expectedLoanTenure" formControlName="expectedLoanTenure">
+  </div>
+  
+  <div class="form-group">
+  expected Emi Amount :  <input type="text" class="form-control" placeholder="Enter expectedEmiAmount" formControlName="expectedEmiAmount">
+  </div>
+      
+  <div class="form-group">
+   Loan Status: <input type="text" class="form-control" placeholder="Enter loanStatus" formControlName="loanStatus">
+  </div>
+  
+  <div class="form-group">
+  Loan disbursed status : <input type="text" class="form-control" placeholder="Enter loanDisbursedStatus" formControlName="loanDisbursedStatus">
+  </div>
+  </div>
+
+
+  <div *ngIf="steps==8">
+    <h3>Customer Documents</h3>
+    <br>
+  <div class="form-group">
+    ITR Return :  <input type="file" class="form-control" formControlName="itrReturns">
+  </div>
+  
+  <div class="form-group">
+  Pan Card : <input type="file" class="form-control" formControlName="pancard">
+  </div>
+  
+  <div class="form-group">
+  MOA :  <input type="file" class="form-control" formControlName="moa">
+  </div>
+      
+  <div class="form-group">
+   AOA: <input type="file" class="form-control" formControlName="aoa">
+  </div>
+  
+  <div class="form-group">
+  Audit report : <input type="file" class="form-control" formControlName="auditReport">
+  </div>
+
+  <div class="form-group">
+    TAN : <input type="file" class="form-control" formControlName="tan">
+    </div>
+
+    <div class="form-group">
+      MSME Certificate : <input type="file" class="form-control" formControlName="msmeCertificate">
+      </div>
+    </div>
+
+
+  
+<div class="form-button">
+<a class="btn btn-primary" *ngIf="steps!=1"(click)="previous()">Previous</a>
+<button type="submit" class="btn btn-primary" *ngIf="steps!=8">Next</button>
+<a class="btn btn-primary" *ngIf="steps==8" (click)="clickreg()">Submit</a>
+</div>
+
+
+</form>
+
+
+<router-outlet></router-outlet>
