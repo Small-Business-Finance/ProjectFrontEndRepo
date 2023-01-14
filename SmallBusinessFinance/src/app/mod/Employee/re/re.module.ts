@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { RERoutingModule } from './re-routing.module';
 import { ProfileComponent } from './profile/profile.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -11,7 +12,7 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   imports: [
     CommonModule,
-    RERoutingModule
+    RERoutingModule,RouterModule
   ]
 })
 export class REModule { }

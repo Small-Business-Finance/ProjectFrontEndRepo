@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { RegisterEnquiryComponent } from '../Employee/re/register-enquiry/register-enquiry.component';
+import { RERoutingModule } from '../Employee/re/re-routing.module';
 
 
 
@@ -20,7 +21,7 @@ import { RegisterEnquiryComponent } from '../Employee/re/register-enquiry/regist
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule,FormsModule,ReactiveFormsModule,RouterModule
+    LoginRoutingModule,FormsModule,ReactiveFormsModule,RouterModule,RERoutingModule
   ]
 })
 export class LoginModule { }
