@@ -1,25 +1,31 @@
-<h3 style="color: red; text-align: center;">Loan Application Form </h3>
-
 <form [formGroup]="registerForm" (ngSubmit)="submit()">
-
+  
+<div class="two">
+  <h1>Loan Application Form 
+    <span> Enter Details</span>
+  </h1></div>
 
 <div *ngIf="steps==1"> 
 <h3>Customer Details</h3>
 <br>
 <div class="form-group">
-Customer Name : <input type="text" class="form-control" placeholder="Enter name" formControlName="customerName">
+    <label class="label">Customer Name :</label><br>
+       <input type="text" class="col-xs-3" placeholder="Enter name" formControlName="customerName">
 </div>
 
 <div class="form-group">
-Pan Card Number : <input type="text" class="form-control" placeholder="Enter pan card number" formControlName="panCardNumber">
+    <label class="label">Pan Card Number :</label><br>
+     <input type="text" class="col-xs-3" placeholder="Enter pan card number" formControlName="panCardNumber">
 </div>
 
 <div class="form-group">
-Date Of Birth : <input type="text" class="form-control" placeholder="Enter dob" formControlName="dateOfBirth">
+    <label class="label">Date Of Birth : </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter dob" formControlName="dateOfBirth">
 </div>
 
 <div class="form-group">
-Gender : <input type="text" class="form-control" placeholder="Enter gender" formControlName="gender">
+    <label class="label">Gender :</label> <br>
+    <input type="text" class="col-xs-3" placeholder="Enter gender" formControlName="gender">
 </div>
 </div>
 
@@ -28,19 +34,23 @@ Gender : <input type="text" class="form-control" placeholder="Enter gender" form
 <h3>Contact Details </h3>
 <br>
 <div class="form-group">
-Address : <input type="text" class="form-control" placeholder="Enter Address" formControlName="address">
+  <label class="label">Address :</label><br>
+   <input type="text" class="col-xs-3" placeholder="Enter Address" formControlName="address">
 </div>
 
 <div class="form-group">
-Email Id : <input type="text" class="form-control" placeholder="Enter Email" formControlName="emailId">
+  <label class="label">Email Id :</label><br>
+   <input type="text" class="col-xs-3" placeholder="Enter Email" formControlName="emailId">
 </div>
 
 <div class="form-group">
-Mobile no : <input type="text" class="form-control" placeholder="Enter Mobile" formControlName="mobileNumber">
+  <label class="label">Mobile no : </label><br>
+  <input type="text" class="col-xs-3" placeholder="Enter Mobile" formControlName="mobileNumber">
 </div>
 
 <div class="form-group">
-Fax no : <input type="text" class="form-control" placeholder="Enter Fax" formControlName="faxNumber">
+  <label class="label">Fax no :</label><br>
+ <input type="text" class="col-xs-3" placeholder="Enter Fax" formControlName="faxNumber">
 </div>
 </div>
     
@@ -49,23 +59,28 @@ Fax no : <input type="text" class="form-control" placeholder="Enter Fax" formCon
   <h3>Company info</h3>
   <br>
 <div class="form-group">
-Company Name :  <input type="text" class="form-control" placeholder="Enter Company" formControlName="companyName">
+  <label class="label">Company Name : </label><br>
+  <input type="text" class="col-xs-3" placeholder="Enter Company" formControlName="companyName">
 </div>
 
 <div class="form-group">
-Company Owner : <input type="text" class="form-control" placeholder="Enter Owner" formControlName="companyOwnerName">
+  <label class="label">Company Owner : </label><br>
+  <input type="text" class="col-xs-3" placeholder="Enter Owner" formControlName="companyOwnerName">
 </div>
 
 <div class="form-group">
-Type of business :  <input type="text" class="form-control" placeholder="Enter business Type" formControlName="typeOfBusiness">
+  <label class="label">Type of business :  </label><br>
+  <input type="text" class="col-xs-3" placeholder="Enter business Type" formControlName="typeOfBusiness">
 </div>
     
 <div class="form-group">
- Pan Card Number: <input type="text" class="form-control" placeholder="Enter  Pan Card" formControlName="PanCardNumber">
+  <label class="label">Pan Card Number: </label><br>
+  <input type="text" class="col-xs-3" placeholder="Enter  Pan Card" formControlName="PanCardNumber">
 </div>
 
 <div class="form-group">
-Company TurnOver : <input type="text" class="form-control" placeholder="Enter TurnOver" formControlName="companyTurnover">
+  <label class="label">Company TurnOver : </label><br>
+  <input type="text" class="col-xs-3" placeholder="Enter TurnOver" formControlName="companyTurnover">
 </div>
 </div>
 
@@ -74,19 +89,23 @@ Company TurnOver : <input type="text" class="form-control" placeholder="Enter Tu
     <h3>Bank Details</h3>
     <br>
   <div class="form-group">
-  Bank Name :  <input type="text" class="form-control" placeholder="Enter Bank Name" formControlName="bankName">
+    <label class="label"> Bank Name :  </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter Bank Name" formControlName="bankName">
   </div>
   
   <div class="form-group">
-  IFSC code : <input type="text" class="form-control" placeholder="Enter IFSC" formControlName="ifscCode">
+    <label class="label">IFSC code : </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter IFSC" formControlName="ifscCode">
   </div>
   
   <div class="form-group">
-  Branch code :  <input type="text" class="form-control" placeholder="Enter code" formControlName="branchCode">
+    <label class="label">Branch code :  </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter code" formControlName="branchCode">
   </div>
       
   <div class="form-group">
-  Branch address: <input type="text" class="form-control" placeholder="Enter address" formControlName="branchAddress">
+    <label class="label">Branch address: </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter address" formControlName="branchAddress">
   </div>
   </div>
 
@@ -95,23 +114,28 @@ Company TurnOver : <input type="text" class="form-control" placeholder="Enter Tu
     <h3>Guarrantor details</h3>
     <br>
   <div class="form-group">
-    Guarrantor Name :  <input type="text" class="form-control" placeholder="Enter Name" formControlName="guarantorName">
+    <label class="label">Guarrantor Name : </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter Name" formControlName="guarantorName">
   </div>
   
   <div class="form-group">
-  pan card number : <input type="text" class="form-control" placeholder="Enter pan card" formControlName="guarantorPanCardNumber">
+    <label class="label">pan card number : </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter pan card" formControlName="guarantorPanCardNumber">
   </div>
   
   <div class="form-group">
-  relation :  <input type="text" class="form-control" placeholder="Enter relation" formControlName="relation">
+    <label class="label">relation : </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter relation" formControlName="relation">
   </div>
       
   <div class="form-group">
-   mobile no: <input type="text" class="form-control" placeholder="Enter mobile" formControlName="mobileNumber">
+    <label class="label">mobile no: </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter mobile" formControlName="mobileNumber">
   </div>
   
   <div class="form-group">
-  Occupation : <input type="text" class="form-control" placeholder="Enter Occupation" formControlName="occupation">
+    <label class="label">Occupation : </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter Occupation" formControlName="occupation">
   </div>
   </div>
 
@@ -120,27 +144,33 @@ Company TurnOver : <input type="text" class="form-control" placeholder="Enter Tu
     <h3>Previous Loan details</h3>
     <br>
   <div class="form-group">
-Loan Amount :  <input type="text" class="form-control" placeholder="Enter loanAmount" formControlName="loanAmount">
+    <label class="label">Loan Amount : </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter loanAmount" formControlName="loanAmount">
   </div>
   
   <div class="form-group">
-  Loan tenure : <input type="text" class="form-control" placeholder="Enter loanTenure" formControlName="loanTenure">
+    <label class="label">Loan tenure : </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter loanTenure" formControlName="loanTenure">
   </div>
   
   <div class="form-group">
-  paid amount :  <input type="text" class="form-control" placeholder="Enter paidAmount" formControlName="paidAmount">
+    <label class="label">paid amount :  </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter paidAmount" formControlName="paidAmount">
   </div>
       
   <div class="form-group">
-Remaining amout: <input type="text" class="form-control" placeholder="Enter remainingAmount" formControlName="remainingAmount">
+    <label class="label">Remaining amout: </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter remainingAmount" formControlName="remainingAmount">
   </div>
   
   <div class="form-group">
-  Defaulter count: <input type="text" class="form-control" placeholder="Enter defaulterCount" formControlName="defaulterCount">
+    <label class="label">Defaulter count: </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter defaulterCount" formControlName="defaulterCount">
   </div>
 
   <div class="form-group">
-Bank Name : <input type="text" class="form-control" placeholder="Enter bankName" formControlName="bankName">
+    <label class="label">Bank Name :</label><br>
+     <input type="text" class="col-xs-3" placeholder="Enter bankName" formControlName="bankName">
     </div>
 </div>
 
@@ -149,23 +179,28 @@ Bank Name : <input type="text" class="form-control" placeholder="Enter bankName"
     <h3>Customer Loan details</h3>
     <br>
   <div class="form-group">
-    expected Loan Amount :  <input type="text" class="form-control" placeholder="Enter expectedLoanAmount" formControlName="expectedLoanAmount">
+    <label class="label">expected Loan Amount :  </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter expectedLoanAmount" formControlName="expectedLoanAmount">
   </div>
   
   <div class="form-group">
-  expected Loan Tenure : <input type="text" class="form-control" placeholder="Enter expectedLoanTenure" formControlName="expectedLoanTenure">
+    <label class="label">expected Loan Tenure :</label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter expectedLoanTenure" formControlName="expectedLoanTenure">
   </div>
   
   <div class="form-group">
-  expected Emi Amount :  <input type="text" class="form-control" placeholder="Enter expectedEmiAmount" formControlName="expectedEmiAmount">
+    <label class="label">expected Emi Amount :  </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter expectedEmiAmount" formControlName="expectedEmiAmount">
   </div>
       
   <div class="form-group">
-   Loan Status: <input type="text" class="form-control" placeholder="Enter loanStatus" formControlName="loanStatus">
+    <label class="label">Loan Status: </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter loanStatus" formControlName="loanStatus">
   </div>
   
   <div class="form-group">
-  Loan disbursed status : <input type="text" class="form-control" placeholder="Enter loanDisbursedStatus" formControlName="loanDisbursedStatus">
+    <label class="label">Loan disbursed status : </label><br>
+    <input type="text" class="col-xs-3" placeholder="Enter loanDisbursedStatus" formControlName="loanDisbursedStatus">
   </div>
   </div>
 
@@ -174,40 +209,47 @@ Bank Name : <input type="text" class="form-control" placeholder="Enter bankName"
     <h3>Customer Documents</h3>
     <br>
   <div class="form-group">
-    ITR Return :  <input type="file" class="form-control" formControlName="itrReturns">
+    <label class="label">ITR Return : </label><br>
+    <input type="file" class="col-xs-3" formControlName="itrReturns">
   </div>
   
   <div class="form-group">
-  Pan Card : <input type="file" class="form-control" formControlName="pancard">
+    <label class="label">Pan Card : </label><br>
+    <input type="file" class="col-xs-3" formControlName="pancard">
   </div>
   
   <div class="form-group">
-  MOA :  <input type="file" class="form-control" formControlName="moa">
+    <label class="label">MOA :  </label><br>
+    <input type="file" class="col-xs-3" formControlName="moa">
   </div>
       
   <div class="form-group">
-   AOA: <input type="file" class="form-control" formControlName="aoa">
+    <label class="label">AOA:</label><br>
+    <input type="file" class="col-xs-3" formControlName="aoa">
   </div>
   
   <div class="form-group">
-  Audit report : <input type="file" class="form-control" formControlName="auditReport">
+    <label class="label">Audit report :</label><br>
+    <input type="file" class="col-xs-3" formControlName="auditReport">
   </div>
 
   <div class="form-group">
-    TAN : <input type="file" class="form-control" formControlName="tan">
+    <label class="label">TAN :</label><br>
+    <input type="file" class="col-xs-3" formControlName="tan">
     </div>
 
     <div class="form-group">
-      MSME Certificate : <input type="file" class="form-control" formControlName="msmeCertificate">
+      <label class="label">MSME Certificate :</label><br>
+       <input type="file" class="col-xs-3" formControlName="msmeCertificate">
       </div>
     </div>
 
 
   
 <div class="form-button">
-<a class="btn btn-primary" *ngIf="steps!=1"(click)="previous()">Previous</a>
-<button type="submit" class="btn btn-primary" *ngIf="steps!=8">Next</button>
-<a class="btn btn-primary" *ngIf="steps==8" (click)="clickreg()">Submit</a>
+<a class="button-33" *ngIf="steps!=1"(click)="previous()"> << </a> &nbsp;
+<button type="submit" class="button-33" *ngIf="steps!=8"> >> </button>
+<a class="button-33" *ngIf="steps==8" (click)="clickreg()">Submit</a>
 </div>
 
 
