@@ -12,6 +12,7 @@ import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { RERoutingModule } from '../Employee/re/re-routing.module';
 import { ProfileComponent } from '../Employee/re/profile/profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { ProfileComponent } from '../Employee/re/profile/profile.component';
   ],
   imports: [
     CommonModule,
-    HeaderNavRoutingModule,RouterModule,RERoutingModule
+    HeaderNavRoutingModule,RouterModule,RERoutingModule,ReactiveFormsModule
   ]
 })
 export class HeaderNavModule { }
