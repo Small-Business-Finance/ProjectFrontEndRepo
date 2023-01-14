@@ -11,6 +11,6 @@ export class Employee {
     empAddress:string
     empMobileno:number
     empEmailId:string
-
-	leavedetails:LeaveDetails
+    username:string
+    password:string
 }

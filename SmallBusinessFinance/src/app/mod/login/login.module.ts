@@ -8,6 +8,9 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { RegisterEnquiryComponent } from '../Employee/re/register-enquiry/register-enquiry.component';
+import { RegisterEmployeeComponent } from '../Employee/admin/register-employee/register-employee.component';
+import { ViewEmployeeComponent } from '../Employee/admin/view-employee/view-employee.component';
+import { UpdateEmployeeComponent } from '../Employee/admin/update-employee/update-employee.component';
 
 
 
@@ -16,7 +19,10 @@ import { RegisterEnquiryComponent } from '../Employee/re/register-enquiry/regist
     RegisterCustomerApplicationComponent,
     ViewCustomerApplicationComponent,
     LoginComponent,
-    RegisterEnquiryComponent
+    RegisterEnquiryComponent,
+    RegisterEmployeeComponent,
+    ViewEmployeeComponent,
+    UpdateEmployeeComponent
   ],
   imports: [
     CommonModule,
