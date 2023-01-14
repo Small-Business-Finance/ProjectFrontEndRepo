@@ -11,6 +11,7 @@ import { RegisterEnquiryComponent } from '../Employee/re/register-enquiry/regist
 import { RegisterEmployeeComponent } from '../Employee/admin/register-employee/register-employee.component';
 import { ViewEmployeeComponent } from '../Employee/admin/view-employee/view-employee.component';
 import { UpdateEmployeeComponent } from '../Employee/admin/update-employee/update-employee.component';
+import { RERoutingModule } from '../Employee/re/re-routing.module
 
 
 
@@ -26,7 +27,7 @@ import { UpdateEmployeeComponent } from '../Employee/admin/update-employee/updat
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule,FormsModule,ReactiveFormsModule,RouterModule
+    LoginRoutingModule,FormsModule,ReactiveFormsModule,RouterModule,RERoutingModule
   ]
 })
 export class LoginModule { }

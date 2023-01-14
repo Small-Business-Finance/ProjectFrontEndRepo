@@ -6,29 +6,32 @@ import { RegisterEnquiryComponent } from '../Employee/re/register-enquiry/regist
 import { RegisterEmployeeComponent } from '../Employee/admin/register-employee/register-employee.component';
 import { ViewEmployeeComponent } from '../Employee/admin/view-employee/view-employee.component';
 import { UpdateEmployeeComponent } from '../Employee/admin/update-employee/update-employee.component';
+import { ProfileComponent } from '../Employee/re/profile/profile.component';
+import { OeprofileComponent } from '../Employee/oe/oeprofile/oeprofile.component';
+import { BmprofileComponent } from '../Employee/branchmanager/bmprofile/bmprofile.component';
+import { FhprofileComponent } from '../Employee/financehead/fhprofile/fhprofile.component';
+import { ThprofileComponent } from '../Employee/telehead/thprofile/thprofile.component';
+import { CaprofileComponent } from '../Employee/creditanalyst/caprofile/caprofile.component';
 
 const routes: Routes = [
 
   {
     path:'',component:LoginComponent,
     children:[
-      {
-          path:'registerCustomer', component:RegisterCustomerApplicationComponent
-      },
-      {
-        path:'enquiry',component:RegisterEnquiryComponent
-      },
+     
+      
       {
         path:'regemployee',component:RegisterEmployeeComponent
       },
-      {
-        path:'viewemployee',component:ViewEmployeeComponent
-      },
+     
       {
         path:'updateemployee',component:UpdateEmployeeComponent
-      }
+      },
+      
     ]
-  }
+  },
+  
+  
 
 ];
 

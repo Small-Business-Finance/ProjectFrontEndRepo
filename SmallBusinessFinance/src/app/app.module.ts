@@ -9,13 +9,15 @@ import { LoginModule } from './mod/login/login.module';
 import { HeaderNavModule } from './mod/header-nav/header-nav.module';
 import { RouterModule } from '@angular/router';
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule,FormsModule,ReactiveFormsModule,LoginModule,HeaderNavModule,RouterModule
+    AppRoutingModule,HttpClientModule,FormsModule,ReactiveFormsModule,HeaderNavModule,RouterModule,LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

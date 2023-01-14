@@ -12,7 +12,6 @@ export class RegisterCustomerApplicationComponent {
   steps:any=1;
 
   registerForm:FormGroup;
-  //caf:CustomerApplicationForm;
 
   constructor(private _fb:FormBuilder,public cs:CustomerapplicationService){}
   
@@ -23,27 +22,68 @@ export class RegisterCustomerApplicationComponent {
         applicationStatus:[''],
 
         customerDetails:this._fb.control({
-
-        }),
-
-        customerContactInfo:this._fb.control({
-
+          aadharId:[],
+          customerName:[''],
+          address:[''],
+          emailId:[''],
+          mobileNumber:[],
+          panCardNumber:[''],
+          dateOfBirth:[''],
+          gender:['']
         }),
        
        customerCompanyDetails:this._fb.control({
-
+        registrationNumber:[],
+	      companyName:[''],
+	      companyOwnerName:[''],
+	      typeOfBusiness:[''],
+	      PanCardNumber:[],
+	      companyTurnover:[],
+        telephoneNo:[],
+        faxNumber:[]
        }),
        customerBankDetails:this._fb.control({
-
+        bankId:[],
+        accountNumber:[],
+        bankName:[''],
+        ifscCode:[],
+        branchCode:[],
+        branchAddress:['']
        }),
        guarantorDetails:this._fb.control({
-
+        guarantorId:[],
+        guarantorName:[''],
+        guarantorPanCardNumber:[],
+        relation:[''],
+        mobileNumber:[],
+        occupation:['']
        }),
        previousLoanDetails:({
-
+        previousLoanId:[],
+        loanAmount:[],
+        loanTenure:[],
+        paidAmount:[],
+        remainingAmount:[],
+        defaulterCount:[],
+        bankName:['']
        }),
        customerLoanDetails:({
-
+        loanId:[],
+        expectedLoanAmount:[],
+        expectedLoanTenure:[],
+        expectedEmiAmount:[],
+        loanStatus:[''],
+        loanDisbursedStatus:['']
+       }),
+       customerDocuments:({
+        documentId:[],
+        itrReturns:[],
+        pancard:[],
+        moa:[],
+        aoa:[],
+        auditReport:[],
+        tan:[],
+        msmeCertificate:[]
        })
 
       })
