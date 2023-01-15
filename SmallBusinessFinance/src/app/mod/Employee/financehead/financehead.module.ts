@@ -5,13 +5,15 @@ import { FinanceheadRoutingModule } from './financehead-routing.module';
 import { FhprofileComponent } from './fhprofile/fhprofile.component';
 import { FhPersonalComponent } from './fh-personal/fh-personal.component';
 import { RouterModule } from '@angular/router';
+import { SanctionLetterComponent } from './sanction-letter/sanction-letter.component';
 
 
 @NgModule({
   declarations: [
     
     FhprofileComponent,
-    FhPersonalComponent
+    FhPersonalComponent,
+    SanctionLetterComponent
   ],
   imports: [
     CommonModule,
