@@ -1,11 +1,11 @@
 form{
-  margin-left: 500px;
+  margin-left: 300px;
 }
 
-.body{
+/* .body{
     text-align: justify;
     margin-left: 15cm;
- }
+ } */
  .label{
     text-transform: capitalize;
     font-family: monospace; 
