@@ -108,7 +108,7 @@ export class RegisterCustomerApplicationComponent {
 
     const customerloanApplication=new FormData();
 
-    customerloanApplication.append("application", customerApplication);
+    customerloanApplication.append("applicationForm", customerApplication);
     customerloanApplication.append("itrReturns", this.itrReturns1);
     customerloanApplication.append("pancard", this.pancard1);
     customerloanApplication.append("moa", this.moa1);
