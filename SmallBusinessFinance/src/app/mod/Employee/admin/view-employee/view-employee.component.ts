@@ -24,22 +24,22 @@ export class ViewEmployeeComponent {
      })
   }
 
-  deleteEmployee(empId:number)
-  {
-    this.cs.deleteEmployee(empId).subscribe();
-    window.location.reload();
-  }
+  // deleteEmployee(empId:number)
+  // {
+  //   this.cs.deleteEmployee(empId).subscribe();
+  //   window.location.reload();
+  // }
 
-  Search()
-  {
-    if(this.empName=='')
-    {
-      this.ngOnInit();
-    }
-    else{
-      this.e=this.e.filter(res=>{
-        return res.empName.toLocaleLowerCase().match(this.empName.toLocaleLowerCase());
-      });
-    }
-  }
+  // Search()
+  // {
+  //   if(this.empName=='')
+  //   {
+  //     this.ngOnInit();
+  //   }
+  //   else{
+  //     this.e=this.e.filter(res=>{
+  //       return res.empName.toLocaleLowerCase().match(this.empName.toLocaleLowerCase());
+  //     });
+  //   }
+  // }
 }
