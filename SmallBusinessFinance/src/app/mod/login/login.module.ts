@@ -19,6 +19,7 @@ import { OeModule } from '../Employee/oe/oe.module';
 import { REModule } from '../Employee/re/re.module';
 import { CreditanalystModule } from '../Employee/creditanalyst/creditanalyst.module';
 import { ProfileComponent } from '../Employee/re/profile/profile.component';
+import { NgxPaginationModule } from 'ngx-pagination/lib/ngx-pagination.module';
 
 
 

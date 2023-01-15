@@ -12,10 +12,10 @@
     <th>Enquiry status</th>
     <th>registration status</th>
   </tr>
-  <tr>
-    <td>aaaaaa</td>
+  <tr *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p ,totalItems:4}" >
   </tr>
-  
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
 </table>
 
 <br><br>
