@@ -17,6 +17,7 @@ import { CaprofileComponent } from '../Employee/creditanalyst/caprofile/caprofil
 import { ViewEmployeeComponent } from '../Employee/admin/view-employee/view-employee.component';
 import { RegisterEnquiryComponent } from '../Employee/re/register-enquiry/register-enquiry.component';
 import { RegisterCustomerApplicationComponent } from '../Employee/re/register-customer-application/register-customer-application.component';
+import { loginroutes } from '../login/login-routing.module';
 
 export const headerroutes: Routes = [
   {
@@ -33,7 +34,7 @@ export const headerroutes: Routes = [
     path:'emicalculator',component:EmiCalculatorComponent
   },
   {
-    path:'employee',component:LoginComponent
+    path:'employee',children:loginroutes
   },
   {
     path:'applyforloan',component:ApplyForLoanComponent

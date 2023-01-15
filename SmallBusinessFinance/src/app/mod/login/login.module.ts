@@ -34,7 +34,7 @@ import { NgxPaginationModule } from 'ngx-pagination/lib/ngx-pagination.module';
     UpdateEmployeeComponent
   ],
   imports: [
-    CommonModule,
+    CommonModule,REModule,
     LoginRoutingModule,FormsModule,ReactiveFormsModule,RouterModule,
     RERoutingModule,BranchmanagerModule,TeleheadModule,FinanceheadModule,OeModule,CreditanalystModule,REModule
   ]
