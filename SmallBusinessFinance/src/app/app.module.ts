@@ -8,16 +8,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginModule } from './mod/login/login.module';
 import { HeaderNavModule } from './mod/header-nav/header-nav.module';
 import { RouterModule } from '@angular/router';
+import { REModule } from './mod/Employee/re/re.module';
+import { LoginComponent } from './mod/login/login/login.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule,FormsModule,ReactiveFormsModule,HeaderNavModule,RouterModule,LoginModule
+    AppRoutingModule,HttpClientModule,FormsModule,
+    ReactiveFormsModule,RouterModule,LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,18 +2,21 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { OeRoutingModule } from './oe-routing.module';
-import { ProfileComponent } from './profile/profile.component';
+
 import { OeprofileComponent } from './oeprofile/oeprofile.component';
+import { OePersonalComponent } from './oe-personal/oe-personal.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    ProfileComponent,
-    OeprofileComponent
+    
+    OeprofileComponent,
+    OePersonalComponent
   ],
   imports: [
     CommonModule,
-    OeRoutingModule
+    OeRoutingModule,RouterModule
   ]
 })
 export class OeModule { }

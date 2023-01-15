@@ -11,7 +11,7 @@ import { ApplyForLoanComponent } from './apply-for-loan/apply-for-loan.component
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { RERoutingModule } from '../Employee/re/re-routing.module';
-import { ProfileComponent } from '../Employee/re/profile/profile.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 
 
@@ -23,7 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
    EmiCalculatorComponent,
    ApplyForLoanComponent,
    FaqComponent,
-   HomeComponent,ProfileComponent
+   HomeComponent
   ],
   imports: [
     CommonModule,
