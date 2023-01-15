@@ -1,2 +1,46 @@
 <p>view-employee works!</p>
 <button>Add new Employee</button>
+<br>
+<nav class="navbar" style="margin-left:480px;">
+  <input class="form-Control" type="text" placeholder="Search by Employee Name" name="empName" [(ngModel)]="empName" (ngModelChange)="Search()">
+  </nav> <br>
+
+<table class="table" border="1">
+    <thead>
+      <tr>
+        <th scope="col">Employee Id</th>
+        <th scope="col">Employee Name</th>
+        <th scope="col">Employee Date Of Birth</th>
+        <th scope="col">Employee Gender</th>
+        <th scope="col">Employee Salary</th>
+        <th scope="col">Employee Role</th>
+        <th scope="col">Employee Address</th>
+        <th scope="col">Employee Mobile No</th>
+        <th scope="col">Employee Email ID</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Password</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of e | paginate :{itemsPerPage:5, currentPage:cp}">
+         <td>{{employee.empId}}</td>
+        <td>{{employee.empName}}</td>
+        <td>{{employee.empDateofBirth}}</td>
+        <td>{{employee.empGender}}</td>
+        <td>{{employee.empSalary}}</td>
+        <td>{{employee.empRole}}</td>
+        <td>{{employee.empAddress}}</td>
+        <td>{{employee.empMobileno}}</td>
+        <td>{{employee.empEmailId}}</td>
+        <td>{{employee.username}}</td>
+        <td>{{employee.password}}</td>
+        <td><i class="fa fa-pencil-square-o" aria-hidden="true" routerLink="/updateEmployee" [state]="employee"></i></td>
+        <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteEmployee(employee.empId)"></i></td>
+    </tr>   
+    </tbody>
+  </table>
+
+  <br>
+    <pagination-controls (pageChange)="cp=$event" style="text-align: center;"></pagination-controls>
