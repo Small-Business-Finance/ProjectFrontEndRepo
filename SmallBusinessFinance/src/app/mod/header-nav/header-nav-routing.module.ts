@@ -42,38 +42,7 @@ export const headerroutes: Routes = [
     path:'faqs',component:FaqComponent
   },
 
-  {
-    path:'reprofile',component:ProfileComponent,
-    children:[
-      {
-        path:'enquiry',component:RegisterEnquiryComponent
-      },
-       
-    {
-    path:'registerCustomer', component:RegisterCustomerApplicationComponent
-    },
-
-    ]
-  },
-  {
-    path:'oeprofile',component:OeprofileComponent
-  },
-  {
-    path:'bmprofile',component:BmprofileComponent
-  },
-  {
-    path:'fhprofile',component:FhprofileComponent
-  },
-  {
-    path:'thprofile',component:ThprofileComponent
-  },
-  {
-    path:'caprofile',component:CaprofileComponent
-  },
-  {
-    path:'viewemployee',component:ViewEmployeeComponent
-  },
-
+  
  
  
 ];

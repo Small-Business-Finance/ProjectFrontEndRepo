@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BmPersonalComponent } from './bm-personal/bm-personal.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+
+ 
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

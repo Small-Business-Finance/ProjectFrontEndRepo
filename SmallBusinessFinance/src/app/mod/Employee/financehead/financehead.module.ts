@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FinanceheadRoutingModule } from './financehead-routing.module';
-import { ProfileComponent } from './profile/profile.component';
 import { FhprofileComponent } from './fhprofile/fhprofile.component';
+import { FhPersonalComponent } from './fh-personal/fh-personal.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
-    ProfileComponent,
-    FhprofileComponent
+    
+    FhprofileComponent,
+    FhPersonalComponent
   ],
   imports: [
     CommonModule,
-    FinanceheadRoutingModule
+    FinanceheadRoutingModule,RouterModule
   ]
 })
 export class FinanceheadModule { }
