@@ -30,6 +30,7 @@ import { OeModule } from '../oe/oe.module';
     ReactiveFormsModule,
     RERoutingModule,RouterModule,BranchmanagerModule,CreditanalystModule,
     FinanceheadModule,TeleheadModule,OeModule
+
   ]
 })
 export class REModule { }
