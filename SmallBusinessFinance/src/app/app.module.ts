@@ -9,7 +9,8 @@ import { LoginModule } from './mod/login/login.module';
 import { HeaderNavModule } from './mod/header-nav/header-nav.module';
 import { RouterModule } from '@angular/router';
 import { REModule } from './mod/Employee/re/re.module';
-import { LoginComponent } from './mod/login/login/login.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { LoginRoutingModule } from './mod/login/login-routing.module';
 
 
 @NgModule({
@@ -18,9 +19,9 @@ import { LoginComponent } from './mod/login/login/login.component';
     
   ],
   imports: [
-    BrowserModule,
+    BrowserModule,NgxPaginationModule,LoginRoutingModule,
     AppRoutingModule,HttpClientModule,FormsModule,
-    ReactiveFormsModule,RouterModule,LoginModule
+    ReactiveFormsModule,RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

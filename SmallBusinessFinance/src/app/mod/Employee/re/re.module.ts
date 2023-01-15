@@ -14,6 +14,7 @@ import { CreditanalystModule } from '../creditanalyst/creditanalyst.module';
 import { FinanceheadModule } from '../financehead/financehead.module';
 import { TeleheadModule } from '../telehead/telehead.module';
 import { OeModule } from '../oe/oe.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -26,7 +27,7 @@ import { OeModule } from '../oe/oe.module';
   ],
   imports: [
     CommonModule,
-    FormsModule,
+    FormsModule,NgxPaginationModule,
     ReactiveFormsModule,
     RERoutingModule,RouterModule,BranchmanagerModule,CreditanalystModule,
     FinanceheadModule,TeleheadModule,OeModule
