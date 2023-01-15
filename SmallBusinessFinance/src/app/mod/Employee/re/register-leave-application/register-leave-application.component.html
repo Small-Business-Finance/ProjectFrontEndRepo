@@ -1,0 +1,34 @@
+<p>register-leave-application works!</p>
+<h3 style="color: red; text-align: center;">Enquiry Registration Form </h3>
+
+<form [formGroup]="leaveForm" (ngSubmit)="leaveSubmit()">
+
+
+    <div>
+        <h3>Leave Details</h3>
+        <br>
+        <div class="form-group">
+            From Date : <input type="text" class="form-control" placeholder="Enter From Date"
+                formControlName="fromDate">
+        </div>
+
+        <div class="form-group">
+            To Date : <input type="text" class="form-control" placeholder="Enter To Date" formControlName="toDate">
+        </div>
+
+        <div class="form-group">
+            Leave Types : <input type="text" class="form-control" placeholder="Enter Type Of Leave"
+                formControlName="leaveType">
+        </div>
+
+        <div class="form-group">
+            Leave Status : <input type="text" class="form-control" placeholder="Enter Leave Status"
+                formControlName="leaveappstatus">
+        </div>
+
+    </div>
+
+    <div class="form-button">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
