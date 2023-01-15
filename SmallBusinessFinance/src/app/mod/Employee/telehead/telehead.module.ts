@@ -5,13 +5,15 @@ import { TeleheadRoutingModule } from './telehead-routing.module';
 import { ThprofileComponent } from './thprofile/thprofile.component';
 import { ThPersonalComponent } from './th-personal/th-personal.component';
 import { RouterModule } from '@angular/router';
+import { DefaulterListComponent } from './defaulter-list/defaulter-list.component';
 
 
 @NgModule({
   declarations: [
   
     ThprofileComponent,
-    ThPersonalComponent
+    ThPersonalComponent,
+    DefaulterListComponent
   ],
   imports: [
     CommonModule,
