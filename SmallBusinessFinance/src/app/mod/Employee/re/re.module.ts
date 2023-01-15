@@ -5,17 +5,19 @@ import { RERoutingModule } from './re-routing.module';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { RegisterLeaveApplicationComponent } from './register-leave-application/register-leave-application.component';
 
 
 
 @NgModule({
   declarations: [
-    ProfileComponent
+    ProfileComponent,
+    RegisterLeaveApplicationComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
     RERoutingModule,RouterModule
   ]
 })
