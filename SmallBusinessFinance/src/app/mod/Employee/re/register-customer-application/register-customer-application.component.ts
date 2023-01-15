@@ -13,6 +13,15 @@ export class RegisterCustomerApplicationComponent {
 
   registerForm:FormGroup;
 
+  
+        itrReturns1:any
+        pancard1:any
+        moa1:any
+        aoa1:any
+        auditReport1:any
+        tan1:any
+        msmeCertificate1:any
+
   constructor(private _fb:FormBuilder,public cs:CustomerapplicationService){}
   
   ngOnInit()
@@ -74,16 +83,6 @@ export class RegisterCustomerApplicationComponent {
         expectedEmiAmount:[],
         loanStatus:[''],
         loanDisbursedStatus:['']
-       }),
-       customerDocuments:({
-        documentId:[],
-        itrReturns:[],
-        pancard:[],
-        moa:[],
-        aoa:[],
-        auditReport:[],
-        tan:[],
-        msmeCertificate:[]
        })
 
       })
@@ -102,9 +101,66 @@ export class RegisterCustomerApplicationComponent {
 
   clickreg()
   {
+
+    console.log(this.registerForm.value)
+    
+    const customerApplication=JSON.stringify(this.registerForm.value);
+
+    const customerloanApplication=new FormData();
+
+    customerloanApplication.append("applicationForm", customerApplication);
+    customerloanApplication.append("itrReturns", this.itrReturns1);
+    customerloanApplication.append("pancard", this.pancard1);
+    customerloanApplication.append("moa", this.moa1);
+    customerloanApplication.append("aoa",this.aoa1);
+    customerloanApplication.append("auditReport", this.auditReport1 );
+    customerloanApplication.append("tan", this.tan1);
+    customerloanApplication.append("msmeCertificate", this.msmeCertificate1);
+  
+    
     this.cs.saveCustomer(this.registerForm.value).subscribe();
+    alert("Loan Application Submited");
   
   }
+
+            itrReturns(event)
+              {
+                this.itrReturns1= event.target.files[0];
+              }
+
+              pancard(event)
+              {
+              this.pancard1= event.target.files[0];
+              }
+           
+              moa(event)
+           {
+              this.moa1= event.target.files[0];
+           }
+
+           aoa(event)
+             {
+              this.aoa1= event.target.files[0];
+            }
+
+           
+
+            auditReport(event)
+             {
+              this.auditReport1= event.target.files[0];
+            }
+
+            tan(event)
+          {
+           this.tan1= event.target.files[0];
+          }
+
+          msmeCertificate(event)
+          {
+          this.msmeCertificate1= event.target.files[0];
+          }
+
+        
 
 }
 

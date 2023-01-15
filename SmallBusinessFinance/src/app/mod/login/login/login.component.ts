@@ -33,7 +33,7 @@ export class LoginComponent {
     
    if (u.username === 're' && u.password === 're') {
       console.log(u.username,u.password);
-      this.router.navigateByUrl("/reprofile");
+      this.router.navigateByUrl("reprofile");
     }
 
     if (u.username === 'oe' && u.password === 'oe') {

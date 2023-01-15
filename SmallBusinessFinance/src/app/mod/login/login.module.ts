@@ -12,6 +12,13 @@ import { RegisterEmployeeComponent } from '../Employee/admin/register-employee/r
 import { ViewEmployeeComponent } from '../Employee/admin/view-employee/view-employee.component';
 import { UpdateEmployeeComponent } from '../Employee/admin/update-employee/update-employee.component';
 import { RERoutingModule } from '../Employee/re/re-routing.module'
+import { BranchmanagerModule } from '../Employee/branchmanager/branchmanager.module';
+import { TeleheadModule } from '../Employee/telehead/telehead.module';
+import { FinanceheadModule } from '../Employee/financehead/financehead.module';
+import { OeModule } from '../Employee/oe/oe.module';
+import { REModule } from '../Employee/re/re.module';
+import { CreditanalystModule } from '../Employee/creditanalyst/creditanalyst.module';
+import { ProfileComponent } from '../Employee/re/profile/profile.component';
 
 
 
@@ -27,7 +34,8 @@ import { RERoutingModule } from '../Employee/re/re-routing.module'
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule,FormsModule,ReactiveFormsModule,RouterModule,RERoutingModule
+    LoginRoutingModule,FormsModule,ReactiveFormsModule,RouterModule,
+    RERoutingModule,BranchmanagerModule,TeleheadModule,FinanceheadModule,OeModule,CreditanalystModule,REModule
   ]
 })
 export class LoginModule { }
