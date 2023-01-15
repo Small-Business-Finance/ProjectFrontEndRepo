@@ -31,6 +31,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ReactiveFormsModule,
     RERoutingModule,RouterModule,BranchmanagerModule,CreditanalystModule,
     FinanceheadModule,TeleheadModule,OeModule
+
   ]
 })
 export class REModule { }
