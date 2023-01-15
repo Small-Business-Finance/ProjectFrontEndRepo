@@ -9,50 +9,43 @@ import { EnquiryService } from 'src/app/shared/enquiry.service';
 })
 export class RegisterEnquiryComponent {
 
-  steps:any=1;
+  steps: any = 1;
 
-  enquiryForm:FormGroup;
-  
+  enquiryForm: FormGroup;
 
-  constructor(private _fb:FormBuilder,public cs:EnquiryService){}
-  
-  ngOnInit()
-  {
-     this.enquiryForm=this._fb.group({
-        enquiryId:[],
-        customerName:[''],
-        companyName:[''],
-        typesOfBusiness:[''],
-        customerAddress:[''],
-        customerPancardNumber:[''],
-        companyPancardNumber:[''],
-        mobileNumber:[''],
-        alternateMobileNumber:[''],
-        emailId:[''],
-        itrStatus:[''],
-        enquiryStatus:[''],
-        registrationStatus:[''],
-          cibilscore:['']
-        
 
-      
+  constructor(private _fb: FormBuilder, public cs: EnquiryService) { }
 
-      })
-      }
-       
-    submit()
-    {
-      this.steps=this.steps+1;
-    
-    }
-  
-  previous()
-  {
-    this.steps=this.steps-1;
+  ngOnInit() {
+    this.enquiryForm = this._fb.group({
+      enquiryId: [],
+      customerName: [''],
+      companyName: [''],
+      typesOfBusiness: [''],
+      customerAddress: [''],
+      customerPancardNumber: [''],
+      companyPancardNumber: [''],
+      mobileNumber: [''],
+      alternateMobileNumber: [''],
+      emailId: [''],
+      itrStatus: [''],
+      enquiryStatus: [''],
+      registrationStatus: [''],
+      cibilscore: ['']
+
+    })
   }
 
-  clickreg()
-  {
+  submit() {
+    this.steps = this.steps + 1;
+
+  }
+
+  previous() {
+    this.steps = this.steps - 1;
+  }
+
+  clickreg() {
     this.cs.postEnquiry(this.enquiryForm.value).subscribe();
   }
 

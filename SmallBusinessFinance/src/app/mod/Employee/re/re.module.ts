@@ -5,6 +5,7 @@ import { RERoutingModule } from './re-routing.module';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { RegisterLeaveApplicationComponent } from './register-leave-application/register-leave-application.component';
 import { ViewEnquiryComponent } from './view-enquiry/view-enquiry.component';
 import { BmPersonalComponent } from '../branchmanager/bm-personal/bm-personal.component';
 import { BranchmanagerModule } from '../branchmanager/branchmanager.module';
@@ -19,9 +20,9 @@ import { OeModule } from '../oe/oe.module';
 @NgModule({
   declarations: [
     ProfileComponent,
+    RegisterLeaveApplicationComponent,
     ViewEnquiryComponent,
     RePersonalComponent
-  
   ],
   imports: [
     CommonModule,
