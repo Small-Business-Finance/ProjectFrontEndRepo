@@ -36,7 +36,8 @@ import { NgxPaginationModule } from 'ngx-pagination/lib/ngx-pagination.module';
   imports: [
     CommonModule,
     LoginRoutingModule,FormsModule,ReactiveFormsModule,RouterModule,
-    RERoutingModule,BranchmanagerModule,TeleheadModule,FinanceheadModule,OeModule,CreditanalystModule
+    RERoutingModule,BranchmanagerModule,TeleheadModule,FinanceheadModule,OeModule,CreditanalystModule,
+    REModule
   ]
 })
 export class LoginModule { }
