@@ -6,4 +6,6 @@ export class CustomerCompanyDetails {
 	typeOfBusiness:string
 	PanCardNumber:string
 	companyTurnover:number
+	telephoneNo:number
+	faxNumber:number
 }
