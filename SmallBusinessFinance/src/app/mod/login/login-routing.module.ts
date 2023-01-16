@@ -21,28 +21,14 @@ import { FhPersonalComponent } from '../Employee/financehead/fh-personal/fh-pers
 import { ThPersonalComponent } from '../Employee/telehead/th-personal/th-personal.component';
 import { CaPersonalComponent } from '../Employee/creditanalyst/ca-personal/ca-personal.component';
 
-const routes: Routes = [
+export const loginroutes: Routes = [
 
   {
     path:'',component:LoginComponent,
-    children:[
-     
-      
-      {
-        path:'regemployee',component:RegisterEmployeeComponent
-      },
-     
-      {
-        path:'updateemployee',component:UpdateEmployeeComponent
-      },
-      
-    ]
   },
-
   {
     path:'reprofile',component:ProfileComponent,
     children:[
-
       {
         path:'repersonal',component:RePersonalComponent
       },
@@ -116,7 +102,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(loginroutes)],
   exports: [RouterModule]
 })
 export class LoginRoutingModule { }

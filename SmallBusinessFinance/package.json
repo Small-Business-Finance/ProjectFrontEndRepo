@@ -21,9 +21,12 @@
     "@schematics/angular": "^15.1.1",
     "bootstrap": "^4.1.1",
     "font-awesome": "^4.7.0",
+<<<<<<< HEAD
     "ng2-order-pipe": "^0.1.5",
     "ng2-search-filter": "^0.5.1",
     "ngx-order-pipe": "^2.2.0",
+=======
+>>>>>>> 4ad0b13978cbb9e41d0565fc13478fa9e92788c2
     "ngx-pagination": "^6.0.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
