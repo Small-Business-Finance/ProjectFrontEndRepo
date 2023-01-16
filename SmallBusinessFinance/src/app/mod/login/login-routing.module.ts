@@ -20,6 +20,8 @@ import { OePersonalComponent } from '../Employee/oe/oe-personal/oe-personal.comp
 import { FhPersonalComponent } from '../Employee/financehead/fh-personal/fh-personal.component';
 import { ThPersonalComponent } from '../Employee/telehead/th-personal/th-personal.component';
 import { CaPersonalComponent } from '../Employee/creditanalyst/ca-personal/ca-personal.component';
+import { DefaulterListComponent } from '../Employee/telehead/defaulter-list/defaulter-list.component';
+import { SanctionLetterComponent } from '../Employee/financehead/sanction-letter/sanction-letter.component';
 
 export const loginroutes: Routes = [
 
@@ -38,15 +40,17 @@ export const loginroutes: Routes = [
       {
         path:'viewenquiry',component:ViewEnquiryComponent
       },
-       
-    {
-    path:'registerCustomer', component:RegisterCustomerApplicationComponent
-    },
-    {
-      path:'viewCustomer', component:ViewCustomerApplicationComponent
+
+      {
+        path:'viewCustomer', component:ViewCustomerApplicationComponent,
+        
       },
-  
-    ]
+      {
+          path:'registerCustomer', component:RegisterCustomerApplicationComponent
+            
+      },
+        
+      ]
   },
   {
     path:'oeprofile',component:OeprofileComponent,
@@ -54,7 +58,11 @@ export const loginroutes: Routes = [
       
       {
         path:'oepersonal',component:OePersonalComponent
-      }
+      },
+
+      {
+        path:'viewenquiry',component:ViewEnquiryComponent
+      },
     ]
   },
   {
@@ -63,7 +71,17 @@ export const loginroutes: Routes = [
       
         {
           path:'bmpersonal',component:BmPersonalComponent
-        }
+        },
+       
+        {
+          path:'viewCustomer', component:ViewCustomerApplicationComponent,
+        },
+            {
+              path:'registerCustomer', component:RegisterCustomerApplicationComponent
+              },
+          {
+            path:'defaulter',component:DefaulterListComponent
+          }
       ]
   },
   {
@@ -72,7 +90,16 @@ export const loginroutes: Routes = [
       
       {
         path:'fhpersonal',component:FhPersonalComponent
-      }
+      },
+      {
+        path:'registerCustomer', component:RegisterCustomerApplicationComponent
+        },
+      {
+        path:'viewCustomer', component:ViewCustomerApplicationComponent
+        },
+        {
+          path:'sanction',component:SanctionLetterComponent
+        }
     ]
   },
   {
@@ -81,7 +108,16 @@ export const loginroutes: Routes = [
       
       {
         path:'thpersonal',component:ThPersonalComponent
-      }
+      },
+      {
+        path:'registerCustomer', component:RegisterCustomerApplicationComponent
+        },
+      {
+        path:'viewCustomer', component:ViewCustomerApplicationComponent
+        },
+        {
+          path:'defaulter',component:DefaulterListComponent
+        }
     ]
   },
   {
@@ -90,7 +126,13 @@ export const loginroutes: Routes = [
       
       {
         path:'capersonal',component:CaPersonalComponent
-      }
+      },
+      {
+        path:'registerCustomer', component:RegisterCustomerApplicationComponent
+        },
+      {
+        path:'viewCustomer', component:ViewCustomerApplicationComponent
+        },
     ]
   },
 
