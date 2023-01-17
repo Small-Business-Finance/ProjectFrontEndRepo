@@ -18,6 +18,7 @@ export class CustomerapplicationService {
     applicationId: 0,
     applicationStatus: '',
     customerDetails: {
+      customerId:0,
       aadharId: 0,
       customerName: '',
       emailId: '',
@@ -28,11 +29,12 @@ export class CustomerapplicationService {
       gender: ''
     },
     customerCompanyDetails: {
+      companyId:0,
       registrationNumber: 0,
       companyName: '',
       companyOwnerName: '',
       typeOfBusiness: '',
-      PanCardNumber: '',
+      panCardNumber: '',
       companyTurnover: 0,
       telephoneNo:0,
       faxNumber:0
@@ -74,14 +76,15 @@ export class CustomerapplicationService {
     customerDocuments: new CustomerDocuments
   }
 
-  saveCustomer(c: CustomerApplicationForm) 
+  saveCustomer(c:any) 
   {
-    return this.http.post("http://localhost:9090/application/",c);
+   return this.http.post("http://localhost:9090/customerapi/application",c,{responseType:'text' as 'json'});
+   
   }
 
   getCustomer()
   {
-    return this.http.get<CustomerApplicationForm[]>("http://localhost:9090/applications/");
+    return this.http.get<CustomerApplicationForm[]>("http://localhost:9090/customerapi/applications/");
   }
 
   deleteCustomer(applicationId:number)
