@@ -1,5 +1,6 @@
 export class CustomerDetails {
 
+	customerId:number
     aadharId:number
 	customerName:string
 	emailId:string

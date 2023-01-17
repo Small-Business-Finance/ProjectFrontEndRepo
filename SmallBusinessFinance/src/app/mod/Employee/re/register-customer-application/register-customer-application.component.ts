@@ -30,7 +30,8 @@ export class RegisterCustomerApplicationComponent {
         applicationId:[],
         applicationStatus:[''],
 
-        customerDetails:this._fb.control({
+        customerDetails:this._fb.group({
+          customerId:[],
           aadharId:[],
           customerName:[''],
           address:[''],
@@ -41,17 +42,18 @@ export class RegisterCustomerApplicationComponent {
           gender:['']
         }),
        
-       customerCompanyDetails:this._fb.control({
+       customerCompanyDetails:this._fb.group({
+        companyId:[],
         registrationNumber:[],
 	      companyName:[''],
 	      companyOwnerName:[''],
 	      typeOfBusiness:[''],
-	      PanCardNumber:[],
+	      panCardNumber:[],
 	      companyTurnover:[],
         telephoneNo:[],
         faxNumber:[]
        }),
-       customerBankDetails:this._fb.control({
+       customerBankDetails:this._fb.group({
         bankId:[],
         accountNumber:[],
         bankName:[''],
@@ -59,7 +61,7 @@ export class RegisterCustomerApplicationComponent {
         branchCode:[],
         branchAddress:['']
        }),
-       guarantorDetails:this._fb.control({
+       guarantorDetails:this._fb.group({
         guarantorId:[],
         guarantorName:[''],
         guarantorPanCardNumber:[],
@@ -67,7 +69,7 @@ export class RegisterCustomerApplicationComponent {
         mobileNumber:[],
         occupation:['']
        }),
-       previousLoanDetails:({
+       previousLoanDetails:this._fb.group({
         previousLoanId:[],
         loanAmount:[],
         loanTenure:[],
@@ -76,7 +78,7 @@ export class RegisterCustomerApplicationComponent {
         defaulterCount:[],
         bankName:['']
        }),
-       customerLoanDetails:({
+       customerLoanDetails:this._fb.group({
         loanId:[],
         expectedLoanAmount:[],
         expectedLoanTenure:[],
@@ -118,7 +120,7 @@ export class RegisterCustomerApplicationComponent {
     customerloanApplication.append("msmeCertificate", this.msmeCertificate1);
   
     
-    this.cs.saveCustomer(this.registerForm.value).subscribe();
+    this.cs.saveCustomer(customerloanApplication).subscribe();
     alert("Loan Application Submited");
   
   }

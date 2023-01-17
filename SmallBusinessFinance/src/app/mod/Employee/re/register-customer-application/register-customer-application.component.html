@@ -5,12 +5,46 @@
     <span> Enter Details</span>
   </h1></div>
 
-<div *ngIf="steps==1"> 
+  <div *ngIf="steps==1"> 
+    <h3>Customer Application :</h3>
+    <br>
+    
+      <div class="form-group">
+        <label class="label">applicationStatus :</label><br>
+           <input type="text" class="col-xs-3" placeholder="Enter applicationStatus" formControlName="applicationStatus">
+    </div>
+    
+  </div>
+
+<div *ngIf="steps==2"> 
 <h3>Customer Details</h3>
 <br>
+<h3 formGroupName="customerDetails">
+
+  <div class="form-group">
+    <label class="label">aadharId :</label><br>
+       <input type="text" class="col-xs-3" placeholder="Enter aadharId" formControlName="aadharId">
+</div>
+
 <div class="form-group">
     <label class="label">Customer Name :</label><br>
        <input type="text" class="col-xs-3" placeholder="Enter name" formControlName="customerName">
+</div>
+
+
+<div class="form-group">
+  <label class="label">emailId :</label><br>
+     <input type="text" class="col-xs-3" placeholder="Enter emailId" formControlName="emailId">
+</div>
+
+<div class="form-group">
+  <label class="label">address :</label><br>
+     <input type="text" class="col-xs-3" placeholder="Enter address" formControlName="address">
+</div>
+
+<div class="form-group">
+  <label class="label">mobileNumber :</label><br>
+   <input type="text" class="col-xs-3" placeholder="Enter mobileNumber" formControlName="mobileNumber">
 </div>
 
 <div class="form-group">
@@ -27,67 +61,68 @@
     <label class="label">Gender :</label> <br>
     <input type="text" class="col-xs-3" placeholder="Enter gender" formControlName="gender">
 </div>
+</h3>
 </div>
 
 
-<div *ngIf="steps==2"> 
-<h3>Contact Details </h3>
+<div *ngIf="steps==3"> 
+<h3 formGroupName="customerCompanyDetails">Company Details : 
 <br>
+
 <div class="form-group">
-  <label class="label">Address :</label><br>
-   <input type="text" class="col-xs-3" placeholder="Enter Address" formControlName="address">
+  <label class="label">registrationNumber :</label><br>
+   <input type="text" class="col-xs-3" placeholder="Enter registrationNumber" formControlName="registrationNumber">
 </div>
 
 <div class="form-group">
-  <label class="label">Email Id :</label><br>
-   <input type="text" class="col-xs-3" placeholder="Enter Email" formControlName="emailId">
+  <label class="label">companyName :</label><br>
+   <input type="text" class="col-xs-3" placeholder="Enter companyName" formControlName="companyName">
 </div>
 
 <div class="form-group">
-  <label class="label">Mobile no : </label><br>
-  <input type="text" class="col-xs-3" placeholder="Enter Mobile" formControlName="mobileNumber">
+  <label class="label">companyOwnerName :</label><br>
+   <input type="text" class="col-xs-3" placeholder="Enter companyOwnerName" formControlName="companyOwnerName">
 </div>
 
 <div class="form-group">
-  <label class="label">Fax no :</label><br>
- <input type="text" class="col-xs-3" placeholder="Enter Fax" formControlName="faxNumber">
+  <label class="label">typeOfBusiness : </label><br>
+  <input type="text" class="col-xs-3" placeholder="Enter typeOfBusiness" formControlName="typeOfBusiness">
 </div>
+
+<div class="form-group">
+  <label class="label">PanCardNumber :</label><br>
+ <input type="text" class="col-xs-3" placeholder="Enter panCardNumber" formControlName="panCardNumber">
+</div>
+
+<div class="form-group">
+  <label class="label">companyTurnover :</label><br>
+ <input type="text" class="col-xs-3" placeholder="Enter companyTurnover" formControlName="companyTurnover">
+</div>
+
+<div class="form-group">
+  <label class="label">telephoneNo :</label><br>
+ <input type="text" class="col-xs-3" placeholder="Enter telephoneNo" formControlName="telephoneNo">
+</div>
+
+<div class="form-group">
+  <label class="label">faxNumber :</label><br>
+ <input type="text" class="col-xs-3" placeholder="Enter faxNumber" formControlName="faxNumber">
+</div>
+
+</h3>
 </div>
     
-
-<div *ngIf="steps==3">
-  <h3>Company info</h3>
-  <br>
-<div class="form-group">
-  <label class="label">Company Name : </label><br>
-  <input type="text" class="col-xs-3" placeholder="Enter Company" formControlName="companyName">
-</div>
-
-<div class="form-group">
-  <label class="label">Company Owner : </label><br>
-  <input type="text" class="col-xs-3" placeholder="Enter Owner" formControlName="companyOwnerName">
-</div>
-
-<div class="form-group">
-  <label class="label">Type of business :  </label><br>
-  <input type="text" class="col-xs-3" placeholder="Enter business Type" formControlName="typeOfBusiness">
-</div>
-    
-<div class="form-group">
-  <label class="label">Pan Card Number: </label><br>
-  <input type="text" class="col-xs-3" placeholder="Enter  Pan Card" formControlName="PanCardNumber">
-</div>
-
-<div class="form-group">
-  <label class="label">Company TurnOver : </label><br>
-  <input type="text" class="col-xs-3" placeholder="Enter TurnOver" formControlName="companyTurnover">
-</div>
-</div>
 
 
 <div *ngIf="steps==4">
-    <h3>Bank Details</h3>
+    <h3 formGroupName="customerBankDetails">Bank Details
     <br>
+
+    <div class="form-group">
+      <label class="label"> accountNumber :  </label><br>
+      <input type="text" class="col-xs-3" placeholder="Enter accountNumber" formControlName="accountNumber">
+    </div>
+
   <div class="form-group">
     <label class="label"> Bank Name :  </label><br>
     <input type="text" class="col-xs-3" placeholder="Enter Bank Name" formControlName="bankName">
@@ -107,11 +142,12 @@
     <label class="label">Branch address: </label><br>
     <input type="text" class="col-xs-3" placeholder="Enter address" formControlName="branchAddress">
   </div>
+</h3>
   </div>
 
 
   <div *ngIf="steps==5">
-    <h3>Guarrantor details</h3>
+    <h3 formGroupName="guarantorDetails">Guarrantor details
     <br>
   <div class="form-group">
     <label class="label">Guarrantor Name : </label><br>
@@ -137,11 +173,12 @@
     <label class="label">Occupation : </label><br>
     <input type="text" class="col-xs-3" placeholder="Enter Occupation" formControlName="occupation">
   </div>
+</h3>
   </div>
 
 
   <div *ngIf="steps==6">
-    <h3>Previous Loan details</h3>
+    <h3 formGroupName="previousLoanDetails">Previous Loan details
     <br>
   <div class="form-group">
     <label class="label">Loan Amount : </label><br>
@@ -172,11 +209,12 @@
     <label class="label">Bank Name :</label><br>
      <input type="text" class="col-xs-3" placeholder="Enter bankName" formControlName="bankName">
     </div>
+  </h3>
 </div>
 
 
 <div *ngIf="steps==7">
-    <h3>Customer Loan details</h3>
+    <h3 formGroupName="customerLoanDetails">Customer Loan details
     <br>
   <div class="form-group">
     <label class="label">expected Loan Amount :  </label><br>
@@ -202,6 +240,7 @@
     <label class="label">Loan disbursed status : </label><br>
     <input type="text" class="col-xs-3" placeholder="Enter loanDisbursedStatus" formControlName="loanDisbursedStatus">
   </div>
+</h3>
   </div>
 
 
@@ -242,6 +281,7 @@
       <label class="label">MSME Certificate : </label><br>
       <input type="file" class="col-xs-3" (change)="msmeCertificate($event)">
       </div>
+    
     </div>
 
 

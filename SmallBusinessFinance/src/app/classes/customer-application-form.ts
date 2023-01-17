@@ -10,6 +10,7 @@ export class CustomerApplicationForm {
 
      applicationId:number
 	applicationStatus:string
+     
      customerDetails:CustomerDetails
      customerCompanyDetails:CustomerCompanyDetails
      customerBankDetails:CustomerBankDetails
