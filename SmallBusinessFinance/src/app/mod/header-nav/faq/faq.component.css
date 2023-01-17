@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(153, 179, 218);
+    background-color: rgb(237, 240, 245);
     }
     .layout {
     width: 700px;
@@ -24,7 +24,7 @@ body {
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: rgb(255, 255, 255);
-    background: rgb(98, 134, 201);
+    background: rgb(114, 114, 219);
     border-radius: 10px;
     }
     .accordion:hover {
