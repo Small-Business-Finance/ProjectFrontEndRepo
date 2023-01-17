@@ -6,87 +6,97 @@
 
     <div *ngIf="steps==1">
         <h3>Enquiry Details</h3>
-        <br>
+        <div class="row">
+            <div class="col">
         <div class="form-group">
             <label class="label"> Customer Name : </label><br>
-           <input type="text" class="col-xs-3" placeholder="Enter Customer Name"
-                formControlName="customerName">
+           <input type="text" class="col-xs-3" formControlName="customerName">
         </div>
-
+    </div>
+<div class="col">
         <div class="form-group">
             <label class="label">Company Name : </label><br>
-            <input type="text" class="col-xs-3" placeholder="Enter Company Name"
-                formControlName="companyName">
+            <input type="text" class="col-xs-3" formControlName="companyName">
         </div>
+            </div></div>
 
+            <div class="row">
+                <div class="col">
         <div class="form-group">
             <label class="label">Types OF Business : </label><br>
-            <input type="text" class="col-xs-3" placeholder="Enter Type Of Business "
-                formControlName="typesOfBusiness">
+            <input type="text" class="col-xs-3" formControlName="typesOfBusiness">
         </div>
-
+    </div>
+    <div class="col">
         <div class="form-group">
             <label class="label">Customer Address : </label><br>
-            <input type="text" class="col-xs-3" placeholder="Enter Address"
-                formControlName="customerAddress">
+            <input type="text" class="col-xs-3" formControlName="customerAddress">
         </div>
+</div></div>
 
+<div class="row">
+    <div class="col">
         <div class="form-group">
             <label class="label">Customer Pancard Number: </label><br>
-            <input type="text" class="col-xs-3" placeholder="Enter Customer Pancard Number"
-                formControlName="customerPancardNumber">
+            <input type="text" class="col-xs-3" formControlName="customerPancardNumber">
         </div>
-
+    </div>
+    <div class="col">
         <div class="form-group">
             <label class="label">Company Pancard Number :</label><br>
-            <input type="text" class="col-xs-3" placeholder="Enter Company Pancard Number "
-                formControlName="companyPancardNumber">
+            <input type="text" class="col-xs-3"  formControlName="companyPancardNumber">
         </div>
-
+        </div></div>
     </div>
 
     <div *ngIf="steps==2">
         <h3>Enquiry Details </h3>
-        <br>
+        <div class="row">
+            <div class="col">
         <div class="form-group">
             <label class="label">Mobile Number : </label><br>
-            <input type="text" class="col-xs-3" placeholder="Enter Mobile Number"
-                formControlName="mobileNumber">
+            <input type="text" class="col-xs-3" formControlName="mobileNumber">
         </div>
-
+    </div>
+<div class="col">
         <div class="form-group">
             <label class="label">Alternate Mobile Number : </label><br>
-            <input type="text" class="col-xs-3"
-                placeholder="Enter Alternate Mobile Number" formControlName="alternateMobileNumber">
+            <input type="text" class="col-xs-3" formControlName="alternateMobileNumber">
         </div>
+</div></div>
 
+<div class="row">
+    <div class="col">
         <div class="form-group">
             <label class="label">Email Id : </label><br>
-            <input type="text" class="col-xs-3" placeholder="Enter Email Id" formControlName="emailId">
+            <input type="text" class="col-xs-3" formControlName="emailId">
         </div>
-
+    </div>
+    <div class="col">
         <div class="form-group">
             <label class="label">ITR Status : </label><br>
-            <input type="text" class="col-xs-3" placeholder="Enter Itr Status"
-                formControlName="itrStatus">
+            <input type="text" class="col-xs-3" formControlName="itrStatus">
         </div>
+</div></div>
 
+<div class="row">
+    <div class="col">
         <div class="form-group">
             <label class="label">Enquiry Status : </label><br>
-            <input type="text" class="col-xs-3" placeholder="Enter Enquiry Status"
-                formControlName="enquiryStatus">
+            <input type="text" class="col-xs-3"  formControlName="enquiryStatus">
         </div>
-
+    </div>
+    <div class="col">
         <div class="form-group">
             <label class="label">Registration Status :</label><br>
-            <input type="text" class="col-xs-3" placeholder="Enter Registration Status"
-                formControlName="registrationStatus">
+            <input type="text" class="col-xs-3" formControlName="registrationStatus">
         </div>
+</div></div>
+
 
         <div class="form-group">
             <label class="label">Cibilscore Status :</label><br>
-             <input type="text" class="col-xs-3" placeholder="Enter Cibilscore Status"
-                formControlName="cibilscore">
+             <input type="text" class="col-xs-3"   formControlName="cibilRemark">
         </div>
     </div>
 
