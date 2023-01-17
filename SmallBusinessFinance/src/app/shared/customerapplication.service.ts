@@ -82,9 +82,13 @@ export class CustomerapplicationService {
    
   }
 
-  getCustomer()
+  getCustomers()
   {
     return this.http.get<CustomerApplicationForm[]>("http://localhost:9090/customerapi/applications/");
+  }
+
+  getCustomer(applicationId: number) {
+    return this.http.get<CustomerApplicationForm>("http://localhost:9090/customerapi/applications/"+applicationId);
   }
 
   deleteCustomer(applicationId:number)

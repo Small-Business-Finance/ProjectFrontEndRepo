@@ -22,6 +22,7 @@ import { ThPersonalComponent } from '../Employee/telehead/th-personal/th-persona
 import { CaPersonalComponent } from '../Employee/creditanalyst/ca-personal/ca-personal.component';
 import { DefaulterListComponent } from '../Employee/telehead/defaulter-list/defaulter-list.component';
 import { SanctionLetterComponent } from '../Employee/financehead/sanction-letter/sanction-letter.component';
+import { ViewCustomerFullDetailsComponent } from '../Employee/re/view-customer-full-details/view-customer-full-details.component';
 
 export const loginroutes: Routes = [
 
@@ -43,9 +44,18 @@ export const loginroutes: Routes = [
 
       {
         path:'viewCustomer', component:ViewCustomerApplicationComponent,
+        children:[
+          {
+            path:'customerfulldetails/:applicationId',component:ViewCustomerFullDetailsComponent
+          },
+        ]
         
       },
-      {
+          
+      
+      
+         
+        {
           path:'registerCustomer', component:RegisterCustomerApplicationComponent
             
       },
