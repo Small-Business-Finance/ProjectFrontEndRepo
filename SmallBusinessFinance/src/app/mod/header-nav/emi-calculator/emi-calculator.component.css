@@ -9,8 +9,7 @@
     overflow: hidden;
 }
 
-.loan-calculator,
-.loan-calculator* {
+.loan-calculator {
     box-sizing: border-box;
 }
 
@@ -102,4 +101,5 @@
 }
 .body{
     background-color: #c8e8e9;
+    margin-top: 0%;
 }
