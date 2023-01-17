@@ -1,5 +1,11 @@
 <p>view-employee works!</p>
-<button>Add new Employee</button>
+
+<button routerLink="registeremployee">Add new Employee</button>
+
+<div class="body">
+
+
+
 <table class="table table-striped">
     <thead>
       <tr>
@@ -14,6 +20,8 @@
         <th scope="col">Employee Email ID</th>
         <th scope="col">UserName</th>
         <th scope="col">Password</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
      </tr>
     </thead>
     <tbody>
@@ -29,11 +37,17 @@
         <td>{{employee.empEmailId}}</td>
         <td>{{employee.username}}</td>
         <td>{{employee.password}}</td>
-        <!-- <td><i class="fa fa-pencil-square-o" aria-hidden="true" routerLink="/updateEmployee" [state]="employee"></i></td>
-        <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteEmployee(employee.empId)"></i></td> -->
+        <td><i class="fa fa-pencil-square-o" aria-hidden="true" routerLink="updateemployee" [state]="employee"></i></td>
+        <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteEmployee(employee.empId)"></i></td>
     </tr>  
     </tbody>
      </table>
+     <br><br>
+     
      <!-- <pagination-controls (pageChange)="cp=$event" style="text-align: center;"></pagination-controls> 
   <br> -->
+
+  <router-outlet></router-outlet>
+
+
    
