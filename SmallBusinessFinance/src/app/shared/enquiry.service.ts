@@ -12,14 +12,14 @@ export class EnquiryService {
 
   constructor(private http:HttpClient) { }
 
-  postEnquiry(pe:Enquiry): Observable<Enquiry>
+  postEnquiry(abc:Enquiry): Observable<Enquiry>
   {
-    return this.http.post<Enquiry>("http://localhost:9090/enquiryapi/enquiry",pe);
+    return this.http.post<Enquiry>("http://localhost:9090/api/enquiry",abc);
   }
 
   postCibilScore(pc:Cibilscore): Observable<Cibilscore>
   {
-    return this.http.post<Cibilscore>("http://localhost:9090/enquiryapi/cibilscore",pc);
+    return this.http.post<Cibilscore>("http://localhost:9090/api/cibilscore",pc);
   }
 
   putEnquiry(ue:Enquiry):Observable<Enquiry>
