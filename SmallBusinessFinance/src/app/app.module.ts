@@ -9,8 +9,8 @@ import { HeaderNavModule } from './mod/header-nav/header-nav.module';
 import { RouterModule } from '@angular/router';
 import { REModule } from './mod/Employee/re/re.module';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { LoginComponent } from './mod/login/login/login.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { loginroutes, LoginRoutingModule } from './mod/login/login-routing.module';
 
 
 
@@ -23,7 +23,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserModule,NgxPaginationModule,
     AppRoutingModule,HttpClientModule,FormsModule,
     ReactiveFormsModule,RouterModule,NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,LoginRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
