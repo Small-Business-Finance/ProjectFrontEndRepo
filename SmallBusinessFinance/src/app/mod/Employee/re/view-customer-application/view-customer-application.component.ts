@@ -15,7 +15,7 @@ export class ViewCustomerApplicationComponent {
 
   ngOnInit()
   {
-    this.cs.getCustomer().subscribe((clist:CustomerApplicationForm[])=>{
+    this.cs.getCustomers().subscribe((clist:CustomerApplicationForm[])=>{
   
       this.cf=clist;
      })
