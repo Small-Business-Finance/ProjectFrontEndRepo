@@ -13,7 +13,14 @@ export interface user {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  noticeMessage1 = "1. All employees are required to attend a meeting at 2pm in the conference room.";
+  noticeMessage2= "2. There will be a company-wide meeting on Friday at 10am in the main conference room. All employees are required to attend.";
 
+  noticeMessage3="3. The office will be closed on Monday for a national holiday. We will resume normal business hours on Tuesday.";
+
+  noticeMessage4="4. A reminder that all employees are required to complete their annual performance reviews by the end of the month. Please schedule a meeting with your manager to discuss your progress.";
+  noticeMessage5="5. The company's annual retreat will take place next month. More information and sign-up details will be provided next week.";
+  
   u: user = {
     username: "",
     password: "",
