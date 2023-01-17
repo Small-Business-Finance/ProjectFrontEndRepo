@@ -1,1 +1,51 @@
 <p>update-employee works!</p>
+<br><br><br>
+<div class="body">
+<form [formGroup]="editEmployee" (ngSubmit)="updateEmployee()">
+<div class="container">
+
+    <div class="form-group">
+        <label for="validationTooltip01">Employee Name</label>
+        <input type="text" class="form-control" formControlName="empName" required>
+      </div>
+      <div class="form-group">
+        <label for="validationTooltip01">Employee Date Of Birth</label>
+        <input type="text" class="form-control" formControlName="empDateofBirth" required>
+      </div>
+      <div class="form-group">
+        <label for="validationTooltip01">Employee Salary</label>
+        <input type="text" class="form-control" formControlName="empSalary" required>
+      </div>
+      <div class="form-group">
+        <label for="validationTooltip01">Employee Role</label>
+        <input type="text" class="form-control" formControlName="empRole" required>
+      </div>
+      <div class="form-group">
+        <label for="validationTooltip01">Employee Address</label>
+        <input type="text" class="form-control" formControlName="empAddress" required>
+      </div>
+      <div class="form-group">
+        <label for="validationTooltip02">Employee Mobile No</label>
+        <input type="text" class="form-control" formControlName="empMobileno" required>
+      </div>
+      <div class="form-group">
+        <label for="validationTooltip02">Employee Email ID</label>
+        <input type="text" class="form-control" formControlName="empEmailId" required>
+      </div>
+      <div class="form-group">
+        <label for="validationTooltip02">Username</label>
+        <input type="text" class="form-control" formControlName="username" required>
+      </div>
+      <div class="form-group">
+        <label for="validationTooltip02">Password</label>
+        <input type="text" class="form-control" formControlName="password" required>
+      </div>
+
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-success btn-lg btn-block">Update Employee</button>
+    </div>
+  </div>
+
+</form>
+</div>

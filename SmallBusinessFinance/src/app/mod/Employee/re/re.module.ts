@@ -15,6 +15,8 @@ import { FinanceheadModule } from '../financehead/financehead.module';
 import { TeleheadModule } from '../telehead/telehead.module';
 import { OeModule } from '../oe/oe.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ViewCustomerFullDetailsComponent } from './view-customer-full-details/view-customer-full-details.component';
+import { ViewCustomerApplicationComponent } from './view-customer-application/view-customer-application.component';
 
 
 
@@ -23,13 +25,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ProfileComponent,
     RegisterLeaveApplicationComponent,
     ViewEnquiryComponent,
-    RePersonalComponent
-  ],
+    RePersonalComponent,
+   ],
+   
   imports: [
     CommonModule,
     FormsModule,NgxPaginationModule,
     ReactiveFormsModule,
-    RERoutingModule,RouterModule,BranchmanagerModule,CreditanalystModule,
+    RouterModule,BranchmanagerModule,CreditanalystModule,
     FinanceheadModule,TeleheadModule,OeModule
 
   ]

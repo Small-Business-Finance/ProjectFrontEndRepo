@@ -20,6 +20,7 @@ import { REModule } from '../Employee/re/re.module';
 import { CreditanalystModule } from '../Employee/creditanalyst/creditanalyst.module';
 import { ProfileComponent } from '../Employee/re/profile/profile.component';
 import { NgxPaginationModule } from 'ngx-pagination/lib/ngx-pagination.module';
+import { ViewCustomerFullDetailsComponent } from '../Employee/re/view-customer-full-details/view-customer-full-details.component';
 
 
 
@@ -27,6 +28,7 @@ import { NgxPaginationModule } from 'ngx-pagination/lib/ngx-pagination.module';
   declarations: [
     RegisterCustomerApplicationComponent,
     ViewCustomerApplicationComponent,
+    ViewCustomerFullDetailsComponent,
     LoginComponent,
     RegisterEnquiryComponent,
     RegisterEmployeeComponent,
@@ -34,9 +36,10 @@ import { NgxPaginationModule } from 'ngx-pagination/lib/ngx-pagination.module';
     UpdateEmployeeComponent
   ],
   imports: [
-    CommonModule,REModule,
+    CommonModule,
     LoginRoutingModule,FormsModule,ReactiveFormsModule,RouterModule,
-    RERoutingModule,BranchmanagerModule,TeleheadModule,FinanceheadModule,OeModule,CreditanalystModule,REModule
+    RERoutingModule,BranchmanagerModule,TeleheadModule,FinanceheadModule,OeModule,CreditanalystModule,
+    REModule
   ]
 })
 export class LoginModule { }

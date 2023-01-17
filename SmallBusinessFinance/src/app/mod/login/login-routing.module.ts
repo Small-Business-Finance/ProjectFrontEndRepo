@@ -20,6 +20,10 @@ import { OePersonalComponent } from '../Employee/oe/oe-personal/oe-personal.comp
 import { FhPersonalComponent } from '../Employee/financehead/fh-personal/fh-personal.component';
 import { ThPersonalComponent } from '../Employee/telehead/th-personal/th-personal.component';
 import { CaPersonalComponent } from '../Employee/creditanalyst/ca-personal/ca-personal.component';
+import { DefaulterListComponent } from '../Employee/telehead/defaulter-list/defaulter-list.component';
+import { SanctionLetterComponent } from '../Employee/financehead/sanction-letter/sanction-letter.component';
+import { ViewCustomerFullDetailsComponent } from '../Employee/re/view-customer-full-details/view-customer-full-details.component';
+import { RegisterLeaveApplicationComponent } from '../Employee/re/register-leave-application/register-leave-application.component';
 
 export const loginroutes: Routes = [
 
@@ -30,7 +34,12 @@ export const loginroutes: Routes = [
     path:'reprofile',component:ProfileComponent,
     children:[
       {
-        path:'repersonal',component:RePersonalComponent
+        path:'repersonal',component:RePersonalComponent,
+        children:[
+          {
+            path:'registerleave',component:RegisterLeaveApplicationComponent
+          }
+        ]
       },
       {
         path:'enquiry',component:RegisterEnquiryComponent
@@ -38,15 +47,23 @@ export const loginroutes: Routes = [
       {
         path:'viewenquiry',component:ViewEnquiryComponent
       },
-       
-    {
-    path:'registerCustomer', component:RegisterCustomerApplicationComponent
-    },
-    {
-      path:'viewCustomer', component:ViewCustomerApplicationComponent
+
+      {
+        path:'viewCustomer', component:ViewCustomerApplicationComponent,
+        children:[
+          {
+            path:'customerfulldetails/:applicationId',component:ViewCustomerFullDetailsComponent
+          },
+        ]
+        
       },
-  
-    ]
+           
+        {
+          path:'registerCustomer', component:RegisterCustomerApplicationComponent
+            
+      },
+        
+      ]
   },
   {
     path:'oeprofile',component:OeprofileComponent,
@@ -54,7 +71,11 @@ export const loginroutes: Routes = [
       
       {
         path:'oepersonal',component:OePersonalComponent
-      }
+      },
+
+      {
+        path:'viewenquiry',component:ViewEnquiryComponent
+      },
     ]
   },
   {
@@ -63,7 +84,17 @@ export const loginroutes: Routes = [
       
         {
           path:'bmpersonal',component:BmPersonalComponent
-        }
+        },
+       
+        {
+          path:'viewCustomer', component:ViewCustomerApplicationComponent,
+        },
+            {
+              path:'registerCustomer', component:RegisterCustomerApplicationComponent
+              },
+          {
+            path:'defaulter',component:DefaulterListComponent
+          }
       ]
   },
   {
@@ -72,7 +103,16 @@ export const loginroutes: Routes = [
       
       {
         path:'fhpersonal',component:FhPersonalComponent
-      }
+      },
+      {
+        path:'registerCustomer', component:RegisterCustomerApplicationComponent
+        },
+      {
+        path:'viewCustomer', component:ViewCustomerApplicationComponent
+        },
+        {
+          path:'sanction',component:SanctionLetterComponent
+        }
     ]
   },
   {
@@ -81,7 +121,16 @@ export const loginroutes: Routes = [
       
       {
         path:'thpersonal',component:ThPersonalComponent
-      }
+      },
+      {
+        path:'registerCustomer', component:RegisterCustomerApplicationComponent
+        },
+      {
+        path:'viewCustomer', component:ViewCustomerApplicationComponent
+        },
+        {
+          path:'defaulter',component:DefaulterListComponent
+        }
     ]
   },
   {
@@ -90,12 +139,26 @@ export const loginroutes: Routes = [
       
       {
         path:'capersonal',component:CaPersonalComponent
-      }
+      },
+      {
+        path:'registerCustomer', component:RegisterCustomerApplicationComponent
+        },
+      {
+        path:'viewCustomer', component:ViewCustomerApplicationComponent
+        },
     ]
   },
 
   {
     path:'viewemployee',component:ViewEmployeeComponent,
+    children:[
+      {
+        path:'registeremployee',component:RegisterEmployeeComponent
+      },
+      {
+        path:'updateemployee',component:UpdateEmployeeComponent
+      }
+    ]
     
   }
 

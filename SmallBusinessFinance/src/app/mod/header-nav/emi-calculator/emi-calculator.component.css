@@ -9,8 +9,7 @@
     overflow: hidden;
 }
 
-.loan-calculator,
-.loan-calculator* {
+.loan-calculator {
     box-sizing: border-box;
 }
 
@@ -99,4 +98,8 @@
         flex-direction: column;
         text-align: center;
     }
+}
+.body{
+    background-color: #c8e8e9;
+    margin-top: 0%;
 }

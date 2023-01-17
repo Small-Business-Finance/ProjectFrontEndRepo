@@ -1,36 +1,41 @@
-<p>login works!</p>
-<a routerLink="/registerCustomer">Register</a><br>
+<!-- <a routerLink="/registerCustomer">Register</a><br>
 <a routerLink="/enquiry">Enquiry</a>
 <br>
 <a routerLink="/regemployee">RegisterEmployee</a><br>
 <a routerLink="/updateemployee">UpdateEmployee</a><br>
-<a routerLink="/viewemployee">ViewEmployee</a>
-
-
-
-
-<br><br>
-
-<div class="container">
+<a routerLink="/viewemployee">ViewEmployee</a> -->
+<div class="container" class="body">
     <div class="row">
-      <div class="col-md-4 login-sec">
-          <h2 class="text-center">Login Now</h2>
+      <div class="col-md-6 login-sec">
+          <h2 class="tp">Employee Login</h2>
           <form class="login-form">
     <div class="form-group">
-      <label for="exampleInputEmail1" class="text-uppercase">Username</label>
-      <input type="text" name="username" id="user" class="form-control" placeholder="Username" [(ngModel)]=u.username>
+      <label for="exampleInputEmail1" class="label">Username :</label><br>
+      <input type="text" name="username" id="user" class="col-xs-4" [(ngModel)]=u.username>
     </div>
     <div class="form-group">
-      <label for="exampleInputPassword1" class="text-uppercase">Password</label>
-       <input type="password" name="password" id="password" class="form-control" placeholder="Password" [(ngModel)]=u.password>
+      <label for="exampleInputPassword1" class="label">Password :</label><br>
+       <input type="password" name="password" id="password" class="col-xs-4" [(ngModel)]=u.password>
     </div>
-    
-    
-      <div class="form-check">
-      <button type="submit" class="btn btn-login float-right"(click)="login(u)">Submit</button>
-    </div>
+   
+      <button type="submit" class="tp1" (click)="login(u)">Submit</button>
+  
     
     </form>
-    
       </div>
+      <div class="col-md-6">
+        <div class="employee-notice">
+          <h3 class="employee-notice__title">Employee Notice</h3>
+          <p class="employee-notice__message">{{ noticeMessage1 }}</p>
+          <p class="employee-notice__message">{{ noticeMessage2 }}</p>
+          <p class="employee-notice__message">{{ noticeMessage3 }}</p>
+          <p class="employee-notice__message">{{ noticeMessage4 }}</p>
+          <p class="employee-notice__message">{{ noticeMessage5 }}</p>
+        </div>
+        
+      </div>
+    </div>
+   
+    
+    </div>
 <router-outlet></router-outlet>

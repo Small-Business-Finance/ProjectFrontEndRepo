@@ -1,0 +1,48 @@
+<h4 style="margin-left: 300px; margin-top: 30px;">view-customer-full-details : </h4>
+<h6 style="margin-left:300px;">
+
+Application Id : {{customerobj?.applicationId}}<br>
+Application Status : {{customerobj?.applicationStatus}}<br><br>
+
+Customer Details : <br><br>
+customer Id : {{customerobj?.customerDetails.customerId}}<br>
+Aadhar Card Number : {{customerobj?.customerDetails.aadharId}}<br>
+Customer Name : {{customerobj?.customerDetails.customerName}}<br>
+Email Id : {{customerobj?.customerDetails.emailId}}<br>
+Address : {{customerobj?.customerDetails.address}}<br>
+Mobile Number : {{customerobj?.customerDetails.mobileNumber}}<br>
+Pan Card Number : {{customerobj?.customerDetails.panCardNumber}}<br>
+Date Of Birth : {{customerobj?.customerDetails.dateOfBirth}}<br>
+Gender : {{customerobj?.customerDetails.gender}}<br><br>
+
+Customer Company Details : <br><br>
+Company Id : {{customerobj?.customerCompanyDetails.companyId}}<br>
+registrationNumber : {{customerobj?.customerCompanyDetails.registrationNumber}}<br>
+companyName : {{customerobj?.customerCompanyDetails.companyName}}<br>
+companyOwnerName : {{customerobj?.customerCompanyDetails.companyOwnerName}}<br>
+typeOfBusiness : {{customerobj?.customerCompanyDetails.typeOfBusiness}}<br>
+panCardNumber : {{customerobj?.customerCompanyDetails.panCardNumber}}<br>
+companyTurnover : {{customerobj?.customerCompanyDetails.companyTurnover}}<br>
+telephoneNo : {{customerobj?.customerCompanyDetails.telephoneNo}}<br>
+faxNumber : {{customerobj?.customerCompanyDetails.faxNumber}}<br><br>
+
+Customer Bank Details : <br><br>
+bankId : {{customerobj?.customerBankDetails.bankId}}<br>
+accountNumber : {{customerobj?.customerBankDetails.accountNumber}}<br>
+bankName : {{customerobj?.customerBankDetails.bankName}}<br>
+ifscCode : {{customerobj?.customerBankDetails.ifscCode}}<br>
+branchCode : {{customerobj?.customerBankDetails.branchCode}}<br>
+accountNumber : {{customerobj?.customerBankDetails.accountNumber}}<br>
+
+bankId:number
+accountNumber:number
+bankName:string
+ifscCode:number
+branchCode:number
+branchAddress:string
+
+
+
+   
+</h6>
+<router-outlet></router-outlet>
