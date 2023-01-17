@@ -26,7 +26,7 @@ export class EmployeeService {
 
   saveemployee(e:Employee)
   {
-    return this.http.post("http://localhost:9090/employeeapi/saveemployee",e)
+    return this.http.post("http://localhost:9090/employeeapi/saveemployee",e,{responseType:'text'as 'json'})
   }
 
   getAllEmployees()
@@ -36,7 +36,7 @@ export class EmployeeService {
 
   updateEmployee(e:Employee)
   {
-    return this.http.put("http://localhost:9090/employeeapi/employee/{empId}"+e.empId,e)
+    return this.http.put("http://localhost:9090/employeeapi/employee/"+e.empId,e)
   }
 
   deleteEmployee(empId:number)
