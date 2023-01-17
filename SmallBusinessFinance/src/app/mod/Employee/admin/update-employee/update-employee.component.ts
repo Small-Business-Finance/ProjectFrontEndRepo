@@ -35,6 +35,7 @@ export class UpdateEmployeeComponent {
     editEmployeeInfo()
     {
       const e:any=this.location.getState();
+      this.editEmployee.get('empId').setValue(e.empId);
       this.editEmployee.get('empName').setValue(e.empName);
       this.editEmployee.get('empDateofBirth').setValue(e.empDateofBirth);
       this.editEmployee.get('empSalary').setValue(e.empSalary);

@@ -23,6 +23,7 @@ import { CaPersonalComponent } from '../Employee/creditanalyst/ca-personal/ca-pe
 import { DefaulterListComponent } from '../Employee/telehead/defaulter-list/defaulter-list.component';
 import { SanctionLetterComponent } from '../Employee/financehead/sanction-letter/sanction-letter.component';
 import { ViewCustomerFullDetailsComponent } from '../Employee/re/view-customer-full-details/view-customer-full-details.component';
+import { RegisterLeaveApplicationComponent } from '../Employee/re/register-leave-application/register-leave-application.component';
 
 export const loginroutes: Routes = [
 
@@ -33,7 +34,12 @@ export const loginroutes: Routes = [
     path:'reprofile',component:ProfileComponent,
     children:[
       {
-        path:'repersonal',component:RePersonalComponent
+        path:'repersonal',component:RePersonalComponent,
+        children:[
+          {
+            path:'registerleave',component:RegisterLeaveApplicationComponent
+          }
+        ]
       },
       {
         path:'enquiry',component:RegisterEnquiryComponent
@@ -51,10 +57,7 @@ export const loginroutes: Routes = [
         ]
         
       },
-          
-      
-      
-         
+           
         {
           path:'registerCustomer', component:RegisterCustomerApplicationComponent
             
@@ -148,6 +151,14 @@ export const loginroutes: Routes = [
 
   {
     path:'viewemployee',component:ViewEmployeeComponent,
+    children:[
+      {
+        path:'registeremployee',component:RegisterEmployeeComponent
+      },
+      {
+        path:'updateemployee',component:UpdateEmployeeComponent
+      }
+    ]
     
   }
 
