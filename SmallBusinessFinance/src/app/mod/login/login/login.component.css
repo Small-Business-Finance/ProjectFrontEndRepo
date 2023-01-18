@@ -1,3 +1,52 @@
 .body{
     background-color: #c8e8e9;
 }
+.label{
+    text-transform: capitalize;
+    font-family: monospace; 
+    font-size: x-large;
+    font-weight: bolder;
+ }
+ .form-group{
+    margin-left: 6cm;
+ }
+ .tp{
+    margin-left: 5.5cm;
+    text-decoration: dashed;
+    color:darkslateblue;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: bold;
+ }
+ .tp1{
+    margin-left: 7cm;
+    background-color: #c2fbd7; 
+    border-radius: 100px; 
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px; color: green; 
+    cursor: pointer; display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px; text-align: center;
+    text-decoration: none; transition: all 250ms;
+    border: 0; 
+    font-size: 26px; 
+    user-select: none; 
+        -webkit-user-select: none; 
+        touch-action: manipulation; 
+ }
+ .tp1:hover{
+     box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+           transform: scale(1.05) rotate(-1deg);
+ }
+ .employee-notice {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .employee-notice__title {
+    font-weight: bold;
+  }
+  
+  .employee-notice__message {
+    margin-top: 10px;
+  }
+  
