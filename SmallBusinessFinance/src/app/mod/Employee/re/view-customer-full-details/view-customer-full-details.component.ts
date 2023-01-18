@@ -14,13 +14,7 @@ export class ViewCustomerFullDetailsComponent {
   customerobj:CustomerApplicationForm;
   ngOnInit(): void 
   {
-  // let a=  parseInt(this.routs.snapshot.paramMap.get('id'));
-  // this.common.getEmployee(a).subscribe(data=>
-  //   {
-  //     console.log(data)
-  //   this.employeeobj=data;
-  //   }
-  //   )
+  
   this.routs.paramMap.subscribe(param1=>
     {
       this.cs.getCustomer(parseInt(param1.get('applicationId'))).subscribe(
