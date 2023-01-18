@@ -162,7 +162,9 @@ window.location.reload();
 
 submit()
     {
+    
       this.steps=this.steps+1;
+      this.editadata()
     
     }
   
