@@ -17,6 +17,7 @@ import { OeModule } from '../oe/oe.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ViewCustomerFullDetailsComponent } from './view-customer-full-details/view-customer-full-details.component';
 import { ViewCustomerApplicationComponent } from './view-customer-application/view-customer-application.component';
+import { ViewLeaveDetailsComponent } from './view-leave-details/view-leave-details.component';
 
 
 
@@ -26,6 +27,7 @@ import { ViewCustomerApplicationComponent } from './view-customer-application/vi
     RegisterLeaveApplicationComponent,
     ViewEnquiryComponent,
     RePersonalComponent,
+    ViewLeaveDetailsComponent
    ],
    
   imports: [

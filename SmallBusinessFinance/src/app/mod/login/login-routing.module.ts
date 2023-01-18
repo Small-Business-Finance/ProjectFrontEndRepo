@@ -24,6 +24,7 @@ import { DefaulterListComponent } from '../Employee/telehead/defaulter-list/defa
 import { SanctionLetterComponent } from '../Employee/financehead/sanction-letter/sanction-letter.component';
 import { ViewCustomerFullDetailsComponent } from '../Employee/re/view-customer-full-details/view-customer-full-details.component';
 import { RegisterLeaveApplicationComponent } from '../Employee/re/register-leave-application/register-leave-application.component';
+import { ViewLeaveDetailsComponent } from '../Employee/re/view-leave-details/view-leave-details.component';
 
 export const loginroutes: Routes = [
 
@@ -37,7 +38,10 @@ export const loginroutes: Routes = [
         path:'repersonal',component:RePersonalComponent,
         children:[
           {
-            path:'registerleave',component:RegisterLeaveApplicationComponent
+            path:'registerleave',component:RegisterLeaveApplicationComponent,
+          },
+          {
+            path:'viewleavedetails',component:ViewLeaveDetailsComponent,
           }
         ]
       },

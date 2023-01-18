@@ -21,6 +21,7 @@ import { CreditanalystModule } from '../Employee/creditanalyst/creditanalyst.mod
 import { ProfileComponent } from '../Employee/re/profile/profile.component';
 import { NgxPaginationModule } from 'ngx-pagination/lib/ngx-pagination.module';
 import { ViewCustomerFullDetailsComponent } from '../Employee/re/view-customer-full-details/view-customer-full-details.component';
+import { ViewLeaveDetailsComponent } from '../Employee/re/view-leave-details/view-leave-details.component';
 
 
 
