@@ -18,10 +18,17 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ViewCustomerFullDetailsComponent } from './view-customer-full-details/view-customer-full-details.component';
 import { ViewCustomerApplicationComponent } from './view-customer-application/view-customer-application.component';
 
+<<<<<<< HEAD
 import { ViewLeaveDetailsComponent } from './view-leave-details/view-leave-details.component';
 
 import { UpdateCustomerApplicationComponent } from './update-customer-application/update-customer-application.component';
 
+=======
+import { UpdateCustomerApplicationComponent } from './update-customer-application/update-customer-application.component';
+
+import { ViewLeaveDetailsComponent } from './view-leave-details/view-leave-details.component';
+
+>>>>>>> 98cd1252270f91d87aeb91fb750204968e1b8f01
 
 
 
@@ -31,8 +38,13 @@ import { UpdateCustomerApplicationComponent } from './update-customer-applicatio
     RegisterLeaveApplicationComponent,
     ViewEnquiryComponent,
     RePersonalComponent,
+<<<<<<< HEAD
     ViewLeaveDetailsComponent,
     UpdateCustomerApplicationComponent,
+=======
+    UpdateCustomerApplicationComponent,
+    ViewLeaveDetailsComponent
+>>>>>>> 98cd1252270f91d87aeb91fb750204968e1b8f01
    ],
    
   imports: [
