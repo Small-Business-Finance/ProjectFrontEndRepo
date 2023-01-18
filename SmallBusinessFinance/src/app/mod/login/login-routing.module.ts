@@ -25,6 +25,8 @@ import { SanctionLetterComponent } from '../Employee/financehead/sanction-letter
 import { ViewCustomerFullDetailsComponent } from '../Employee/re/view-customer-full-details/view-customer-full-details.component';
 import { RegisterLeaveApplicationComponent } from '../Employee/re/register-leave-application/register-leave-application.component';
 import { UpdateCustomerApplicationComponent } from '../Employee/re/update-customer-application/update-customer-application.component';
+import { ViewLeaveDetailsComponent } from '../Employee/re/view-leave-details/view-leave-details.component';
+
 
 export const loginroutes: Routes = [
 
@@ -38,7 +40,10 @@ export const loginroutes: Routes = [
         path:'repersonal',component:RePersonalComponent,
         children:[
           {
-            path:'registerleave',component:RegisterLeaveApplicationComponent
+            path:'registerleave',component:RegisterLeaveApplicationComponent,
+          },
+          {
+            path:'viewleavedetails',component:ViewLeaveDetailsComponent,
           }
         ]
       },

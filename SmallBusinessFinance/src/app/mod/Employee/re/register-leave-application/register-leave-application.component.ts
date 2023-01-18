@@ -9,12 +9,10 @@ import { LeaveApplicationService } from 'src/app/shared/leave-application.servic
 })
 export class RegisterLeaveApplicationComponent {
 
-  leaveForm: FormGroup;
-
   constructor(private _fb: FormBuilder, public cs: LeaveApplicationService) { }
-
+  regLeave: FormGroup;
   ngOnInit() {
-    this.leaveForm = this._fb.group({
+    this.regLeave = this._fb.group({
       leaveAppId: [],
       empId: [],
       fromDate: [''],
@@ -24,6 +22,10 @@ export class RegisterLeaveApplicationComponent {
     })
   }
   leaveSubmit() {
-    this.cs.postLeave(this.leaveForm.value).subscribe();
+    this.cs.postLeave(this.regLeave.value).subscribe();
+  }
+  reset()
+  {
+    this.regLeave.reset()
   }
 }
