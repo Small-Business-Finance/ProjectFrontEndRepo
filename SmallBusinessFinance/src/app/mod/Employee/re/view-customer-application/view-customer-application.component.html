@@ -20,10 +20,9 @@
       <td>{{c.applicationStatus}}</td>
       <td><a [routerLink]="['customerfulldetails',c.applicationId]">show details</a></td>
 
-      <!-- <td><a class="btn">
-         <i class="fa fa-edit" [routerLink]="['update']" [state]="s"></i></a></td>
-      <td><i class="fa fa-pencil-square-o" aria-hidden="true" (click)="editData(s)"></i></td>
-      <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteData(s.id)"></i></td> -->
+      <td><a class="btn">
+         <i class="fa fa-edit" [routerLink]="['updatecustomer']" [state]="c"></i></a></td>
+      <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteData(c.applicationId)"></i></td> 
       
   </tr>
     
