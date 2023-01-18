@@ -10,17 +10,38 @@ import { LeaveApplicationService } from 'src/app/shared/leave-application.servic
   styleUrls: ['./view-leave-details.component.css']
 })
 export class ViewLeaveDetailsComponent {
-
-  constructor(public ldt:LeaveApplicationService){}
+  ls="";
+  leavestatus="";
+  
+  constructor(public las:LeaveApplicationService){}
   l:LeaveDetails[];
-  // editLeave:FormGroup;
   
   ngOnInit()
   {
-    this.ldt.getAllLeavedetails().subscribe((leavedetails:LeaveDetails[])=>{
+    this.las.getAllLeavedetails().subscribe((leavedetails:LeaveDetails[])=>{
   
       this.l=leavedetails;
      })
   }
+  modo(value: string){
+    switch(value) {
+      case "Pending":
+        this.leavestatus="Pending";
+         break;
+      case "Approved":
+        this.leavestatus="Approved"; 
+         break;
+      case "Rejected":
+        this.leavestatus="Rejected";
+         break;
+    }
+  }
   
+  updatestatus(xx:LeaveDetails) {
+    xx.leaveappstatus=this.leavestatus;
+    console.log(xx.leaveappstatus);
+    console.log("hello");
+    this.las.updateLeave(xx).subscribe();
+    window.location.reload();
+  } 
 }
