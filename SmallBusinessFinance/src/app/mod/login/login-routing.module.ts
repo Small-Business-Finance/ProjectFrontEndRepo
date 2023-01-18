@@ -24,6 +24,7 @@ import { DefaulterListComponent } from '../Employee/telehead/defaulter-list/defa
 import { SanctionLetterComponent } from '../Employee/financehead/sanction-letter/sanction-letter.component';
 import { ViewCustomerFullDetailsComponent } from '../Employee/re/view-customer-full-details/view-customer-full-details.component';
 import { RegisterLeaveApplicationComponent } from '../Employee/re/register-leave-application/register-leave-application.component';
+import { UpdateCustomerApplicationComponent } from '../Employee/re/update-customer-application/update-customer-application.component';
 
 export const loginroutes: Routes = [
 
@@ -54,6 +55,9 @@ export const loginroutes: Routes = [
           {
             path:'customerfulldetails/:applicationId',component:ViewCustomerFullDetailsComponent
           },
+          {
+            path:'updatecustomer',component:UpdateCustomerApplicationComponent
+          }
         ]
         
       },

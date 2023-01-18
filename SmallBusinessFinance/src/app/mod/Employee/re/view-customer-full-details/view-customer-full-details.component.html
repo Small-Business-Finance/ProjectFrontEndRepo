@@ -1,10 +1,10 @@
-<h4 style="margin-left: 300px; margin-top: 30px;">view-customer-full-details : </h4>
+<h4 style="margin-left: 300px; margin-top: 30px; color: red;">Customer-full-details : </h4>
 <h6 style="margin-left:300px;">
 
 Application Id : {{customerobj?.applicationId}}<br>
 Application Status : {{customerobj?.applicationStatus}}<br><br>
 
-Customer Details : <br><br>
+<h6 style="color: blue;">Customer Details : </h6>
 customer Id : {{customerobj?.customerDetails.customerId}}<br>
 Aadhar Card Number : {{customerobj?.customerDetails.aadharId}}<br>
 Customer Name : {{customerobj?.customerDetails.customerName}}<br>
@@ -15,33 +15,60 @@ Pan Card Number : {{customerobj?.customerDetails.panCardNumber}}<br>
 Date Of Birth : {{customerobj?.customerDetails.dateOfBirth}}<br>
 Gender : {{customerobj?.customerDetails.gender}}<br><br>
 
-Customer Company Details : <br><br>
+<h6 style="color: blue;"> Company Details : </h6><br>
 Company Id : {{customerobj?.customerCompanyDetails.companyId}}<br>
-registrationNumber : {{customerobj?.customerCompanyDetails.registrationNumber}}<br>
-companyName : {{customerobj?.customerCompanyDetails.companyName}}<br>
-companyOwnerName : {{customerobj?.customerCompanyDetails.companyOwnerName}}<br>
-typeOfBusiness : {{customerobj?.customerCompanyDetails.typeOfBusiness}}<br>
-panCardNumber : {{customerobj?.customerCompanyDetails.panCardNumber}}<br>
-companyTurnover : {{customerobj?.customerCompanyDetails.companyTurnover}}<br>
-telephoneNo : {{customerobj?.customerCompanyDetails.telephoneNo}}<br>
-faxNumber : {{customerobj?.customerCompanyDetails.faxNumber}}<br><br>
+Registration Number : {{customerobj?.customerCompanyDetails.registrationNumber}}<br>
+Company Name : {{customerobj?.customerCompanyDetails.companyName}}<br>
+Company Owner Name : {{customerobj?.customerCompanyDetails.companyOwnerName}}<br>
+Type Of Business : {{customerobj?.customerCompanyDetails.typeOfBusiness}}<br>
+Pan Card Number : {{customerobj?.customerCompanyDetails.panCardNumber}}<br>
+Company Turnover : {{customerobj?.customerCompanyDetails.companyTurnover}}<br>
+Telephone No : {{customerobj?.customerCompanyDetails.telephoneNo}}<br>
+Fax Number : {{customerobj?.customerCompanyDetails.faxNumber}}<br><br>
 
-Customer Bank Details : <br><br>
-bankId : {{customerobj?.customerBankDetails.bankId}}<br>
-accountNumber : {{customerobj?.customerBankDetails.accountNumber}}<br>
-bankName : {{customerobj?.customerBankDetails.bankName}}<br>
-ifscCode : {{customerobj?.customerBankDetails.ifscCode}}<br>
-branchCode : {{customerobj?.customerBankDetails.branchCode}}<br>
-accountNumber : {{customerobj?.customerBankDetails.accountNumber}}<br>
+<h6 style="color: blue;"> Customer Bank Details : </h6><br>
+bank Id : {{customerobj?.customerBankDetails.bankId}}<br>
+Account Number : {{customerobj?.customerBankDetails.accountNumber}}<br>
+bank Name : {{customerobj?.customerBankDetails.bankName}}<br>
+ifsc Code : {{customerobj?.customerBankDetails.ifscCode}}<br>
+branch Code : {{customerobj?.customerBankDetails.branchCode}}<br>
+branch Address : {{customerobj?.customerBankDetails.branchAddress}}<br><br>
 
-bankId:number
-accountNumber:number
-bankName:string
-ifscCode:number
-branchCode:number
-branchAddress:string
+<h6 style="color: blue;"> guarantor Details:  </h6><br>
+guarantor Id : {{customerobj?.guarantorDetails.guarantorId}}<br>
+guarantor Name : {{customerobj?.guarantorDetails.guarantorName}}<br>
+guarantor PanCard Number : {{customerobj?.guarantorDetails.guarantorPanCardNumber}}<br>
+relation : {{customerobj?.guarantorDetails.relation}}<br>
+mobile Number : {{customerobj?.guarantorDetails.mobileNumber}}<br>
+occupation : {{customerobj?.guarantorDetails.occupation}}<br><br>
 
 
+<h6 style="color: blue;"> previous Loan Details: </h6><br>
+previous LoanId : {{customerobj?.previousLoanDetails.previousLoanId}}<br>
+loan Amount : {{customerobj?.previousLoanDetails.loanAmount}}<br>
+loan Tenure : {{customerobj?.previousLoanDetails.loanTenure}}<br>
+paid Amount : {{customerobj?.previousLoanDetails.paidAmount}}<br>
+remaining Amount : {{customerobj?.previousLoanDetails.remainingAmount}}<br>
+defaulter Count : {{customerobj?.previousLoanDetails.defaulterCount}}<br>
+bank Name : {{customerobj?.previousLoanDetails.bankName}}<br><br>
+
+<h6 style="color: blue;"> customerLoanDetails: </h6><br>
+loanId : {{customerobj?.customerLoanDetails.loanId}}<br>
+expectedLoanAmount : {{customerobj?.customerLoanDetails.expectedLoanAmount}}<br>
+expectedLoanTenure : {{customerobj?.customerLoanDetails.expectedLoanTenure}}<br>
+expectedEmiAmount : {{customerobj?.customerLoanDetails.expectedEmiAmount}}<br>
+loanStatus : {{customerobj?.customerLoanDetails.loanStatus}}<br>
+loanDisbursedStatus : {{customerobj?.customerLoanDetails.loanDisbursedStatus}}<br><br>
+
+<h6 style="color: blue;"> customerDocuments:</h6><br>
+documentId : {{customerobj?.customerDocuments.documentId}}<br>
+itrReturns : <img [src]="'data:image/jpeg;base64,'+customerobj?.customerDocuments.itrReturns" height="100" width="100"><br><br>
+pancard : <img [src]="'data:image/jpeg;base64,'+customerobj?.customerDocuments.pancard" height="100" width="100"><br><br>
+moa : <img [src]="'data:image/jpeg;base64,'+customerobj?.customerDocuments.moa" height="100" width="100"><br><br>
+aoa :  <img [src]="'data:image/jpeg;base64,'+customerobj?.customerDocuments.aoa" height="100" width="100"><br><br>
+auditReport : <img [src]="'data:image/jpeg;base64,'+customerobj?.customerDocuments.auditReport" height="100" width="100"><br><br>
+tan : <img [src]="'data:image/jpeg;base64,'+customerobj?.customerDocuments.tan" height="100" width="100"><br><br>
+msmeCertificate : <img [src]="'data:image/jpeg;base64,'+customerobj?.customerDocuments.msmeCertificate" height="100" width="100"><br><br>
 
    
 </h6>

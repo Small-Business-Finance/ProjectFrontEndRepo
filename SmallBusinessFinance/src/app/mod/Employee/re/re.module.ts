@@ -17,6 +17,7 @@ import { OeModule } from '../oe/oe.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ViewCustomerFullDetailsComponent } from './view-customer-full-details/view-customer-full-details.component';
 import { ViewCustomerApplicationComponent } from './view-customer-application/view-customer-application.component';
+import { UpdateCustomerApplicationComponent } from './update-customer-application/update-customer-application.component';
 
 
 
@@ -26,6 +27,7 @@ import { ViewCustomerApplicationComponent } from './view-customer-application/vi
     RegisterLeaveApplicationComponent,
     ViewEnquiryComponent,
     RePersonalComponent,
+    UpdateCustomerApplicationComponent,
    ],
    
   imports: [
