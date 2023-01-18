@@ -1,4 +1,105 @@
 
+<form [formGroup]="enquiryForm" (ngSubmit)="submit()">
+    <div class="two">
+        <h1>Enquiry Registration Form 
+        <span>Fill Details</span></h1>
+    </div>
+    
+        <div *ngIf="steps==1">
+            <h3>Enquiry Details</h3>
+            <br>
+            <div class="form-group">
+                <label class="label"> Customer Name : </label><br>
+               <input type="text" class="col-xs-3" placeholder="Enter Customer Name"
+                    formControlName="customerName">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">Company Name : </label><br>
+                <input type="text" class="col-xs-3" placeholder="Enter Company Name"
+                    formControlName="companyName">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">Types OF Business : </label><br>
+                <input type="text" class="col-xs-3" placeholder="Enter Type Of Business "
+                    formControlName="typesOfBusiness">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">Customer Address : </label><br>
+                <input type="text" class="col-xs-3" placeholder="Enter Address"
+                    formControlName="customerAddress">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">Customer Pancard Number: </label><br>
+                <input type="text" class="col-xs-3" placeholder="Enter Customer Pancard Number"
+                    formControlName="customerPancardNumber">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">Company Pancard Number :</label><br>
+                <input type="text" class="col-xs-3" placeholder="Enter Company Pancard Number "
+                    formControlName="companyPancardNumber">
+            </div>
+    
+        </div>
+    
+        <div *ngIf="steps==2">
+            <h3>Enquiry Details </h3>
+            <br>
+            <div class="form-group">
+                <label class="label">Mobile Number : </label><br>
+                <input type="text" class="col-xs-3" placeholder="Enter Mobile Number"
+                    formControlName="mobileNumber">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">Alternate Mobile Number : </label><br>
+                <input type="text" class="col-xs-3"
+                    placeholder="Enter Alternate Mobile Number" formControlName="alternateMobileNumber">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">Email Id : </label><br>
+                <input type="text" class="col-xs-3" placeholder="Enter Email Id" formControlName="emailId">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">ITR Status : </label><br>
+                <input type="text" class="col-xs-3" placeholder="Enter Itr Status"
+                    formControlName="itrStatus">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">Enquiry Status : </label><br>
+                <input type="text" class="col-xs-3" placeholder="Enter Enquiry Status"
+                    formControlName="enquiryStatus">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">Registration Status :</label><br>
+                <input type="text" class="col-xs-3" placeholder="Enter Registration Status"
+                    formControlName="registrationStatus">
+            </div>
+    
+            <div class="form-group">
+                <label class="label">Cibilscore Status :</label><br>
+                 <input type="text" class="col-xs-3" placeholder="Enter Cibilscore Status"
+                    formControlName="cibilscore">
+            </div>
+        </div>
+    
+        <div class="form-button">
+            <a class="button-33" *ngIf="steps!=1" (click)="previous()"><<</a> &nbsp;
+            <button type="submit" class="button-33" *ngIf="steps!=2">>></button>
+            <a class="button-33" *ngIf="steps==2" (click)="clickreg()">Submit</a>
+        </div>
+    
+    </form>
+
 <div class="body">
     <p>apply-for-loan works!</p>
 </div>
+
