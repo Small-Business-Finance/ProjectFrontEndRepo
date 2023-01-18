@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 import { Location } from '@angular/common';
+import { CustomerDetails } from 'src/app/classes/customer-details';
+import { CustomerApplicationForm } from 'src/app/classes/customer-application-form';
 
 @Component({
   selector: 'app-update-customer-application',
@@ -11,6 +13,8 @@ import { Location } from '@angular/common';
 export class UpdateCustomerApplicationComponent {
 
   steps:any=1;
+  cf:CustomerApplicationForm[];
+
   constructor(private fb:FormBuilder,private cs:CustomerapplicationService,private location:Location) { }
 
   updateForm:FormGroup;
@@ -79,19 +83,20 @@ export class UpdateCustomerApplicationComponent {
      })
 
     })
-    
-  this.editadata();
-    
+
+    this.cs.getCustomers().subscribe((cd:CustomerApplicationForm[])=>{
+        this.cf=cd;
+    });
+
+   this.editadata();
   }
 
 editadata()
 {
   let cobj:any=this.location.getState();
 
-console.log(cobj.applicationId);
-if(cobj.applicationId!=0)
-{
- 
+  console.log(cobj.applicationId);
+  
   this.updateForm.get('applicationId').setValue(cobj.applicationId)
   this.updateForm.get('applicationStatus').setValue(cobj.applicationStatus);
 
@@ -147,7 +152,7 @@ if(cobj.applicationId!=0)
 
 
 }
-}
+
 onSubmit()
 {
   

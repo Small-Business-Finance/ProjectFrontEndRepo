@@ -21,8 +21,8 @@ export class ViewCustomerApplicationComponent {
      })
   }
 
-  // deleteCustomer(c:number)
-  // {
-  //   this.cs.deleteCustomer(c).subscribe();
-  // }
+  deleteCustomer(c:number)
+  {
+    this.cs.deleteCustomer(c).subscribe();
+   }
 }

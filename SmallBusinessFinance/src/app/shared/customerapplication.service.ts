@@ -96,7 +96,7 @@ export class CustomerapplicationService {
     return this.http.delete("http://localhost:9090/customerapi/application/"+applicationId);
   }
 
-  updateCustomer(c:CustomerApplicationForm)
+  updateCustomer(c:any)
   {
     return this.http.put("http://localhost:9090/customerapi/application/"+c.applicationId,c)
   }
