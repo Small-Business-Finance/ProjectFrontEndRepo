@@ -98,6 +98,6 @@ export class CustomerapplicationService {
 
   updateCustomer(c:any)
   {
-    return this.http.put("http://localhost:9090/customerapi/application/"+c.applicationId,c)
+    return this.http.put("http://localhost:9090/customerapi/application/"+c.applicationId,c,{responseType:'text' as 'json'})
   }
 }

@@ -1,3 +1,49 @@
 <div class="body">
-<p style="margin-left: 300px;">sanction-letter works!</p>
-</div>
+
+
+<form [formGroup]="sanctionForm" (ngSubmit)="generate()">
+    <h3>Sanction Letter</h3>
+    <br>
+       
+      <div class="form-group">
+        <label class="label">applicationId :</label><br>
+           <input type="text" class="col-xs-3" formControlName="applicationId">
+    </div>
+
+    <div class="form-group">
+        <label class="label">Customer Name :</label><br>
+           <input type="text" class="col-xs-3"  formControlName="customerName">
+    </div>
+
+     <div class="form-group">
+      <label class="label">Loan Amount :</label><br>
+         <input type="text" class="col-xs-3"  formControlName="sanctionedLoanAmount">
+    </div>
+   
+    <div class="form-group">
+      <label class="label">Rate of Interest :</label><br>
+         <input type="text" class="col-xs-3"  formControlName="interestRate">
+    </div>
+    
+    <div class="form-group">
+      <label class="label">Tenure :</label><br>
+       <input type="text" class="col-xs-3"  formControlName="sanctionedTenure">
+    </div>
+  
+    <div class="form-group">
+        <label class="label">EMI Amount :</label><br>
+         <input type="text" class="col-xs-3" formControlName="emiAmount">
+    </div>
+    
+    <br><br>
+    <div class="form-button">
+    <a class="button-33">Send Mail</a>
+    </div>
+
+</form>
+    </div>
+
+
+
+
+

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sanction-letter',
@@ -7,4 +8,26 @@ import { Component } from '@angular/core';
 })
 export class SanctionLetterComponent {
 
+  constructor(private fb:FormBuilder){}
+
+  sanctionForm:FormGroup
+
+  ngOnInit()
+  {
+    this.sanctionForm=this.fb.group({
+      sanctionedLoanId:[],
+      applicationId:[],
+      customerName:[''],
+      sanctionedLoanAmount:[],
+      interestRate:[],
+      sanctionedTenure:[],
+      emiAmount:[]
+    })
+
+  }
+
+  generate()
+  {
+    
+  }
 }
