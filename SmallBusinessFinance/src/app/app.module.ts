@@ -11,13 +11,13 @@ import { REModule } from './mod/Employee/re/re.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { loginroutes, LoginRoutingModule } from './mod/login/login-routing.module';
+import { EmailSender } from './classes/email-sender';
 
 
 
 @NgModule({
   declarations: [
     AppComponent
-    
   ],
   imports: [
     BrowserModule,NgxPaginationModule,
