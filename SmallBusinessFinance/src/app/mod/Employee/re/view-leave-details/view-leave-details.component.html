@@ -1,6 +1,5 @@
-<p>view-leave-details works!</p>
-<div class="body">
 
+<div class="body">
     <table class="table table-striped">
         <thead>
           <tr>
@@ -10,22 +9,26 @@
             <th scope="col">To Date</th>
             <th scope="col">Leave Type</th>
             <th scope="col">Leave Application Status</th>
-            <th scope="col">Edit</th>
-            <th scope="col">Delete</th>
+            <th scope="col">Save</th>
          </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let leavedetails of l">
+          <tr *ngFor="let leavedetails of l ">
              <td>{{leavedetails.leaveAppId}}</td>
             <td>{{leavedetails.empId}}</td>
             <td>{{leavedetails.fromDate}}</td>
             <td>{{leavedetails.toDate}}</td>
             <td>{{leavedetails.leaveType}}</td>
-            <td>{{leavedetails.leaveappstatus}}</td>
-           
-            <td><i class="fa fa-pencil-square-o" aria-hidden="true" routerLink="updateLeave" [state]="leavedetails"></i></td>
-            <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteLeavedetails(leavedetails.leaveAppId)"></i></td>
-        </tr>  
+            <td><select  value="leavedetails.leaveappstatus" (change)="modo($event.target.value)">
+              <option  value="leavedetails.leaveappstatus"> {{leavedetails.leaveappstatus}}* </option>
+              <option value="Pending">Pending</option>
+              <option value="Approved"> Approved </option>
+              <option value="Rejected"> Rejected </option>
+            </select>
+            </td>
+            <td>
+              <button (click)="updatestatus(leavedetails)">Save</button></td>
+           </tr>  
         </tbody>
          </table>
-         <br><br>
+         

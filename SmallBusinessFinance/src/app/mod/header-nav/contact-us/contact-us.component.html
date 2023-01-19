@@ -34,23 +34,23 @@
                 <div class="topic-text">HelpDesk</div>
                 <p></p>
 
-                <form>
+                <form [formGroup]="emailsender" (ngSubmit)="onSubmit()" >
                     <div class="input-box">
-                        <input type="text" placeholder="Enter your Name">
+                        <input type="text" formControlName="fullname" placeholder="Enter your Name">
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="Enter your Email Id">
+                        <input type="text" formControlName="emailid" placeholder="Enter your Email Id">
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="Enter your Phone No.">
+                        <input type="text" formControlName="phonenumber" placeholder="Enter your Phone No.">
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="Enter your Query">
+                        <input type="text" formControlName="query" placeholder="Enter your Query">
                     </div>
 
                     <div class="button">
-                        <!-- <button (click)="submitContact()">Send Now</button> -->
-                        <input type="button" value="Send Now">
+                        <button >Send Now</button> 
+                    
                     </div>
                 </form>
 

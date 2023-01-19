@@ -6,6 +6,7 @@ import { FhprofileComponent } from './fhprofile/fhprofile.component';
 import { FhPersonalComponent } from './fh-personal/fh-personal.component';
 import { RouterModule } from '@angular/router';
 import { SanctionLetterComponent } from './sanction-letter/sanction-letter.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { SanctionLetterComponent } from './sanction-letter/sanction-letter.compo
   ],
   imports: [
     CommonModule,
-    FinanceheadRoutingModule,RouterModule
+    FinanceheadRoutingModule,RouterModule,FormsModule,ReactiveFormsModule
   ]
 })
 export class FinanceheadModule { }
