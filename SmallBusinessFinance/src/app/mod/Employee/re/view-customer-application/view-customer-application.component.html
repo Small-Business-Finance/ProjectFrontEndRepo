@@ -1,6 +1,6 @@
 <div class="body">
 <h4 style="margin-left: 300px; margin-top: 20px;">Customer list</h4>
-<br><br>
+<div *ngIf="currentRoute=='/caprofile/viewCustomer'">
 <table class="table" style="margin-left: 300px">
   <thead>
     <tr>
@@ -27,8 +27,8 @@
   </tr>
     
   </tbody>
-</table>
-  <br><br>
+</table></div>
+
   
   <a style="margin-left: 300px;" routerLink="/reprofile/registerCustomer"><button>Loan Application Form</button></a>
 </div>
