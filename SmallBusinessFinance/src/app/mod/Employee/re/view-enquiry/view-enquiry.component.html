@@ -1,6 +1,6 @@
 <div class="body">
 <h4 style="margin-left: 300px; margin-top: 20px;">Enquiry list</h4>
-<br><br>
+
 <table id="customers">
   <tr>
     <th>Owner Name</th>
@@ -22,10 +22,12 @@
     <td>{{item.companyPancardNumber}}</td>
     <td>{{item.registrationStatus}}</td>
     <td>{{item.cibilscore.cibilRemark}}</td>
-    <td *ngIf="currentRoute=='/oeprofile/viewenquiry'"><button>Generate Cibil</button></td>
+    <td *ngIf="currentRoute=='/oeprofile/viewenquiry'"> <button (click)="generate(item.enquiryId)">Generate Cibil</button></td>
+    <!-- <td *ngIf="currentRoute=='/oeprofile/viewenquiry'">
+      <button (click)="generate(item.enquiryId)")>Generate Cibil</button> </td> -->
   </tr>
   <tr>
-  <td colspan="3"><pagination-controls (pageChange)="p = $event"></pagination-controls></td></tr>
+  <td colspan="4"><pagination-controls (pageChange)="p = $event"></pagination-controls> </td> </tr>
 
 </table>
 
