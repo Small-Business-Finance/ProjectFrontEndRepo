@@ -12,7 +12,7 @@
     <th>Registration Status</th>
     <th>Cibil Remark</th>
   </tr>
-  <tr *ngFor="let item of allenquiries | paginate: { itemsPerPage: 5, currentPage: p ,totalItems:4}" >
+  <tr *ngFor="let item of allenquiries | paginate: { itemsPerPage: 5, currentPage: p}" >
     <td>{{item.customerName}}</td>
     <td>{{item.companyName}}</td>
     <td>{{item.customerAddress}}</td>
@@ -22,7 +22,8 @@
     <td>{{item.registrationStatus}}</td>
     <td>{{item.cibilscore.cibilRemark}}</td>
   </tr>
-  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  <tr>
+  <td colspan="3"><pagination-controls (pageChange)="p = $event"></pagination-controls></td></tr>
 
 </table>
 

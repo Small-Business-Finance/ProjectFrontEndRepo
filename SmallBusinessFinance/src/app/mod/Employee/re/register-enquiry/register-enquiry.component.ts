@@ -31,8 +31,9 @@ export class RegisterEnquiryComponent {
       itrStatus: [''],
       enquiryStatus: [''],
       registrationStatus: [''],
+      cibilscore:this._fb.group({
       cibilRemark: ['']
-
+    })
     })
   }
 

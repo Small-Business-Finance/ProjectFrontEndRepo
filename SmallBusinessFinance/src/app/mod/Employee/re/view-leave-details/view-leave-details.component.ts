@@ -24,18 +24,8 @@ export class ViewLeaveDetailsComponent {
      })
   }
   modo(value: string){
-    switch(value) {
-      case "Pending":
-        this.leavestatus="Pending";
-         break;
-      case "Approved":
-        this.leavestatus="Approved"; 
-         break;
-      case "Rejected":
-        this.leavestatus="Rejected";
-         break;
-    }
-  }
+    this.leavestatus=value;
+   }
   
   updatestatus(xx:LeaveDetails) {
     xx.leaveappstatus=this.leavestatus;
