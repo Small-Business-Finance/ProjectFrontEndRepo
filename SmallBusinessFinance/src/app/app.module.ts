@@ -13,7 +13,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { loginroutes, LoginRoutingModule } from './mod/login/login-routing.module';
 import { EmailSender } from './classes/email-sender';
 import { CustomerApplicationForm } from './classes/customer-application-form';
-import { EmailSender } from './classes/email-sender';
+
 
 
 
