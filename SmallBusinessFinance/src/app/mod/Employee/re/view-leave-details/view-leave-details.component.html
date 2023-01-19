@@ -1,6 +1,7 @@
 
 <div class="body">
-    <table class="table table-striped">
+  <h4 style="margin-left: 300px; margin-top: 20px;">Leave Application list</h4>
+    <table class="table table-striped" id="leaves">
         <thead>
           <tr>
             <th scope="col">Leave Application Id</th>
@@ -13,7 +14,7 @@
          </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let leavedetails of l ">
+          <tr *ngFor="let leavedetails of l | paginate: { itemsPerPage: 5, currentPage: p}">
              <td>{{leavedetails.leaveAppId}}</td>
             <td>{{leavedetails.empId}}</td>
             <td>{{leavedetails.fromDate}}</td>
@@ -30,5 +31,10 @@
               <button (click)="updatestatus(leavedetails)">Save</button></td>
            </tr>  
         </tbody>
-         </table>
+        <tr>
+          <td colspan="3"><pagination-controls (pageChange)="p = $event"></pagination-controls></td></tr>
+    </table>
+    <tr>
+     
+    </div>
          

@@ -15,7 +15,7 @@ export class ViewLeaveDetailsComponent {
   
   constructor(public las:LeaveApplicationService){}
   l:LeaveDetails[];
-  
+  p: number = 1;
   ngOnInit()
   {
     this.las.getAllLeavedetails().subscribe((leavedetails:LeaveDetails[])=>{
