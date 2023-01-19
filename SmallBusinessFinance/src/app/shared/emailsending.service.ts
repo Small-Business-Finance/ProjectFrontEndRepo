@@ -11,11 +11,10 @@ export class EmailsendingService {
  
   constructor(private http:HttpClient) { }
 
+
   
-  
-  postQuery(input: any) {
-    return this.http.post('http://localhost:9090/emailsenderapi/emailsend', input, { responseType:  'text' as 'json'})
-    
+  postQuery(input:EmailSender) {
+    return this.http.post('http://localhost:9090/emailsenderapi/emailsend', input, { responseType:  'text' as 'json'});
   }
 
   sendSanctionEmail(s:any)

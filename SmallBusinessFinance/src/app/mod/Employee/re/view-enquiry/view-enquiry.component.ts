@@ -18,8 +18,14 @@ export class ViewEnquiryComponent {
   p: number = 1;
  allenquiries:Enquiry[];
   ngOnInit(){
-this.cs.getEnquiryList().subscribe((elist:Enquiry[])=>{
-this.allenquiries=elist;
+  this.cs.getEnquiryList().subscribe((elist:Enquiry[])=>{
+  this.allenquiries=elist;
 })
+  }
+  generate(id:number){
+    console.log(id);
+    let abc=this.cs.generateCibilScore(id).subscribe();
+    console.log(abc);
+    window.location.reload();
   }
 }
