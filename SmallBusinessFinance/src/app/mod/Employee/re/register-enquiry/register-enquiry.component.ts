@@ -29,10 +29,10 @@ export class RegisterEnquiryComponent {
       alternateMobileNumber: [''],
       emailId: [''],
       itrStatus: [''],
-      enquiryStatus: [''],
-      registrationStatus: [''],
+      enquiryStatus: ['Pending'],
+      registrationStatus: ['Not Registered'],
       cibilscore:this._fb.group({
-      cibilRemark: ['']
+      cibilRemark: ['Not Generated']
     })
     })
   }
@@ -41,7 +41,6 @@ export class RegisterEnquiryComponent {
     this.steps = this.steps + 1;
 
   }
-
   previous() {
     this.steps = this.steps - 1;
   }

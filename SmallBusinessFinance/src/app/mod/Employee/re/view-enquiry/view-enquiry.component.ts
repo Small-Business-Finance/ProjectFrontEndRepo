@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Enquiry } from 'src/app/classes/enquiry';
 import { EnquiryService } from 'src/app/shared/enquiry.service';
@@ -8,11 +9,14 @@ import { EnquiryService } from 'src/app/shared/enquiry.service';
   styleUrls: ['./view-enquiry.component.css']
 })
 export class ViewEnquiryComponent {
+  currentRoute: string;
 
-  constructor(private cs:EnquiryService){}
+  constructor(private cs:EnquiryService,public rr:Router){
+    console.log(rr.url);
+    this.currentRoute=rr.url;
+  }
   p: number = 1;
-  // collection: any[];
-  allenquiries:Enquiry[];
+ allenquiries:Enquiry[];
   ngOnInit(){
 this.cs.getEnquiryList().subscribe((elist:Enquiry[])=>{
 this.allenquiries=elist;
