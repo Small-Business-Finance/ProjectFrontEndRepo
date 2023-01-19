@@ -74,13 +74,15 @@
         </div>
     </div>
     <div class="col">
-        <div class="form-group">
+        <div class="col-md-4">
             <label class="label">ITR Status : </label><br>
-            <input type="text" class="col-xs-3" formControlName="itrStatus">
+            <select class="form-control" formControlName="itrStatus">
+                <option value="Filed">  Filed  </option><option value="Not Filed">  Not  Filed  </option>
+            </select>
         </div>
 </div></div>
 
-<div class="row">
+<!-- <div class="row">
     <div class="col">
         <div class="form-group">
             <label class="label">Enquiry Status : </label><br>
@@ -92,13 +94,14 @@
             <label class="label">Registration Status :</label><br>
             <input type="text" class="col-xs-3" formControlName="registrationStatus">
         </div>
-</div></div>
+</div></div> -->
 
-
+<!-- <h3 formGroupName="cibilscore">
         <div class="form-group">
-            <label class="label">Cibilscore Status :</label><br>
+            <label class="label">Cibilscore Remark :</label><br>
              <input type="text" class="col-xs-3"   formControlName="cibilRemark">
         </div>
+    </h3> -->
     </div>
 
     <div class="form-button">
