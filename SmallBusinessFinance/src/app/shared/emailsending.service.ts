@@ -13,9 +13,10 @@ export class EmailsendingService {
   
   postQuery(input: any) {
     return this.http.post('http://localhost:9090/emailsenderapi/emailsend', input, { responseType:  'text' as 'json'})
-      
     
   }
+
+  
 
   
 }

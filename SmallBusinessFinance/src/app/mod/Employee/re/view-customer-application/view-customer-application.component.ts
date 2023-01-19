@@ -31,7 +31,7 @@ export class ViewCustomerApplicationComponent {
      })
   }
 
-  deleteCustomer(c:number)
+  deleteData(c:number)
   {
     this.cs.deleteCustomer(c).subscribe();
    }
