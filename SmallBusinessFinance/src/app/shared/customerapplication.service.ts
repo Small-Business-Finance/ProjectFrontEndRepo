@@ -68,7 +68,8 @@ export class CustomerapplicationService {
       loanId: 0,
       expectedLoanAmount: 0,
       expectedLoanTenure: 0,
-      expectedEmiAmount: 0,
+      rateOfInterest:0,
+      emiAmount: 0,
       loanStatus: '',
       loanDisbursedStatus: ''
     },

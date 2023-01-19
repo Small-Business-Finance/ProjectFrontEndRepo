@@ -19,6 +19,8 @@ import { ViewCustomerFullDetailsComponent } from './view-customer-full-details/v
 import { ViewCustomerApplicationComponent } from './view-customer-application/view-customer-application.component';
 import { ViewLeaveDetailsComponent } from './view-leave-details/view-leave-details.component';
 import { UpdateCustomerApplicationComponent } from './update-customer-application/update-customer-application.component';
+import { SanctionLetterComponent } from '../financehead/sanction-letter/sanction-letter.component';
+import { FinanceheadRoutingModule } from '../financehead/financehead-routing.module';
 
 
 @NgModule({
@@ -38,7 +40,7 @@ import { UpdateCustomerApplicationComponent } from './update-customer-applicatio
     FormsModule,NgxPaginationModule,
     ReactiveFormsModule,
     RouterModule,BranchmanagerModule,CreditanalystModule,
-    FinanceheadModule,TeleheadModule,OeModule
+    TeleheadModule,OeModule,FinanceheadRoutingModule,FinanceheadModule
 
   ]
 })

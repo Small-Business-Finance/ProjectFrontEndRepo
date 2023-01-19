@@ -11,6 +11,8 @@ import { REModule } from './mod/Employee/re/re.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { loginroutes, LoginRoutingModule } from './mod/login/login-routing.module';
+import { EmailSender } from './classes/email-sender';
+import { CustomerApplicationForm } from './classes/customer-application-form';
 
 
 
@@ -25,7 +27,7 @@ import { loginroutes, LoginRoutingModule } from './mod/login/login-routing.modul
     ReactiveFormsModule,RouterModule,NgxPaginationModule,
     Ng2SearchPipeModule,LoginRoutingModule
   ],
-  providers: [],
+  providers: [EmailSender,CustomerApplicationForm],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

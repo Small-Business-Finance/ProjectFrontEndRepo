@@ -3,7 +3,11 @@ export class CustomerLoanDetails {
     loanId:number
 	expectedLoanAmount:number
 	expectedLoanTenure:number
-	expectedEmiAmount:number
+	emiAmount:number
+	rateOfInterest:number
 	loanStatus:string
 	loanDisbursedStatus:string
+
+	
+	
 }

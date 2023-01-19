@@ -3,9 +3,11 @@ export class SanctionLetter {
      sanctionedLoanId:number
 	 applicationId:number
 	 customerName:string
-	 sanctionedLoanAmount:number
-	 interestRate:number
-	 sanctionedTenure:number
+	 expectedLoanAmount:number
+	 rateOfInterest:number
+	 expectedLoanTenure:number
 	 emiAmount:number
+	 
+	
 	 
 }

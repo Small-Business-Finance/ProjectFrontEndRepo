@@ -1,6 +1,37 @@
 <div class="body">
+
+<!-- RE -->
+<div *ngIf="currentRoute=='/reprofile/viewCustomer'">
+  <h4 style="margin-left: 300px; margin-top: 20px;">Customer list</h4>
+  <table class="table" style="margin-left: 300px" id="custapplications">
+    <thead>
+      <tr>
+        <th scope="col">Application Id</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Application Status</th>
+        <th scope="col">Show details</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of cf">
+         <td>{{c.applicationId}}</td>
+        <td>{{c.customerDetails.customerName}}</td>
+        <td>{{c.applicationStatus}}</td>
+        <td><a [routerLink]="['customerfulldetails',c.applicationId]">show details</a></td>
+         <td><a class="btn">
+           <i class="fa fa-edit" [routerLink]="['updatecustomer']" [state]="c"></i></a></td>
+        <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteData(c.applicationId)"></i></td>     
+    </tr>
+      </tbody>
+  </table>
+    <a style="margin-left: 300px;" routerLink="/reprofile/registerCustomer"><button>Loan Application Form</button></a>
+  </div> 
+
+  <!-- CREDIT ANALYST -->
+  <div *ngIf="currentRoute=='/caprofile/viewCustomer'">
 <h4 style="margin-left: 300px; margin-top: 20px;">Customer list</h4>
-<div *ngIf="currentRoute=='/caprofile/viewCustomer'">
 <table class="table" style="margin-left: 300px" id="custapplications">
   <thead>
     <tr>
@@ -8,9 +39,8 @@
       <th scope="col">Customer Name</th>
       <th scope="col">Application Status</th>
       <th scope="col">Show details</th>
-     <th scope="col">Edit</th>
+      <th scope="col">Edit</th>
       <th scope="col">Delete</th>
-      
     </tr>
   </thead>
   <tbody>
@@ -19,17 +49,46 @@
       <td>{{c.customerDetails.customerName}}</td>
       <td>{{c.applicationStatus}}</td>
       <td><a [routerLink]="['customerfulldetails',c.applicationId]">show details</a></td>
-
-      <td><a class="btn">
+       <td><a class="btn">
          <i class="fa fa-edit" [routerLink]="['updatecustomer']" [state]="c"></i></a></td>
-      <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteData(c.applicationId)"></i></td> 
-      
+      <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteData(c.applicationId)"></i></td>     
   </tr>
-    
-  </tbody>
+    </tbody>
+</table>
+  
+</div> 
+
+
+<!-- FINANCE HEAD -->
+<div *ngIf="currentRoute=='/fhprofile/viewCustomer'"> 
+<h4 style="margin-left: 300px; margin-top: 20px;">Customer list</h4>
+<table class="table" style="margin-left: 300px" id="custapplications">
+  <thead>
+    <tr>
+      <th scope="col">Application Id</th>
+      <th scope="col">Customer Name</th>
+      <th scope="col">Loan Amount </th>
+      <th scope="col">Rate of Interest</th>
+      <th scope="col">Tenure</th>
+      <th scope="col">EMI Amount</th>
+      <th scope="col">Application Status</th>
+      <th scope="col">Generate sanction</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of cf">
+       <td>{{c.applicationId}}</td>
+       <td>{{c.customerDetails.customerName}}</td>
+       <td>{{c.customerLoanDetails.expectedLoanAmount}}</td>
+       <td>{{c.customerLoanDetails.rateOfInterest}}</td>
+       <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
+       <td>{{c.customerLoanDetails.emiAmount}}</td>
+      <td>{{c.applicationStatus}}</td>
+      <td><a routerLink="/fhprofile/sanction" [state]="c">Generate Sanction</a></td> 
+  </tr>
+     </tbody>
 </table></div>
 
   
-  <a style="margin-left: 300px;" routerLink="/reprofile/registerCustomer"><button>Loan Application Form</button></a>
-</div>
+  
   <router-outlet></router-outlet>

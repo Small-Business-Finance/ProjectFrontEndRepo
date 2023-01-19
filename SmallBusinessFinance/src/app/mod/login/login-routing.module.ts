@@ -77,6 +77,8 @@ export const loginroutes: Routes = [
   },
   {
     path:'oeprofile',component:OeprofileComponent,
+
+   
     children:[
       
       {
@@ -105,31 +107,41 @@ export const loginroutes: Routes = [
           {
             path:'defaulter',component:DefaulterListComponent
           }
-      ]
+      ],
+
+      
   },
   {
     path:'fhprofile',component:FhprofileComponent,
     children:[
-      
       {
         path:'fhpersonal',component:FhPersonalComponent
       },
+
       {
         path:'registerCustomer', component:RegisterCustomerApplicationComponent
-        },
+      },
+      
+      {
+        path:'sanction',component:SanctionLetterComponent
+      },
       {
         path:'viewCustomer', component:ViewCustomerApplicationComponent,
         children:[
           {
             path:'customerfulldetails/:applicationId',component:ViewCustomerFullDetailsComponent
-          }
-        ]
+          },
+          
+          
+          ]
         },
-        {
-          path:'sanction',component:SanctionLetterComponent
-        }
-    ]
+        
+       ],
+      
   },
+
+  
+
   {
     path:'thprofile',component:ThprofileComponent,
     children:[

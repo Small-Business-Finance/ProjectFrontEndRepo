@@ -1,8 +1,9 @@
 export class EmailSender {
 
-	fromemailid:string
-    fullname:string
-	emailid:string
-	phonenumber:string
-	query:string
+	toEmail:string
+	fromEmail:string
+    subject:string
+	message:string
+	
+
 }

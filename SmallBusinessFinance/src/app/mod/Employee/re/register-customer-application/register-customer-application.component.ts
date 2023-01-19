@@ -82,7 +82,8 @@ export class RegisterCustomerApplicationComponent {
         loanId:[],
         expectedLoanAmount:[],
         expectedLoanTenure:[],
-        expectedEmiAmount:[],
+        emiAmount:[],
+        rateOfInterest:[],
         loanStatus:[''],
         loanDisbursedStatus:['']
        })
