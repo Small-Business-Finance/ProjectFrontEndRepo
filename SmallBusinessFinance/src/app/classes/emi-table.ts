@@ -2,7 +2,7 @@ export class EmiTable {
 
         emiDetailsId:number
 	    emiStatus:string
-	    emiAmount:number
+	    emidate:any
 	    emiTenure:number
 		emiPaid:number
 		defaultorCount:number

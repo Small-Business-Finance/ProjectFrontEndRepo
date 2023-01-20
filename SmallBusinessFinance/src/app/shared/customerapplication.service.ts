@@ -72,6 +72,14 @@ export class CustomerapplicationService {
       emiAmount: 0,
       loanStatus: '',
       loanDisbursedStatus: ''
+      // emitable:{
+      //   emiDetailsId:0,
+      //   emiStatus:'',
+      //   emidate:'',
+      //   emiTenure:0,
+      // emiPaid:0,
+      // defaultorCount:0,
+      // }
     },
     
     customerDocuments: new CustomerDocuments

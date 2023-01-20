@@ -88,7 +88,34 @@
   </tr>
      </tbody>
 </table></div>
-
-  
+<!-- 
+ TELE HEAD 
+<div *ngIf="currentRoute=='/thprofile/viewCustomer'"> 
+  <h4 style="margin-left: 300px; margin-top: 20px;">Customer list</h4>
+  <table class="table" style="margin-left: 300px" id="custapplications">
+    <thead>
+      <tr>
+        <th scope="col">EMI DETAILS Id</th>
+        <th scope="col">EMI STATUS</th>
+        <th scope="col">EMI AMOUNT </th>
+        <th scope="col">EMI TENURE</th>
+        <th scope="col">EMI PAID</th> 
+        <th scope="col">DEFAULTER COUNT</th>
+        <th scope="col">EMI DATE</th>
+        
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of cf">
+         <td>{{c.customerLoanDetails.emitable.emiDetailsId}}</td>
+         <td>{{c.customerLoanDetails.emitable.emiStatus}}</td>
+         <td>{{c.customerLoanDetails.emitable.emiAmount}}</td>
+       <td>{{c.customerLoanDetails.emitable.emiTenure}}</td>
+         <td>{{c.customerLoanDetails.emitable.emiPaid}}</td> 
+         <td>{{c.customerLoanDetails.emitable.defaultorCount}}</td>
+         <td>{{c.customerLoanDetails.emitable.emidate}}</td>
+        </tr>
+       </tbody>
+  </table></div>   -->
   
   <router-outlet></router-outlet>
