@@ -69,9 +69,8 @@ export const loginroutes: Routes = [
       },
            
         {
-          path:'registerCustomer', component:RegisterCustomerApplicationComponent
-            
-      },
+          path:'registerCustomer', component:RegisterCustomerApplicationComponent  
+        },
         
       ]
   },
