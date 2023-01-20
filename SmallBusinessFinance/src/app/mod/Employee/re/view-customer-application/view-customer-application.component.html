@@ -86,7 +86,7 @@
        <td>{{c.customerLoanDetails.emiAmount}}</td>
       <td>{{c.applicationStatus}}</td>
       <td><a routerLink="/fhprofile/sanction" [state]="c">Generate Sanction</a></td> 
-      <td><button (click)="generatePdf()">PDF</button></td>
+      <td><button (click)="generatePdf(c.applicationId)">PDF</button></td>
       
   </tr>
      </tbody>

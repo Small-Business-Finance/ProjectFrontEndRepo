@@ -69,10 +69,15 @@ export class SanctionLetterComponent {
     
   }
 
-  generatePdf()
-  {
-    
-  }
+//   generatePdf(applicationId:number)
+//   {
+  
+//  console.log(this.sanctionForm.value)
+//   window.open("http://localhost:9090/genPdf/"+applicationId)
+ 
+
+
+//   }
 
   
 }

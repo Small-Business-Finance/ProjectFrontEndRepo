@@ -35,4 +35,15 @@ export class ViewCustomerApplicationComponent {
   {
     this.cs.deleteCustomer(c).subscribe();
    }
+
+   generatePdf(applicationId:number)
+   {
+   
+  //console.log(this.sanctionForm.value)
+   window.open("http://localhost:9090/pdfapi/genPdf/"+applicationId)
+  
+ 
+ 
+   }
+ 
 }
