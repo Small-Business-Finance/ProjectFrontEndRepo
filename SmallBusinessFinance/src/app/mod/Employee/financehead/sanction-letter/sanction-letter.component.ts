@@ -4,6 +4,7 @@ import { EmailsendingService } from 'src/app/shared/emailsending.service';
 import { Location } from '@angular/common';
 import { CustomerApplicationForm } from 'src/app/classes/customer-application-form';
 import { EmailSender } from 'src/app/classes/email-sender';
+import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 
 @Component({
   selector: 'app-sanction-letter',
@@ -13,21 +14,28 @@ import { EmailSender } from 'src/app/classes/email-sender';
 export class SanctionLetterComponent {
 
   sanctionForm:FormGroup;
-  ems:EmailSender;
-  cf:CustomerApplicationForm[];
 
-  constructor(private fb:FormBuilder,private es:EmailsendingService,private location:Location,public em:EmailSender,public cmf:CustomerApplicationForm) { }
+  constructor(private fb:FormBuilder,private ems:EmailsendingService,private location:Location,private cmf:CustomerApplicationForm,public ee:EmailSender,public cs:CustomerapplicationService) { }
 
+  // es:EmailSender={
+  //   toEmail: '',
+  //   subject: '',
+  //   message: ''
+  // }
   ngOnInit()
   {
     this.sanctionForm=this.fb.group({
       sanctionedLoanId:[],
       applicationId:[],
       customerName:[''],
+      emailId:[''],
       expectedLoanAmount:[],
       rateOfInterest:[],
       expectedLoanTenure:[],
-      emiAmount:[]
+      emiAmount:[],
+      toEmail: '',
+     subject: '',
+      message:''
     })
 
     this.generateSanction();
@@ -36,34 +44,25 @@ export class SanctionLetterComponent {
   generateSanction()
   {
   let obj:any=this.location.getState();
- // this.sanctionForm.get('sanctionedLoanId').setValue(obj.sanctionedLoanId)
+ this.sanctionForm.get('sanctionedLoanId').setValue(obj.sanctionedLoanId)
   this.sanctionForm.get('applicationId').setValue(obj.applicationId);
   this.sanctionForm.get('customerName').setValue(obj.customerDetails.customerName);
+   this.sanctionForm.get('emailId').setValue(obj.customerDetails.emailId);
   this.sanctionForm.get('expectedLoanAmount').setValue(obj.customerLoanDetails.expectedLoanAmount);
   this.sanctionForm.get('rateOfInterest').setValue(obj.customerLoanDetails.rateOfInterest);
   this.sanctionForm.get('expectedLoanTenure').setValue(obj.customerLoanDetails.expectedLoanTenure);
   this.sanctionForm.get('emiAmount').setValue(obj.customerLoanDetails.emiAmount);
+  this.sanctionForm.get('toEmail').setValue(obj.customerDetails.emailId)
+  this.sanctionForm.get('subject').setValue(this.ee.subject);
+  this.sanctionForm.get('message').setValue(this.cmf.customerLoanDetails);
   }
 
   sendEmail()
   {
-    const application = JSON.stringify(this.em);
-     const sanctionDocument = new FormData();
-    // sanctionDocument.append("applicationId", application);
-    // sanctionDocument.append("customerName", application);
-    // sanctionDocument.append("sanctionedLoanAmount", application);
-    // sanctionDocument.append("interestRate", application);
-    // sanctionDocument.append("sanctionedTenure", application);
-    // sanctionDocument.append("emiAmount", application);
-    sanctionDocument.append('this.em.toEmail',application);
-    sanctionDocument.append('this.em.fromEmail',application);
-    sanctionDocument.append('this.em.subject',application);
-    sanctionDocument.append('this.em.message',application);
-  
-    
-    
-    this.es.sendSanctionEmail(sanctionDocument).subscribe();
-    window.location.reload();
+    console.log(this.sanctionForm.value)
+    this.ems.sendSanctionEmail(this.sanctionForm.value).subscribe();
     
   }
+
+  
 }

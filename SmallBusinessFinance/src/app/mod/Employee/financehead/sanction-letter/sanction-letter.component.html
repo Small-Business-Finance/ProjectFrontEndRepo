@@ -3,7 +3,6 @@
 
 <form [formGroup]="sanctionForm" (ngSubmit)="sendEmail()">
     <h3>Sanction Letter</h3>
-    <br>
        
       <div class="form-group">
         <label class="label">applicationId :</label><br>
@@ -34,11 +33,21 @@
         <label class="label">EMI Amount :</label><br>
          <input type="text" class="col-xs-3" formControlName="emiAmount">
     </div>
+
+    <div class="form-group">
+      <label class="label">Email Id :</label><br>
+       <input type="text" class="col-xs-3" formControlName="emailId">
+  </div>
     
-    <br><br>
+  <div class="button">
+    <button>Send Now</button> 
+
+</div>
+
+    <!-- <br><br>
     <div class="form-button">
     <a class="button-33">Send Mail</a>
-    </div>
+    </div> -->
 
 </form>
     </div>
