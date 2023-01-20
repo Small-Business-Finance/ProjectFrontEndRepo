@@ -73,6 +73,7 @@
       <th scope="col">EMI Amount</th>
       <th scope="col">Application Status</th>
       <th scope="col">Generate sanction</th>
+      <th scope="col">Action</th>
       </tr>
   </thead>
   <tbody>
@@ -85,10 +86,45 @@
        <td>{{c.customerLoanDetails.emiAmount}}</td>
       <td>{{c.applicationStatus}}</td>
       <td><a routerLink="/fhprofile/sanction" [state]="c">Generate Sanction</a></td> 
+      <td><button (click)="generatePdf()">PDF</button></td>
+      
   </tr>
      </tbody>
 </table></div>
 
+
+<!-- Branch Manager -->
+<div *ngIf="currentRoute=='/bmprofile/viewCustomer'"> 
+  <h4 style="margin-left: 300px; margin-top: 20px;">Customer list</h4>
+  <table class="table" style="margin-left: 300px" id="custapplications">
+    <thead>
+      <tr>
+        <th scope="col">Application Id</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Sanction Amount </th>
+        <th scope="col">Rate of Interest</th>
+        <th scope="col">Tenure</th>
+        <th scope="col">Loan Status</th>
+        <th scope="col">Disbursement</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of cf">
+         <td>{{c.applicationId}}</td>
+         <td>{{c.customerDetails.customerName}}</td>
+         <td>{{c.customerLoanDetails.expectedLoanAmount}}</td>
+         <td>{{c.customerLoanDetails.rateOfInterest}}</td>
+         <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
+        <td>{{c.customerLoanDetails.loanStatus}}</td>
+        <td><button>Disbursement</button></td>
+        <td><button>PDF</button></td>
+        
+        <!-- <td><a routerLink="/bmprofile/" [state]="c">Generate Sanction</a></td>  -->
+    </tr>
+       </tbody>
+  </table></div>
+  
   
   
   <router-outlet></router-outlet>
