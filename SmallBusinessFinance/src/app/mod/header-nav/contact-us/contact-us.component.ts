@@ -41,12 +41,12 @@ export class ContactUsComponent implements OnInit {
     }
 
     onSubmit() {
-    
+    let newLine="\n";
 this.sss.toEmail=this.emailsender.controls['emailid'].value;
 this.sss.subject="Query From About Section";
-this.sss.message="Hello "+this.emailsender.controls['fullname'].value+" , We have received your query("
+this.sss.message="Hello "+this.emailsender.controls['fullname'].value+ ","+newLine +"  We have received your query("
 +this.emailsender.controls['query'].value+"). Our Executive will call you on provided mobile number "
-+this.emailsender.controls['phonenumber'].value+" Thank You.";
++this.emailsender.controls['phonenumber'].value+ newLine +" Thank You.";
 console.log(this.sss);
       this.cs.postQuery(this.sss).subscribe();
   }
