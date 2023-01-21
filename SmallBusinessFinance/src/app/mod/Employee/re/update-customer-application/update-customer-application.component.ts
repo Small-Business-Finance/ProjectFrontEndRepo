@@ -161,7 +161,7 @@ onSubmit()
 {
   
 this.cs.updateCustomer(this.updateForm.value).subscribe();
-//window.location.reload();
+window.location.reload();
 }
 
 submit()

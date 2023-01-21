@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
@@ -22,7 +23,7 @@ export class RegisterCustomerApplicationComponent {
         tan1:any
         msmeCertificate1:any
 
-  constructor(private _fb:FormBuilder,public cs:CustomerapplicationService){}
+  constructor(private _fb:FormBuilder,public cs:CustomerapplicationService,private location:Location){}
   
   ngOnInit()
   {
@@ -87,10 +88,20 @@ export class RegisterCustomerApplicationComponent {
         loanStatus:[''],
         loanDisbursedStatus:['']
        })
-
+      
       })
+      this.regcust();
       }
-       
+      regcust(){
+        let obj:any=this.location.getState();
+this.registerForm.get('customerDetails.customerName').setValue(obj.customerName);
+this.registerForm.get('customerDetails.address').setValue(obj.customerAddress);
+this.registerForm.get('customerCompanyDetails.companyName').setValue(obj.companyName);
+this.registerForm.get('customerDetails.mobileNumber').setValue(obj.mobileNumber);
+this.registerForm.get('customerDetails.emailId').setValue(obj.emailId);
+this.registerForm.get('customerDetails.panCardNumber').setValue(obj.customerPancardNumber);
+this.registerForm.get('customerCompanyDetails.panCardNumber').setValue(obj.companyPancardNumber);
+      } 
     submit()
     {
       this.steps=this.steps+1;

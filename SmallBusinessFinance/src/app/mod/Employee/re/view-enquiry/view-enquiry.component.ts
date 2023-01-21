@@ -28,4 +28,7 @@ export class ViewEnquiryComponent {
     console.log(abc);
     window.location.reload();
   }
+  registercust(item:Enquiry){
+
+  }
 }
