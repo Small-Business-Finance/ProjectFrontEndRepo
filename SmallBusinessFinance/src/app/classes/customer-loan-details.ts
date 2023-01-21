@@ -1,3 +1,5 @@
+import { EmiTable } from "./emi-table"
+
 export class CustomerLoanDetails {
 
     loanId:number
@@ -7,6 +9,8 @@ export class CustomerLoanDetails {
 	rateOfInterest:number
 	loanStatus:string
 	loanDisbursedStatus:string
+	defaultorCount:number
+	emitable:EmiTable
 
 	
 	
