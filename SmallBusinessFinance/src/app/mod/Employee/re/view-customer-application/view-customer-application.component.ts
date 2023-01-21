@@ -62,12 +62,22 @@ export class ViewCustomerApplicationComponent {
   {
     this.es.sendRejectionEmail(c).subscribe();
   }
+  
+date: Date = new Date();
   generateemi(c:CustomerApplicationForm){
     const p=c.customerLoanDetails.expectedLoanAmount;
     const n=c.customerLoanDetails.expectedLoanTenure;
+    let ld=c.customerLoanDetails
     const r=c.customerLoanDetails.rateOfInterest/(12*100);
     let emi:number;
     emi=p * r * (Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
     console.log(emi);
+    console.log(this.date.toLocaleDateString(),)
+    this.date.toLocaleDateString();
+    for (let i = 1; i <= n; i++) {
+      this.date.setMonth(this.date.getMonth() + 1);
+      console.log(this.date.toLocaleDateString());
+    }
+    console.log(this.date.toLocaleDateString());
   } 
 }
