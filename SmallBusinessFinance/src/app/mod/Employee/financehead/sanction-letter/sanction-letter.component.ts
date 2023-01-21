@@ -6,6 +6,7 @@ import { CustomerApplicationForm } from 'src/app/classes/customer-application-fo
 import { EmailSender } from 'src/app/classes/email-sender';
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 
+
 @Component({
   selector: 'app-sanction-letter',
   templateUrl: './sanction-letter.component.html',
@@ -17,6 +18,7 @@ export class SanctionLetterComponent {
 
   constructor(private fb:FormBuilder,private ems:EmailsendingService,private location:Location,private cmf:CustomerApplicationForm,public ee:EmailSender,public cs:CustomerapplicationService) { }
 
+  
   // es:EmailSender={
   //   toEmail: '',
   //   subject: '',
@@ -52,6 +54,7 @@ export class SanctionLetterComponent {
   this.sanctionForm.get('rateOfInterest').setValue(obj.customerLoanDetails.rateOfInterest);
   this.sanctionForm.get('expectedLoanTenure').setValue(obj.customerLoanDetails.expectedLoanTenure);
   this.sanctionForm.get('emiAmount').setValue(obj.customerLoanDetails.emiAmount);
+
   this.sanctionForm.get('toEmail').setValue(obj.customerDetails.emailId)
   this.sanctionForm.get('subject').setValue(this.ee.subject);
   this.sanctionForm.get('message').setValue(this.cmf.customerLoanDetails);

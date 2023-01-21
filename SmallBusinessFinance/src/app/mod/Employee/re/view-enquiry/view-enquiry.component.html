@@ -7,10 +7,10 @@
     <th>Company Name</th>
     <th>Address</th>
     <th>Type Of Business</th>
-    <th>Enquiry Status</th>
+    <th *ngIf="currentRoute=='/reprofile/viewenquiry'">Enquiry Status</th>
     <th>Pancard Number(C)</th>
-    <th>Registration Status</th>
     <th>Cibil Remark</th>
+    <th>Registration Status</th>
     <th *ngIf="currentRoute=='/oeprofile/viewenquiry'">Generate Cibil</th>
   </tr>
   <tr *ngFor="let item of allenquiries | paginate: { itemsPerPage: 5, currentPage: p}" >
@@ -18,17 +18,18 @@
     <td>{{item.companyName}}</td>
     <td>{{item.customerAddress}}</td>
     <td>{{item.typesOfBusiness}}</td>
-    <td>{{item.enquiryStatus}}</td>
+    <td *ngIf="currentRoute=='/reprofile/viewenquiry'">{{item.enquiryStatus}}</td>
     <td>{{item.companyPancardNumber}}</td>
-    <td>{{item.registrationStatus}}</td>
-    <td>{{item.cibilscore.cibilRemark}}</td>
+    <td >{{item.cibilscore.cibilRemark}}</td>
+    <td *ngIf="item.enquiryStatus=='Pending'&& currentRoute=='/reprofile/viewenquiry'">{{item.registrationStatus}}</td>
+    <td *ngIf="currentRoute=='/oeprofile/viewenquiry'">{{item.registrationStatus}}</td>
+    <td *ngIf="item.enquiryStatus=='Cibil Generated'&& currentRoute=='/reprofile/viewenquiry' && item.cibilscore.cibilRemark!='Low'"><button routerLink="/reprofile/registerCustomer" [state]="item">Register</button></td>
+    <td *ngIf="item.enquiryStatus=='Cibil Generated'&& currentRoute=='/reprofile/viewenquiry' && item.cibilscore.cibilRemark=='Low'"><button (click)="xx()">Send R Mail</button></td>
     <td *ngIf="currentRoute=='/oeprofile/viewenquiry'"> <button (click)="generate(item.enquiryId)">Generate Cibil</button></td>
-    <!-- <td *ngIf="currentRoute=='/oeprofile/viewenquiry'">
-      <button (click)="generate(item.enquiryId)")>Generate Cibil</button> </td> -->
+    
   </tr>
   <tr>
   <td colspan="4"><pagination-controls (pageChange)="p = $event"></pagination-controls> </td> </tr>
-
 </table>
 
 

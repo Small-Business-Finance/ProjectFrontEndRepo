@@ -19,7 +19,12 @@ export class EmailsendingService {
 
   sendSanctionEmail(s:any)
   {
-    return this.http.post("http://localhost:9090/emailsenderapi/mail",s);
+    return this.http.post("http://localhost:9090/emailsenderapi/sanction",s);
+  }
+
+  sendRejectionEmail(r:any)
+  {
+    return this.http.post("http://localhost:9090/emailsenderapi/rejection",r);
   }
 
   
