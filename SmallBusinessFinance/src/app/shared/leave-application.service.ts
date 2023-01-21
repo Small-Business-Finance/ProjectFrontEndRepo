@@ -36,4 +36,8 @@ export class LeaveApplicationService {
   {
     return this.http.delete("http://localhost:9090/leaveapi//leavedetail/"+leaveAppId)
   }
+  getById(leaveAppId:number) 
+  {
+    return this.http.get<LeaveDetails[]>("http://localhost:9090/leaveapi/getbyId/"+leaveAppId);
+  }
 }
