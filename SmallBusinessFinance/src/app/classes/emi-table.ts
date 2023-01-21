@@ -4,6 +4,6 @@ export class EmiTable {
 	    emiStatus:string
 	    emidate:any
 	    emiTenure:number
-		emiPaid:number
+		emiAmount:number
 		
 }
