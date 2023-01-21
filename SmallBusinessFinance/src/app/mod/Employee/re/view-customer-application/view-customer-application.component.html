@@ -38,20 +38,30 @@
       <th scope="col">Application Id</th>
       <th scope="col">Customer Name</th>
       <th scope="col">Application Status</th>
-      <th scope="col">Show details</th>
-      <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
+      <th scope="col">action</th>
+      <th>Full Details</th>
+      <th scope="col"></th>
+      
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let c of cf">
        <td>{{c.applicationId}}</td>
       <td>{{c.customerDetails.customerName}}</td>
-      <td>{{c.applicationStatus}}</td>
-      <td><a [routerLink]="['customerfulldetails',c.applicationId]">show details</a></td>
-       <td><a class="btn">
-         <i class="fa fa-edit" [routerLink]="['updatecustomer']" [state]="c"></i></a></td>
-      <td><i class="fa fa-trash-o" aria-hidden="true" (click)="deleteData(c.applicationId)"></i></td>     
+      <td><select value="c.applicationStatus" (change)="modo($event.target.value)">
+         <option value="c.applicationStatus">{{c.applicationStatus}}*</option>
+        <option value="Verified">Verified </option>
+        <option value="Rejected">Rejected </option>
+        <option value="registered">registered </option>
+        <option value="Sanctioned">Sanctioned </option>
+      </select>
+        </td>
+        <td *ngIf="c.applicationStatus=='Rejected'"><button (click)="rejectionMail(c)">rejection mail</button></td>
+        <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
+        <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
+        <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
+      <td><a [routerLink]="['customerfulldetails',c.applicationId]">show details</a></td>  
+      <td><button (click)="updatestatus(c)">Save</button></td> 
   </tr>
     </tbody>
 </table>
@@ -70,10 +80,9 @@
       <th scope="col">Loan Amount </th>
       <th scope="col">Rate of Interest</th>
       <th scope="col">Tenure</th>
-      <th scope="col">EMI Amount</th>
       <th scope="col">Application Status</th>
       <th scope="col">Generate sanction</th>
-      <th scope="col">Action</th>
+      <th scope="col">updateStatus</th>
       </tr>
   </thead>
   <tbody>
@@ -83,11 +92,20 @@
        <td>{{c.customerLoanDetails.expectedLoanAmount}}</td>
        <td>{{c.customerLoanDetails.rateOfInterest}}</td>
        <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
-       <td>{{c.customerLoanDetails.emiAmount}}</td>
-      <td>{{c.applicationStatus}}</td>
+       <td><select value="c.applicationStatus" (change)="modo($event.target.value)">
+        <option value="c.applicationStatus">{{c.applicationStatus}}*</option>
+        <option value="Verified">Verified </option>
+        <option value="Rejected">Rejected </option>
+        <option value="registered">registered </option>
+       <option value="Sanctioned">Sanctioned</option>
+     </select>
+       </td>
       <td><a routerLink="/fhprofile/sanction" [state]="c">Generate Sanction</a></td> 
-      <td><button (click)="generatePdf(c.applicationId)">PDF</button></td>
-      
+      <td *ngIf="c.applicationStatus=='Rejected'"><button (click)="rejectionMail(c)">rejection mail</button></td>
+        <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
+        <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
+        <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
+        <td><button (click)="updatestatus(c)">save</button></td>
   </tr>
      </tbody>
 </table></div>
@@ -104,8 +122,9 @@
         <th scope="col">Sanction Amount </th>
         <th scope="col">Rate of Interest</th>
         <th scope="col">Tenure</th>
-        <th scope="col">Loan Status</th>
+        <th scope="col">Application Status</th>
         <th scope="col">Disbursement</th>
+        <th scope="col">Action</th>
         <th scope="col">Action</th>
       </tr>
     </thead>
@@ -116,8 +135,12 @@
          <td>{{c.customerLoanDetails.expectedLoanAmount}}</td>
          <td>{{c.customerLoanDetails.rateOfInterest}}</td>
          <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
-        <td>{{c.customerLoanDetails.loanStatus}}</td>
-        <td><button>Disbursement</button></td>
+        <td>{{c.applicationStatus}}</td>
+        <td *ngIf="c.applicationStatus=='Rejected'"><button (click)="rejectionMail(c)">rejection mail</button></td>
+        <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
+        <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
+        <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
+        <td><button>Disburse</button></td>
         <td><button>PDF</button></td>
         
         <!-- <td><a routerLink="/bmprofile/" [state]="c">Generate Sanction</a></td>  -->

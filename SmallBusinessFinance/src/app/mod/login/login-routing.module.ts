@@ -170,7 +170,12 @@ export const loginroutes: Routes = [
         path:'registerCustomer', component:RegisterCustomerApplicationComponent
         },
       {
-        path:'viewCustomer', component:ViewCustomerApplicationComponent
+        path:'viewCustomer', component:ViewCustomerApplicationComponent,
+        children:[
+          {
+            path:'customerfulldetails/:applicationId',component:ViewCustomerFullDetailsComponent
+          },
+        ]
         },
     ]
   },
