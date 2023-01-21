@@ -62,5 +62,12 @@ export class ViewCustomerApplicationComponent {
   {
     this.es.sendRejectionEmail(c).subscribe();
   }
- 
+  generateemi(c:CustomerApplicationForm){
+    const p=c.customerLoanDetails.expectedLoanAmount;
+    const n=c.customerLoanDetails.expectedLoanTenure;
+    const r=c.customerLoanDetails.rateOfInterest/(12*100);
+    let emi:number;
+    emi=p * r * (Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    console.log(emi);
+  } 
 }
