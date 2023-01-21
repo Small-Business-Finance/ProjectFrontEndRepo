@@ -69,7 +69,6 @@ export class CustomerapplicationService {
       expectedLoanAmount: 0,
       expectedLoanTenure: 0,
       rateOfInterest:0,
-      emiAmount: 0,
       loanStatus: '',
       loanDisbursedStatus: '',
       defaultorCount:0,
@@ -78,7 +77,7 @@ export class CustomerapplicationService {
         emiStatus:'',
         emidate:'',
         emiTenure:0,
-      emiPaid:0
+      emiAmount:0
       }
     },
     

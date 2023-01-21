@@ -112,7 +112,12 @@
 
 <!-- Branch Manager -->
 <div *ngIf="currentRoute=='/bmprofile/viewCustomer'"> 
-       <th scope="col">Application Id</th>
+  <h4 style="margin-left: 300px; margin-top: 20px;">Customer list</h4>
+  <table class="table" style="margin-left: 300px" id="custapplications">
+    <thead>
+      <tr>
+
+        <th scope="col">Application Id</th>
         <th scope="col">Customer Name</th>
         <th scope="col">Sanction Amount </th>
         <th scope="col">Rate of Interest</th>
@@ -142,8 +147,14 @@
     </tr>
        </tbody>
   </table></div>
-  
 
+  <!-- Tele Head -->
+<div *ngIf="currentRoute=='/thprofile/defaulter'"> 
+  <h4 style="margin-left: 300px; margin-top: 20px;">Defaulter list</h4>
+  <table class="table" style="margin-left: 300px" id="custapplications">
+    <thead>
+      <tr>
+  
         <th scope="col">Loan Id</th>
         <th scope="col">Expectd Loan Amount</th>
         <th scope="col">Expectd Loan Tenure</th>
@@ -170,5 +181,6 @@
         </tr>
        </tbody>
   </table></div>  
+
   
   <router-outlet></router-outlet>
