@@ -88,34 +88,38 @@
   </tr>
      </tbody>
 </table></div>
-<!-- 
- TELE HEAD 
-<div *ngIf="currentRoute=='/thprofile/viewCustomer'"> 
+
+<!-- TELE HEAD -->
+<div *ngIf="currentRoute=='/thprofile/defaulterlist'"> 
   <h4 style="margin-left: 300px; margin-top: 20px;">Customer list</h4>
   <table class="table" style="margin-left: 300px" id="custapplications">
     <thead>
       <tr>
-        <th scope="col">EMI DETAILS Id</th>
-        <th scope="col">EMI STATUS</th>
-        <th scope="col">EMI AMOUNT </th>
-        <th scope="col">EMI TENURE</th>
-        <th scope="col">EMI PAID</th> 
-        <th scope="col">DEFAULTER COUNT</th>
-        <th scope="col">EMI DATE</th>
+        <th scope="col">Loan Id</th>
+        <th scope="col">Expectd Loan Amount</th>
+        <th scope="col">Expectd Loan Tenure</th>
+        <th scope="col">Rate Of Interest</th>
+        <th scope="col">EMI Amount</th>
+        <th scope="col">Loan Status</th>
+        <th scope="col">Loan Disbursed Status</th>
+        <th scope="col">Defaulter Count</th>
+        <th scope="col">EMI Details Id</th>
+        <th scope="col">EMI Status</th>
+        <th scope="col">EMI Tenure</th>
+        <th scope="col">EMI Paid</th>
+        <th scope="col">EMI Date</th>
         
         </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let c of cf">
+      <tr *ngFor="let c of ld">
          <td>{{c.customerLoanDetails.emitable.emiDetailsId}}</td>
          <td>{{c.customerLoanDetails.emitable.emiStatus}}</td>
-         <td>{{c.customerLoanDetails.emitable.emiAmount}}</td>
-       <td>{{c.customerLoanDetails.emitable.emiTenure}}</td>
+         <td>{{c.customerLoanDetails.emitable.emiTenure}}</td>
          <td>{{c.customerLoanDetails.emitable.emiPaid}}</td> 
-         <td>{{c.customerLoanDetails.emitable.defaultorCount}}</td>
          <td>{{c.customerLoanDetails.emitable.emidate}}</td>
         </tr>
        </tbody>
-  </table></div>   -->
+  </table></div>  
   
   <router-outlet></router-outlet>

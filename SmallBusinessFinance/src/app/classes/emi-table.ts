@@ -5,5 +5,5 @@ export class EmiTable {
 	    emidate:any
 	    emiTenure:number
 		emiPaid:number
-		defaultorCount:number
+		
 }

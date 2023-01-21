@@ -9,7 +9,8 @@ export class CustomerLoanDetails {
 	rateOfInterest:number
 	loanStatus:string
 	loanDisbursedStatus:string
-	// emitable:EmiTable
+	defaultorCount:number
+	emitable:EmiTable
 
 	
 	
