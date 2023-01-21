@@ -14,7 +14,7 @@ export class ViewCustomerApplicationComponent {
   cf:CustomerApplicationForm[];
   applicationStatus="";
 
-  constructor(public cs:CustomerapplicationService,public rr:Router,public es:EmailsendingService,public sss:loan){
+  constructor(public cs:CustomerapplicationService,public rr:Router,public es:EmailsendingService){
     console.log(rr.url);
     this.currentRoute=rr.url;
     
