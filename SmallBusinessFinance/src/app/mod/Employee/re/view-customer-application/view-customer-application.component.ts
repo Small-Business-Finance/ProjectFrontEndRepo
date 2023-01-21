@@ -14,7 +14,7 @@ export class ViewCustomerApplicationComponent {
   cf:CustomerApplicationForm[];
   applicationStatus="";
 
-  constructor(public cs:CustomerapplicationService,public rr:Router,public es:EmailsendingService){
+  constructor(public cs:CustomerapplicationService,public rr:Router,public es:EmailsendingService,public sss:loan){
     console.log(rr.url);
     this.currentRoute=rr.url;
     
@@ -55,7 +55,7 @@ export class ViewCustomerApplicationComponent {
   {
     c.applicationStatus=this.applicationStatus;
     this.cs.updateCustomer(c).subscribe();
-    window.location.reload();
+    //window.location.reload();
   }
 
   rejectionMail(c:any)
