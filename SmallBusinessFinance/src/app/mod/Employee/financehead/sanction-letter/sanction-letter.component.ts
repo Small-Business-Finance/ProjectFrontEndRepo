@@ -15,8 +15,6 @@ import { CustomerapplicationService } from 'src/app/shared/customerapplication.s
 export class SanctionLetterComponent {
 
   sanctionForm:FormGroup;
- 
-  pdf:any
 
   constructor(private fb:FormBuilder,private ems:EmailsendingService,private location:Location,private cmf:CustomerApplicationForm,public ee:EmailSender,public cs:CustomerapplicationService) { }
 
@@ -68,16 +66,6 @@ export class SanctionLetterComponent {
     this.ems.sendSanctionEmail(this.sanctionForm.value).subscribe();
     
   }
-
-//   generatePdf(applicationId:number)
-//   {
-  
-//  console.log(this.sanctionForm.value)
-//   window.open("http://localhost:9090/genPdf/"+applicationId)
- 
-
-
-//   }
 
   
 }
