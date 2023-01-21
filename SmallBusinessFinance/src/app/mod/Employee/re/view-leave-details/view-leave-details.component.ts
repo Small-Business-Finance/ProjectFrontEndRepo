@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
 import { LeaveDetails } from 'src/app/classes/leave-details';
 import { LeaveApplicationService } from 'src/app/shared/leave-application.service';
 
@@ -34,4 +33,5 @@ export class ViewLeaveDetailsComponent {
     this.las.updateLeave(xx).subscribe();
     window.location.reload();
   } 
+
 }

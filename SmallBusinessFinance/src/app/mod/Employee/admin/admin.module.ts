@@ -11,7 +11,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
-    ViewEmployeeComponent,
     UpdateEmployeeComponent
   ],
   imports: [
