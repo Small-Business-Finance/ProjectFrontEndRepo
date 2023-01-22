@@ -83,10 +83,17 @@ export class RegisterCustomerApplicationComponent {
         loanId:[],
         expectedLoanAmount:[],
         expectedLoanTenure:[],
-        emiAmount:[],
+       // emiAmount:[],
         rateOfInterest:[],
         loanStatus:[''],
-        loanDisbursedStatus:['']
+        loanDisbursedStatus:[''],
+        emitable:this._fb.group({
+          emiDetailsId:0,
+          emiStatus:'',
+          emidate:'',
+          emiTenure:0,
+        emiAmount:0
+        })
        })
       
       })
