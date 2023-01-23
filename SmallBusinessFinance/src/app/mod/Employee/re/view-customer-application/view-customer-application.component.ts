@@ -45,6 +45,12 @@ export class ViewCustomerApplicationComponent {
      window.open("http://localhost:9090/pdfapi/genPdf/"+applicationId)
     
   }
+  generateExcel(applicationId:number)
+   {
+
+     window.open("http://localhost:9090/pdfapi/genExcel/"+applicationId)
+    
+  }
 
   modo(value:string)
   {
