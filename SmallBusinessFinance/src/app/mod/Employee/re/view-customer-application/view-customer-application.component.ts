@@ -3,7 +3,9 @@ import { CustomerApplicationForm } from 'src/app/classes/customer-application-fo
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 import { Router,NavigationEnd  } from '@angular/router';
 import { EmailsendingService } from 'src/app/shared/emailsending.service';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { CustomerLoanDetails } from 'src/app/classes/customer-loan-details';
+import { LoanService } from 'src/app/shared/loan.service';
 @Component({
   selector: 'app-view-customer-application',
   templateUrl: './view-customer-application.component.html',
@@ -15,7 +17,7 @@ export class ViewCustomerApplicationComponent {
   cf:CustomerApplicationForm[];
   applicationStatus="";
 
-  constructor(private fb:FormBuilder,public em:EmailSender,public loandetails:CustomerLoanDetails,public cs:CustomerapplicationService,
+  constructor(public loandetails:CustomerLoanDetails,public cs:CustomerapplicationService,
     public rr:Router,public es:EmailsendingService,public sss:LoanService,public fb:FormBuilder,public cmf:CustomerApplicationForm,private location:Location){
     console.log(rr.url);
     this.currentRoute=rr.url;
@@ -64,7 +66,7 @@ export class ViewCustomerApplicationComponent {
 
   rejectionMail(c:any)
   {
-    let obj:any=this.location.getState();
+    
    // this.em.toEmail=obj.customerDetails.emailId;
     this.es.sendRejectionEmail(c).subscribe();
   }
