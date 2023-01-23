@@ -20,3 +20,12 @@
     background-color: #04AA6D;
     color: white;
   }
+  .one{
+    float: left;
+  }
+  .two{
+    float: left;
+    margin-left: 400px;
+  }
+  
+  

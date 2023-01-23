@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Employee } from 'src/app/classes/employee';
 import { LeaveDetails } from 'src/app/classes/leave-details';
+import { EmployeeService } from 'src/app/shared/employee.service';
 import { LeaveApplicationService } from 'src/app/shared/leave-application.service';
 
 @Component({
@@ -10,10 +12,11 @@ import { LeaveApplicationService } from 'src/app/shared/leave-application.servic
 })
 export class RePersonalComponent {
 
-  constructor(private cs:LeaveApplicationService) {}
+  constructor(private cs:LeaveApplicationService,public api:EmployeeService) {}
+
+  e:Employee[];
 
    leave:LeaveDetails[];
-  leaveobj:LeaveDetails;
   id:number=2345;
 
   ngOnInit(){
@@ -27,6 +30,12 @@ export class RePersonalComponent {
       }
     )
     
+    this.api.getAllEmployees().subscribe((
+      employee:Employee[])=>
+      {
+        console.log(employee);
+      this.e=employee;
+    })
     
   }
 
