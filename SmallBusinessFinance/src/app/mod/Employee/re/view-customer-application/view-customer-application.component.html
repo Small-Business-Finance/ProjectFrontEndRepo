@@ -140,8 +140,10 @@
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
-        <td><button (click)="generateemi(c)">Disburse</button></td>
+        <td *ngIf="c.applicationStatus=='Sanctioned'"><button (click)="generateemi(c)">Disburse</button></td>
+        <td *ngIf="c.applicationStatus=='Disbursed'"><button routerLink="emi" [state]="c">View Emi</button></td>
         <td><button>PDF</button></td>
+       
         
         <!-- <td><a routerLink="/bmprofile/" [state]="c">Generate Sanction</a></td>  -->
     </tr>
