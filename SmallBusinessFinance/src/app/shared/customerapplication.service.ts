@@ -72,13 +72,13 @@ export class CustomerapplicationService {
       loanStatus: '',
       loanDisbursedStatus: '',
       defaultorCount:0,
-      emitable:{
+      emitable:[{
         emiDetailsId:0,
         emiStatus:'',
         emidate:'',
         emiTenure:0,
-      emiAmount:0
-      }
+        emiAmount:0
+      }]
     },
     
     customerDocuments: new CustomerDocuments
