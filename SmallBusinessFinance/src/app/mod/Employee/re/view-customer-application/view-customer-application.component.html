@@ -126,6 +126,7 @@
         <th scope="col">Disbursement</th>
         <th scope="col">Action</th>
         <th scope="col">Action</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -142,6 +143,8 @@
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
         <td><button (click)="generateemi(c)">Disburse</button></td>
+        <td><button>PDF</button></td>
+        <td><button (click)="generateExcel(c.applicationId)">Excel</button></td>
         <td><button (click)="generatePdf(c.applicationId)">PDF</button></td>
         
         <!-- <td><a routerLink="/bmprofile/" [state]="c">Generate Sanction</a></td>  -->
@@ -166,17 +169,25 @@
         <th scope="col">EMI Details Id</th>
         <th scope="col">EMI Status</th>
         <th scope="col">EMI Tenure</th>
-        <th scope="col">EMI Paid</th>
+        <th scope="col">EMI Amount</th>
         <th scope="col">EMI Date</th>
+        
         
         </tr>
     </thead>
     <tbody>
       <tr *ngFor="let c of ld">
+        <td>{{c.customerLoanDetails.loanId}}</td>
+        <td>{{c.customerLoanDetails.expectedLoanAmount}}</td>
+        <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
+        <td>{{c.customerLoanDetails.rateOfInterest}}</td>
+        <td>{{c.customerLoanDetails.loanStatus}}</td>
+        <td>{{c.customerLoanDetails.loanDisbursedStatus}}</td>
+        <td>{{c.customerLoanDetails.defaultorCount}}</td>
          <td>{{c.customerLoanDetails.emitable.emiDetailsId}}</td>
          <td>{{c.customerLoanDetails.emitable.emiStatus}}</td>
          <td>{{c.customerLoanDetails.emitable.emiTenure}}</td>
-         <td>{{c.customerLoanDetails.emitable.emiPaid}}</td> 
+         <td>{{c.customerLoanDetails.emitable.emiAmount}}</td> 
          <td>{{c.customerLoanDetails.emitable.emidate}}</td>
         </tr>
        </tbody>
