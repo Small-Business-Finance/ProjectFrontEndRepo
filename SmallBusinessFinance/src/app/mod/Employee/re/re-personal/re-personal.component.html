@@ -1,4 +1,28 @@
 <div class="body">
+  <h4 style="margin-left: 300px; margin-top: 30px; color: rgb(0, 145, 255);">Employee Details : </h4>
+  <h6 style="margin-left:300px;">
+    <tr *ngFor="let employee of e">
+      <div class="one"> 
+        empId : {{employee.empId}}<br>
+        empName : {{employee.empName}}<br>
+        empDateofBirth : {{employee.empDateofBirth}}<br>
+        empGender : {{employee.empGender}}<br>
+        empSalary : {{employee.empSalary}}<br>
+        empRole : {{employee.empRole}}
+      </div>
+      <div class="two">
+        empAddress: {{employee.empAddress}}<br>
+        empMobileno : {{employee.empMobileno}}<br>
+        empEmailId : {{employee.empEmailId}}<br>
+        username : {{employee.username}}<br>
+        password : {{employee.password}}
+      </div>
+    </tr>
+  </h6>
+</div>
+
+
+<div class="body">
   <h4 style="margin-left: 300px; margin-top: 20px;">Leave Details</h4>
   <table class="table table-striped" id="leaves">
     <thead>

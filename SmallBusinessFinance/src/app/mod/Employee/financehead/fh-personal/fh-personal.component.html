@@ -1,3 +1,48 @@
 <div class="body">
-<p style="margin-left: 300px;">fh-personal works!</p>
-</div>
+    <h4 style="margin-left: 300px; margin-top: 30px; color: rgb(0, 145, 255);">Employee Details : </h4>
+    <h6 style="margin-left:300px;">
+      <tr *ngFor="let employee of e">
+        <div class="one"> 
+          empId : {{employee.empId}}<br>
+          empName : {{employee.empName}}<br>
+          empDateofBirth : {{employee.empDateofBirth}}<br>
+          empGender : {{employee.empGender}}<br>
+          empSalary : {{employee.empSalary}}<br>
+          empRole : {{employee.empRole}}
+        </div>
+        <div class="two">
+          empAddress: {{employee.empAddress}}<br>
+          empMobileno : {{employee.empMobileno}}<br>
+          empEmailId : {{employee.empEmailId}}<br>
+          username : {{employee.username}}<br>
+          password : {{employee.password}}
+        </div>
+      </tr>
+    </h6>
+  </div>
+  
+  
+  <div class="body">
+    <h4 style="margin-left: 300px; margin-top: 20px;">Leave Details</h4>
+    <table class="table table-striped" id="leaves">
+      <thead>
+        <tr>
+          <th scope="col">From Date</th>
+          <th scope="col">To Date</th>
+          <th scope="col">Leave Type</th>
+          <th scope="col">Leave Application Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leaveobje of leave">
+          <td>{{leaveobje.fromDate}}</td>
+          <td>{{leaveobje.toDate}}</td>
+          <td>{{leaveobje.leaveType}}</td>
+          <td>{{leaveobje.leaveappstatus}}</td>
+          <!-- </tr> <td> <a routerLink="viewleavedetails">View Leave Details</a></td> -->
+      </tbody>
+    </table>
+    <a style="margin-left: 300px;" routerLink="registerleave"><button>Apply For Leave</button></a>
+  </div>
+  
+  <router-outlet></router-outlet>
