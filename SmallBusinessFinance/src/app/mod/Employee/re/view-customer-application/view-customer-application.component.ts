@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CustomerApplicationForm } from 'src/app/classes/customer-application-form';
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 import { Router,NavigationEnd  } from '@angular/router';
+import { EmailsendingService } from 'src/app/shared/emailsending.service';
 @Component({
   selector: 'app-view-customer-application',
   templateUrl: './view-customer-application.component.html',
@@ -11,7 +12,9 @@ export class ViewCustomerApplicationComponent {
   currentRoute: string;
   name = 'Get Current Url Route Demo';
   cf:CustomerApplicationForm[];
-  constructor(public cs:CustomerapplicationService,public rr:Router){
+  applicationStatus="";
+
+  constructor(public cs:CustomerapplicationService,public rr:Router,public es:EmailsendingService){
     console.log(rr.url);
     this.currentRoute=rr.url;
     
@@ -38,12 +41,26 @@ export class ViewCustomerApplicationComponent {
 
    generatePdf(applicationId:number)
    {
-   
-  //console.log(this.sanctionForm.value)
-   window.open("http://localhost:9090/pdfapi/genPdf/"+applicationId)
-  
- 
- 
-   }
+
+     window.open("http://localhost:9090/pdfapi/genPdf/"+applicationId)
+    
+  }
+
+  modo(value:string)
+  {
+    this.applicationStatus=value;
+  }
+
+  updatestatus(c:CustomerApplicationForm)
+  {
+    c.applicationStatus=this.applicationStatus;
+    this.cs.updateCustomer(c).subscribe();
+    window.location.reload();
+  }
+
+  rejectionMail(c:any)
+  {
+    this.es.sendRejectionEmail(c).subscribe();
+  }
  
 }
