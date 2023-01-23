@@ -13,6 +13,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { loginroutes, LoginRoutingModule } from './mod/login/login-routing.module';
 import { EmailSender } from './classes/email-sender';
 import { CustomerApplicationForm } from './classes/customer-application-form';
+import { CustomerLoanDetails } from './classes/customer-loan-details';
 
 
 
@@ -27,7 +28,7 @@ import { CustomerApplicationForm } from './classes/customer-application-form';
     ReactiveFormsModule,RouterModule,NgxPaginationModule,
     Ng2SearchPipeModule,LoginRoutingModule
   ],
-  providers: [EmailSender,CustomerApplicationForm],
+  providers: [EmailSender,CustomerApplicationForm,CustomerLoanDetails],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

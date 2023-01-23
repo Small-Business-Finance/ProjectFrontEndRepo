@@ -21,6 +21,7 @@ import { ViewLeaveDetailsComponent } from './view-leave-details/view-leave-detai
 import { UpdateCustomerApplicationComponent } from './update-customer-application/update-customer-application.component';
 import { SanctionLetterComponent } from '../financehead/sanction-letter/sanction-letter.component';
 import { FinanceheadRoutingModule } from '../financehead/financehead-routing.module';
+import { ViewemitableComponent } from './viewemitable/viewemitable.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FinanceheadRoutingModule } from '../financehead/financehead-routing.mod
     ViewLeaveDetailsComponent,
     UpdateCustomerApplicationComponent,
     UpdateCustomerApplicationComponent,
-    ViewLeaveDetailsComponent
+    ViewLeaveDetailsComponent,
+    ViewemitableComponent
    ],
    
   imports: [
