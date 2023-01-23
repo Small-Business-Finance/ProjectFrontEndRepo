@@ -24,7 +24,7 @@ export class EmailsendingService {
 
   sendRejectionEmail(r:any)
   {
-    return this.http.post("http://localhost:9090/emailsenderapi/rejection",r);
+    return this.http.post("http://localhost:9090/emailsenderapi/mail",r);
   }
 
   

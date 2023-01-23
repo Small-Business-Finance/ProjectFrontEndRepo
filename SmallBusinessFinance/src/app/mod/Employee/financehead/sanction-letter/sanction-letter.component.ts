@@ -28,13 +28,13 @@ export class SanctionLetterComponent {
   {
     this.sanctionForm=this.fb.group({
       sanctionedLoanId:[],
+      applicationStatus:[''],
       applicationId:[],
       customerName:[''],
       emailId:[''],
       expectedLoanAmount:[],
       rateOfInterest:[],
       expectedLoanTenure:[],
-      emiAmount:[],
       toEmail: '',
      subject: '',
       message:''
@@ -48,12 +48,12 @@ export class SanctionLetterComponent {
   let obj:any=this.location.getState();
  this.sanctionForm.get('sanctionedLoanId').setValue(obj.sanctionedLoanId)
   this.sanctionForm.get('applicationId').setValue(obj.applicationId);
+  this.sanctionForm.get('applicationStatus').setValue(obj.applicationStatus);
   this.sanctionForm.get('customerName').setValue(obj.customerDetails.customerName);
    this.sanctionForm.get('emailId').setValue(obj.customerDetails.emailId);
   this.sanctionForm.get('expectedLoanAmount').setValue(obj.customerLoanDetails.expectedLoanAmount);
   this.sanctionForm.get('rateOfInterest').setValue(obj.customerLoanDetails.rateOfInterest);
   this.sanctionForm.get('expectedLoanTenure').setValue(obj.customerLoanDetails.expectedLoanTenure);
-  this.sanctionForm.get('emiAmount').setValue(obj.customerLoanDetails.emiAmount);
 
   this.sanctionForm.get('toEmail').setValue(obj.customerDetails.emailId)
   this.sanctionForm.get('subject').setValue(this.ee.subject);
@@ -64,6 +64,10 @@ export class SanctionLetterComponent {
   {
     console.log(this.sanctionForm.value)
     this.ems.sendSanctionEmail(this.sanctionForm.value).subscribe();
+    let obj:any=this.location.getState();
+    obj.applicationStatus="Sanctioned";
+    this.cs.updateCustomer(obj).subscribe();
+    //window.location.reload();
     
   }
 

@@ -37,17 +37,18 @@
     <tr>
       <th scope="col">Application Id</th>
       <th scope="col">Customer Name</th>
+      <th scope="col">Email id</th>
       <th scope="col">Application Status</th>
       <th scope="col">action</th>
       <th>Full Details</th>
-      <th scope="col"></th>
-      
+      <th scope="col"></th> 
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let c of cf">
        <td>{{c.applicationId}}</td>
       <td>{{c.customerDetails.customerName}}</td>
+      <td>{{c.customerDetails.emailId}}</td>
       <td><select value="c.applicationStatus" (change)="modo($event.target.value)">
          <option value="c.applicationStatus">{{c.applicationStatus}}*</option>
         <option value="Verified">Verified </option>
@@ -56,7 +57,7 @@
         <option value="Sanctioned">Sanctioned </option>
       </select>
         </td>
-        <td *ngIf="c.applicationStatus=='Rejected'"><button (click)="rejectionMail(c)">rejection mail</button></td>
+        <td *ngIf="c.applicationStatus=='Rejected'"><a [state]="c"><button (click)="rejectionMail(c)">rejection mail</button></a></td>
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
@@ -101,7 +102,6 @@
      </select>
        </td>
       <td><a routerLink="/fhprofile/sanction" [state]="c">Generate Sanction</a></td> 
-      <td *ngIf="c.applicationStatus=='Rejected'"><button (click)="rejectionMail(c)">rejection mail</button></td>
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
