@@ -18,7 +18,7 @@ export class ViewCustomerApplicationComponent {
   applicationStatus="";
 
   constructor(public loandetails:CustomerLoanDetails,public cs:CustomerapplicationService,
-    public rr:Router,public es:EmailsendingService,public sss:LoanService,public fb:FormBuilder,public cmf:CustomerApplicationForm,private location:Location){
+    public rr:Router,public es:EmailsendingService,public sss:LoanService,public fb:FormBuilder,public cmf:CustomerApplicationForm){
     console.log(rr.url);
     this.currentRoute=rr.url;
     
@@ -68,12 +68,20 @@ export class ViewCustomerApplicationComponent {
   {
     
    // this.em.toEmail=obj.customerDetails.emailId;
-    this.es.sendRejectionEmail(c).subscribe();
+    this.es.sendMultipleEmail(c).subscribe();
   }
 
 date: Date = new Date();
+
   generateemi(c:CustomerApplicationForm){
-this.sss.saveemi(c.applicationId).subscribe();
+  this.sss.saveemi(c.applicationId).subscribe();
+  this.es.sendMultipleEmail(c).subscribe();
+  c.applicationStatus="Disbursed";
+  this.cs.updateCustomer(c).subscribe();
+  //window.location.reload();
+
+
+
   } 
 
 }

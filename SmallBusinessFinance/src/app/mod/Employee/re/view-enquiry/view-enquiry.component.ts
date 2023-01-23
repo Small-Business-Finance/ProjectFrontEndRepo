@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Enquiry } from 'src/app/classes/enquiry';
+import { EmailsendingService } from 'src/app/shared/emailsending.service';
 import { EnquiryService } from 'src/app/shared/enquiry.service';
 @Component({
   selector: 'app-view-enquiry',
@@ -11,7 +12,7 @@ import { EnquiryService } from 'src/app/shared/enquiry.service';
 export class ViewEnquiryComponent {
   currentRoute: string;
 
-  constructor(private cs:EnquiryService,public rr:Router){
+  constructor(private cs:EnquiryService,public rr:Router,public es:EmailsendingService){
     console.log(rr.url);
     this.currentRoute=rr.url;
   }
@@ -28,7 +29,16 @@ export class ViewEnquiryComponent {
     console.log(abc);
     window.location.reload();
   }
+
+  lowcibilmail(c:any)
+  {
+    console.log(c)
+    this.es.sendcibilmail(c).subscribe();
+  }
+
   registercust(item:Enquiry){
 
   }
+
+
 }
