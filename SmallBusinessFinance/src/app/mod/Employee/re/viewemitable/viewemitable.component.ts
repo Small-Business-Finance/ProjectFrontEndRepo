@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmiTable } from 'src/app/classes/emi-table';
@@ -9,18 +10,13 @@ import { LoanService } from 'src/app/shared/loan.service';
   styleUrls: ['./viewemitable.component.css']
 })
 export class ViewemitableComponent {
-
-  currentRoute: string;
-  constructor(private cs:LoanService,public rr:Router){
-    console.log(rr.url);
-    this.currentRoute=rr.url;
+  objectcaf: any;
+  objemi:any;
+  p=1;
+  constructor(private location: Location) { }
+  ngOnInit() {
+    this.objectcaf =this.location.getState();
+    this.objemi=this.objectcaf.customerLoanDetails.emitable;
+    this.objemi.sort((a: { emidate: string; },b: { emidate: any; }) => a.emidate.localeCompare(b.emidate));
   }
-  p: number = 1;
-  allenquiries:EmiTable[];
-
-  // ngOnInit(){
-  //   this.cs.getEMIdetailList().subscribe((emilist:EmiTable[])=>{
-  //   this.allenquiries=emilist;
-  // })
-  //   }
 }

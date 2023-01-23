@@ -100,6 +100,11 @@ export const loginroutes: Routes = [
 
       {
         path: 'viewCustomer', component: ViewCustomerApplicationComponent,
+        children:[
+          {
+            path:'emi',component:ViewemitableComponent,
+          }
+        ]
       },
       {
         path: 'registerCustomer', component: RegisterCustomerApplicationComponent
