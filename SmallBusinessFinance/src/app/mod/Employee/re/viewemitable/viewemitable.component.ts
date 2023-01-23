@@ -1,6 +1,8 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { EmiTable } from 'src/app/classes/emi-table';
+import { LoanService } from 'src/app/shared/loan.service';
 
 @Component({
   selector: 'app-viewemitable',

@@ -162,6 +162,9 @@ export const loginroutes: Routes = [
       },
       {
         path: 'defaulter', component: DefaulterListComponent
+      },
+      {
+        path:'viewemitable', component:ViewemitableComponent
       }
     ]
   },

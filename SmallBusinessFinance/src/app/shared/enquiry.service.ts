@@ -59,4 +59,6 @@ export class EnquiryService {
   {
     return this.http.get<number>("http://localhost:9090/enquiryapi/cibil/getscore/"+id);
   }
+
+  
 }

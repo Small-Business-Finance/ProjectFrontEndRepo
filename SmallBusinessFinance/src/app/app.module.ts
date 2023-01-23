@@ -28,7 +28,7 @@ import { CustomerLoanDetails } from './classes/customer-loan-details';
     ReactiveFormsModule,RouterModule,NgxPaginationModule,
     Ng2SearchPipeModule,LoginRoutingModule
   ],
-  providers: [EmailSender,CustomerApplicationForm,CustomerLoanDetails],
+  providers: [CustomerApplicationForm,CustomerLoanDetails,EmailSender],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

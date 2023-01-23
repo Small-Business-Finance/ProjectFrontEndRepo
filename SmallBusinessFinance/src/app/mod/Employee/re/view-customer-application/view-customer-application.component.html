@@ -37,29 +37,29 @@
     <tr>
       <th scope="col">Application Id</th>
       <th scope="col">Customer Name</th>
+      <th scope="col">Email id</th>
       <th scope="col">Application Status</th>
       <th scope="col">action</th>
       <th>Full Details</th>
-      <th scope="col"></th>
-      
+      <th scope="col"></th> 
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let c of cf">
        <td>{{c.applicationId}}</td>
       <td>{{c.customerDetails.customerName}}</td>
+      <td>{{c.customerDetails.emailId}}</td>
       <td><select value="c.applicationStatus" (change)="modo($event.target.value)">
          <option value="c.applicationStatus">{{c.applicationStatus}}*</option>
         <option value="Verified">Verified </option>
         <option value="Rejected">Rejected </option>
-        <option value="registered">registered </option>
-        <option value="Sanctioned">Sanctioned </option>
       </select>
         </td>
-        <td *ngIf="c.applicationStatus=='Rejected'"><button (click)="rejectionMail(c)">rejection mail</button></td>
+        <td *ngIf="c.applicationStatus=='Rejected'"><a [state]="c"><button (click)="rejectionMail(c)">rejection mail</button></a></td>
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
+        <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
       <td><a [routerLink]="['customerfulldetails',c.applicationId]">show details</a></td>  
       <td><button (click)="updatestatus(c)">Save</button></td> 
   </tr>
@@ -101,10 +101,10 @@
      </select>
        </td>
       <td><a routerLink="/fhprofile/sanction" [state]="c">Generate Sanction</a></td> 
-      <td *ngIf="c.applicationStatus=='Rejected'"><button (click)="rejectionMail(c)">rejection mail</button></td>
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
+        <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
         <td><button (click)="updatestatus(c)">save</button></td>
   </tr>
      </tbody>
@@ -126,6 +126,7 @@
         <th scope="col">Disbursement</th>
         <th scope="col">Action</th>
         <th scope="col">Action</th>
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
@@ -144,6 +145,11 @@
         <td *ngIf="c.applicationStatus=='Disbursed'"><button routerLink="emi" [state]="c">View Emi</button></td>
         <td><button>PDF</button></td>
        
+        <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
+        <td><button (click)="generateemi(c)">Disburse</button></td>
+        <td><button>PDF</button></td>
+        <td><button (click)="generateExcel(c.applicationId)">Excel</button></td>
+        <td><button (click)="generatePdf(c.applicationId)">PDF</button></td>
         
         <!-- <td><a routerLink="/bmprofile/" [state]="c">Generate Sanction</a></td>  -->
     </tr>
@@ -156,7 +162,6 @@
   <table class="table" style="margin-left: 300px" id="custapplications">
     <thead>
       <tr>
-  
         <th scope="col">Loan Id</th>
         <th scope="col">Expectd Loan Amount</th>
         <th scope="col">Expectd Loan Tenure</th>
@@ -168,17 +173,25 @@
         <th scope="col">EMI Details Id</th>
         <th scope="col">EMI Status</th>
         <th scope="col">EMI Tenure</th>
-        <th scope="col">EMI Paid</th>
+        <th scope="col">EMI Amount</th>
         <th scope="col">EMI Date</th>
+        
         
         </tr>
     </thead>
     <tbody>
       <tr *ngFor="let c of ld">
+        <td>{{c.customerLoanDetails.loanId}}</td>
+        <td>{{c.customerLoanDetails.expectedLoanAmount}}</td>
+        <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
+        <td>{{c.customerLoanDetails.rateOfInterest}}</td>
+        <td>{{c.customerLoanDetails.loanStatus}}</td>
+        <td>{{c.customerLoanDetails.loanDisbursedStatus}}</td>
+        <td>{{c.customerLoanDetails.defaultorCount}}</td>
          <td>{{c.customerLoanDetails.emitable.emiDetailsId}}</td>
          <td>{{c.customerLoanDetails.emitable.emiStatus}}</td>
          <td>{{c.customerLoanDetails.emitable.emiTenure}}</td>
-         <td>{{c.customerLoanDetails.emitable.emiPaid}}</td> 
+         <td>{{c.customerLoanDetails.emitable.emiAmount}}</td> 
          <td>{{c.customerLoanDetails.emitable.emidate}}</td>
         </tr>
        </tbody>
