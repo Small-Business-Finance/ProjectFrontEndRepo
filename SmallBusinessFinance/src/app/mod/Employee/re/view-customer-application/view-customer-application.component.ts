@@ -18,7 +18,7 @@ export class ViewCustomerApplicationComponent {
   cf:CustomerApplicationForm[];
   applicationStatus="";
 
-  constructor(public loand:CustomerLoanDetails,public cs:CustomerapplicationService,
+  constructor(public loandetails:CustomerLoanDetails,public cs:CustomerapplicationService,
     public rr:Router,public es:EmailsendingService,public sss:LoanService,public fb:FormBuilder){
     console.log(rr.url);
     this.currentRoute=rr.url;
@@ -38,25 +38,6 @@ export class ViewCustomerApplicationComponent {
       this.cf=clist;
      })
 
-     
-this.emiform=this.fb.group({
- 
-  loanId:[],
-  expectedLoanAmount:[],
-  expectedLoanTenure:[],
-  rateOfInterest:[],
-  loanStatus:[''],
-  loanDisbursedStatus:[''],
-  defaultorCount:0,
-
-  emitable:this.fb.group({
-    emiDetailsId: 0,
-        emiStatus: '',
-        emidate: '',
-        emiTenure: 0,
-        emiAmount: 0
-  })
-})
   }
 
   deleteData(c:number)
@@ -87,60 +68,11 @@ this.emiform=this.fb.group({
   {
     this.es.sendRejectionEmail(c).subscribe();
   }
- 
-  
-  emi:number;
-  p:number;
-  r:number;
-  n:number;
+
 date: Date = new Date();
   generateemi(c:CustomerApplicationForm){
-   
-      this.date.toLocaleDateString();
-      this.p=c.customerLoanDetails.expectedLoanAmount;
- 
-      this.r=c.customerLoanDetails.rateOfInterest/(12*100);
-      this.n=c.customerLoanDetails.expectedLoanTenure;
-     this.emi=this.p * this.r * (Math.pow(1 + this.r, this.n)) / (Math.pow(1 + this.r, this.n) - 1);
-        console.log(this.emi);
-        console.log(this.p,this.n);
-        console.log(c.customerLoanDetails.expectedLoanTenure)
-        console.log(this.date.toLocaleDateString(),)
-    for (let i = 1; i <= c.customerLoanDetails.expectedLoanTenure; i++) {
- 
-  this.date.setMonth(this.date.getMonth() + 1);
-  console.log(this.date.toLocaleDateString());
-        this.loand=c.customerLoanDetails;
-        this.emiform.get('emitable.emiTenure').setValue(this.n);
-this.emiform.get('emitable.emiAmount').setValue(this.emi);
-this.emiform.get('emitable.emidate').setValue(this.date.toLocaleDateString());
-this.emiform.get('emitable.emiStatus').setValue("Waiting");
-this.emiform.get('loanId').setValue(c.customerLoanDetails.loanId);
-this.emiform.get('expectedLoanAmount').setValue(this.p);
-this.emiform.get('expectedLoanTenure').setValue(this.n);
-this.emiform.get('rateOfInterest').setValue(this.r);
-this.emiform.get('loanStatus').setValue("Disbursed");
-this.emiform.get('loanDisbursedStatus').setValue("Disbursed");
-c.customerLoanDetails=this.emiform.value;
-this.sss.saveemi(c,c.applicationId).subscribe();
-}
-  
+this.sss.saveemi(c.applicationId).subscribe();
   } 
 
 }
- // loand:CustomerLoanDetails={
-  //   loanId: 0,
-  //   expectedLoanAmount: 0,
-  //   expectedLoanTenure: 0,
-  //   rateOfInterest: 0,
-  //   loanStatus: '',
-  //   loanDisbursedStatus: '',
-  //   defaultorCount: 0,
-  //   emitable:{
-  //     emiDetailsId: 0,
-  //     emiStatus: '',
-  //     emidate: undefined,
-  //     emiTenure: 0,
-  //     emiAmount: 0
-  //   }
-  // }
+ 

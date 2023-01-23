@@ -10,9 +10,9 @@ export class LoanService {
   
   constructor(private http:HttpClient) { }
 
-  saveemi(ld: CustomerApplicationForm, applicationId: number) {
+  saveemi(applicationId: number) {
     console.log(1);
-   return this.http.post("http://localhost:9090/customerapi/application/"+applicationId,ld);
+   return this.http.put("http://localhost:9090/loanapi123/application/"+applicationId,applicationId);
   }
 
 }

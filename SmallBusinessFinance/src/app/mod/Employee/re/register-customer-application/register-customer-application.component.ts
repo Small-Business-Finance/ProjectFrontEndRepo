@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 
 @Component({
@@ -83,17 +83,16 @@ export class RegisterCustomerApplicationComponent {
         loanId:[],
         expectedLoanAmount:[],
         expectedLoanTenure:[],
-       // emiAmount:[],
         rateOfInterest:[],
         loanStatus:[''],
         loanDisbursedStatus:[''],
-        emitable:this._fb.group({
-          emiDetailsId:0,
-          emiStatus:'',
-          emidate:'',
-          emiTenure:0,
-        emiAmount:0
-        })
+        // emitable:this._fb.array([{
+        //   emiDetailsId:0,
+        //   emiStatus:'',
+        //   emidate:'', 
+        //   emiTenure:0,
+        //   emiAmount:0
+        // }])
        })
       
       })
