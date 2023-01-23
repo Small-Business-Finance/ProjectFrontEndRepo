@@ -143,6 +143,7 @@
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
         <td><button (click)="generateemi(c)">Disburse</button></td>
         <td><button>PDF</button></td>
+        <td><button (click)="generateExcel(c.applicationId)">Excel</button></td>
         
         <!-- <td><a routerLink="/bmprofile/" [state]="c">Generate Sanction</a></td>  -->
     </tr>

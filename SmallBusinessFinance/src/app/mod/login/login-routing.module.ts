@@ -26,6 +26,7 @@ import { ViewCustomerFullDetailsComponent } from '../Employee/re/view-customer-f
 import { RegisterLeaveApplicationComponent } from '../Employee/re/register-leave-application/register-leave-application.component';
 import { ViewLeaveDetailsComponent } from '../Employee/re/view-leave-details/view-leave-details.component';
 import { UpdateCustomerApplicationComponent } from '../Employee/re/update-customer-application/update-customer-application.component';
+import { ViewemitableComponent } from '../Employee/re/viewemitable/viewemitable.component';
 
 
 
@@ -156,6 +157,9 @@ export const loginroutes: Routes = [
       },
       {
         path: 'defaulter', component: DefaulterListComponent
+      },
+      {
+        path:'viewemitable', component:ViewemitableComponent
       }
     ]
   },

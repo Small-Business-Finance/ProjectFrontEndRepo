@@ -18,9 +18,9 @@ export class ViewemitableComponent {
   p: number = 1;
   allenquiries:EmiTable[];
 
-  ngOnInit(){
+  // ngOnInit(){
   //   this.cs.getEMIdetailList().subscribe((emilist:EmiTable[])=>{
   //   this.allenquiries=emilist;
   // })
-    }
+  //   }
 }
