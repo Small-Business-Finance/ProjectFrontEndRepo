@@ -22,9 +22,14 @@ export class EmailsendingService {
     return this.http.post("http://localhost:9090/emailsenderapi/sanction",s);
   }
 
-  sendRejectionEmail(r:any)
+  sendMultipleEmail(r:any)
   {
-    return this.http.post("http://localhost:9090/emailsenderapi/rejection",r);
+    return this.http.post("http://localhost:9090/emailsenderapi/mail",r);
+  }
+
+  sendcibilmail(m:any)
+  {
+    return this.http.post("http://localhost:9090/emailsenderapi/lowcibil",m)
   }
 
   

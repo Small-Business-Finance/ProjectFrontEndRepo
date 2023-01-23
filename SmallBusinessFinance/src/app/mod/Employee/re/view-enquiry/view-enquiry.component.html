@@ -23,8 +23,8 @@
     <td >{{item.cibilscore.cibilRemark}}</td>
     <td *ngIf="item.enquiryStatus=='Pending'&& currentRoute=='/reprofile/viewenquiry'">{{item.registrationStatus}}</td>
     <td *ngIf="currentRoute=='/oeprofile/viewenquiry'">{{item.registrationStatus}}</td>
-    <td *ngIf="item.enquiryStatus=='Cibil Generated'&& currentRoute=='/reprofile/viewenquiry' && item.cibilscore.cibilRemark!='Low'"><button routerLink="/reprofile/registerCustomer" [state]="item">Register</button></td>
-    <td *ngIf="item.enquiryStatus=='Cibil Generated'&& currentRoute=='/reprofile/viewenquiry' && item.cibilscore.cibilRemark=='Low'"><button (click)="xx()">Send R Mail</button></td>
+    <td *ngIf="item.enquiryStatus=='Cibil Generated'&& currentRoute=='/reprofile/viewenquiry' && item.cibilscore.cibilRemark!='low'"><button routerLink="/reprofile/registerCustomer" [state]="item">Register</button></td>
+    <td *ngIf="item.enquiryStatus=='Cibil Generated'&& currentRoute=='/reprofile/viewenquiry' && item.cibilscore.cibilRemark=='low'"><button (click)="lowcibilmail(item)">Send R Mail</button></td>
     <td *ngIf="currentRoute=='/oeprofile/viewenquiry'"> <button (click)="generate(item.enquiryId)">Generate Cibil</button></td>
     
   </tr>
