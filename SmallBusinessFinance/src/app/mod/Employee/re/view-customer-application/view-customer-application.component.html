@@ -61,7 +61,7 @@
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
       <td><a [routerLink]="['customerfulldetails',c.applicationId]">show details</a></td>  
-      <td><button (click)="updatestatus(c)">Save</button></td> 
+      <td><button *ngIf="c.applicationStatus=='registered'" (click)="updatestatus(c)">Save</button></td> 
   </tr>
     </tbody>
 </table>
@@ -82,7 +82,8 @@
       <th scope="col">Tenure</th>
       <th scope="col">Application Status</th>
       <th scope="col">Generate sanction</th>
-      <th scope="col">updateStatus</th>
+      <th scope="col">Process</th>
+      <th scope="col">Update</th>
       </tr>
   </thead>
   <tbody>
@@ -94,18 +95,18 @@
        <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
        <td><select value="c.applicationStatus" (change)="modo($event.target.value)">
         <option value="c.applicationStatus">{{c.applicationStatus}}*</option>
-        <option value="Verified">Verified </option>
+        <!-- <option value="Verified">Verified </option>
         <option value="Rejected">Rejected </option>
-        <option value="registered">registered </option>
+        <option value="registered">registered </option> -->
        <option value="Sanctioned">Sanctioned</option>
      </select>
        </td>
-      <td><a routerLink="/fhprofile/sanction" [state]="c">Generate Sanction</a></td> 
+      <td><a routerLink="/fhprofile/sanction" [state]="c" *ngIf="c.applicationStatus=='Verified'">Generate Sanction</a></td> 
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
-        <td><button (click)="updatestatus(c)">save</button></td>
+        <td><button *ngIf="c.applicationStatus=='Verified'" (click)="updatestatus(c)">save</button></td>
   </tr>
      </tbody>
 </table></div>
