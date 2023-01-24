@@ -83,7 +83,6 @@
       <th scope="col">Application Status</th>
       <th scope="col">Generate sanction</th>
       <th scope="col">Process</th>
-      <th scope="col">Update</th>
       </tr>
   </thead>
   <tbody>
@@ -93,20 +92,19 @@
        <td>{{c.customerLoanDetails.expectedLoanAmount}}</td>
        <td>{{c.customerLoanDetails.rateOfInterest}}</td>
        <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
-       <td><select value="c.applicationStatus" (change)="modo($event.target.value)">
-        <option value="c.applicationStatus">{{c.applicationStatus}}*</option>
+       <!-- <td><select value="c.applicationStatus" (change)="modo($event.target.value)"> -->
+        <td>{{c.applicationStatus}}</td>
         <!-- <option value="Verified">Verified </option>
         <option value="Rejected">Rejected </option>
         <option value="registered">registered </option> -->
-       <option value="Sanctioned">Sanctioned</option>
-     </select>
-       </td>
+       <!-- <option value="Sanctioned">Sanctioned</option>
+     </select> -->
+       
       <td><a routerLink="/fhprofile/sanction" [state]="c" *ngIf="c.applicationStatus=='Verified'">Generate Sanction</a></td> 
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
-        <td><button *ngIf="c.applicationStatus=='Verified'" (click)="updatestatus(c)">save</button></td>
   </tr>
      </tbody>
 </table></div>

@@ -82,8 +82,8 @@ date: Date = new Date();
   generateemi(c:CustomerApplicationForm){
   this.sss.saveemi(c.applicationId).subscribe();
   this.es.sendMultipleEmail(c).subscribe();
-  c.applicationStatus="Disbursed";
-  this.cs.updateCustomer(c).subscribe();
+  // c.applicationStatus="Disbursed";
+  // this.cs.updateCustomer(c).subscribe();
   //window.location.reload();
 
 

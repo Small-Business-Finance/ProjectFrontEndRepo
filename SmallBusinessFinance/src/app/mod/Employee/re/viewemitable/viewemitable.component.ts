@@ -13,10 +13,20 @@ export class ViewemitableComponent {
   objectcaf: any;
   objemi:any;
   p=1;
-  constructor(private location: Location) { }
+  emiStatus:""
+  constructor(private location: Location,public ls:LoanService) { }
   ngOnInit() {
     this.objectcaf =this.location.getState();
     this.objemi=this.objectcaf.customerLoanDetails.emitable;
     this.objemi.sort((a: { emidate: string; },b: { emidate: any; }) => a.emidate.localeCompare(b.emidate));
   }
+
+ 
+
+  // updatestatus(e:EmiTable)
+  // {
+  //   e.emiStatus=this.emiStatus;
+  //   //this.ls
+  //   //window.location.reload();
+  // }
 }
