@@ -30,7 +30,7 @@ export class RegisterCustomerApplicationComponent {
   {
      this.registerForm=this._fb.group({
         applicationId:[],
-        applicationStatus:[''],
+        applicationStatus:['Registered'],
 
         customerDetails:this._fb.group({
           customerId:[],
