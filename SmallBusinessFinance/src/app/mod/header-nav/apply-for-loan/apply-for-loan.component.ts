@@ -1,5 +1,8 @@
+
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { CustomerApplicationForm } from 'src/app/classes/customer-application-form';
+import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 import { EnquiryService } from 'src/app/shared/enquiry.service';
 
 @Component({
@@ -9,11 +12,13 @@ import { EnquiryService } from 'src/app/shared/enquiry.service';
 })
 export class ApplyForLoanComponent {
   steps: any = 1;
-
   enquiryForm: FormGroup;
 
+  customer:CustomerApplicationForm;
+  id:number;
 
-  constructor(private _fb: FormBuilder, public cs: EnquiryService) { }
+
+  constructor(private _fb: FormBuilder, public cs: EnquiryService,public api:CustomerapplicationService) { }
 
   ngOnInit() {
     this.enquiryForm = this._fb.group({
@@ -28,10 +33,11 @@ export class ApplyForLoanComponent {
       alternateMobileNumber: [''],
       emailId: [''],
       itrStatus: [''],
-      enquiryStatus: [''],
-      registrationStatus: [''],
-      cibilscore: ['']
-
+      enquiryStatus: ['pending'],
+      registrationStatus: ['Not Registered'],
+      cibilscore: this._fb.group({
+        cibilRemark: ['Not Generated']
+      })
     })
   }
 
@@ -46,6 +52,15 @@ export class ApplyForLoanComponent {
 
   clickreg() {
     this.cs.postEnquiry(this.enquiryForm.value).subscribe();
+  }
+  login()
+  {
+    this.api.getCustomer(this.id).subscribe((
+      data:CustomerApplicationForm)=>{
+        this.customer=data;
+        console.log(data);
+      }
+      )
   }
 
 }
