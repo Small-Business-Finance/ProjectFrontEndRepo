@@ -16,7 +16,13 @@
         <td>{{item.emiAmount}}</td>
         <td>{{item.emidate}}</td>
         <td>{{item.defaultorCount}}</td>
-        <td>{{item.emiStatus}}</td>        
+        <td><select value="item.emiStatus">
+          <option value="item.emiStatus">{{item.emiStatus}}*</option>
+         <option value="Paid">Paid</option>
+         <option value="Unpaid">Unpaid </option>
+       </select>
+         </td>   
+         <td><button (click)="updatestatus(item)">Save</button></td>      
       </tr>
       <tr>
       <td colspan="4"><pagination-controls (pageChange)="p = $event"></pagination-controls> </td> </tr>
