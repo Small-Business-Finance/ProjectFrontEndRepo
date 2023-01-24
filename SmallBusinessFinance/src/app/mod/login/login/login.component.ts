@@ -56,7 +56,7 @@ export class LoginComponent {
     }
 
     if (u.username === 'th' && u.password === 'th') {
-      this.router.navigateByUrl("thprofile/viewemitable");
+      this.router.navigateByUrl("thprofile/defaulter");
     }
 
     if (u.username === 'ca' && u.password === 'ca') {

@@ -61,7 +61,7 @@
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
       <td><a [routerLink]="['customerfulldetails',c.applicationId]">show details</a></td>  
-      <td><button *ngIf="c.applicationStatus=='registered'" (click)="updatestatus(c)">Save</button></td> 
+      <td><button (click)="updatestatus(c)">Save</button></td> 
   </tr>
     </tbody>
 </table>
@@ -151,44 +151,7 @@
        </tbody>
   </table></div>
 
-  <!-- Tele Head -->
-<div *ngIf="currentRoute=='/thprofile/viewemitable'"> 
-  <h4 style="margin-left: 300px; margin-top: 20px;">Defaulter list</h4>
-  <table class="table" style="margin-left: 300px" id="custapplications">
-    <thead>
-      <tr>
-        <th scope="col">Loan Id</th>
-        <th scope="col">Expectd Loan Amount</th>
-        <th scope="col">Expectd Loan Tenure</th>
-        <th scope="col">Rate Of Interest</th>
-        <th scope="col">EMI Amount</th>
-        <th scope="col">Loan Status</th>
-        <th scope="col">Loan Disbursed Status</th>
-        <th scope="col">Defaulter Count</th>
-        <th scope="col">EMI Details Id</th>
-        <th scope="col">EMI Status</th>
-        <th scope="col">EMI Tenure</th>
-        <th scope="col">EMI Amount</th>
-        <th scope="col">EMI Date</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let c of ld">
-        <td>{{c.customerLoanDetails.loanId}}</td>
-        <td>{{c.customerLoanDetails.expectedLoanAmount}}</td>
-        <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
-        <td>{{c.customerLoanDetails.rateOfInterest}}</td>
-        <td>{{c.customerLoanDetails.loanStatus}}</td>
-        <td>{{c.customerLoanDetails.loanDisbursedStatus}}</td>
-        <td>{{c.customerLoanDetails.defaultorCount}}</td>
-         <td>{{c.customerLoanDetails.emitable.emiDetailsId}}</td>
-         <td>{{c.customerLoanDetails.emitable.emiStatus}}</td>
-         <td>{{c.customerLoanDetails.emitable.emiTenure}}</td>
-         <td>{{c.customerLoanDetails.emitable.emiAmount}}</td> 
-         <td>{{c.customerLoanDetails.emitable.emidate}}</td>
-        </tr>
-       </tbody>
-  </table></div>  
+
 
   
   <router-outlet></router-outlet>
