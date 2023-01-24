@@ -1,6 +1,7 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { Router } from '@angular/router';
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 
 @Component({
@@ -23,7 +24,7 @@ export class RegisterCustomerApplicationComponent {
         tan1:any
         msmeCertificate1:any
 
-  constructor(private _fb:FormBuilder,public cs:CustomerapplicationService,private location:Location){}
+  constructor(private _fb:FormBuilder,public cs:CustomerapplicationService,private location:Location,public router:Router){}
   
   ngOnInit()
   {
@@ -139,7 +140,9 @@ this.registerForm.get('customerCompanyDetails.panCardNumber').setValue(obj.compa
   
     
     this.cs.saveCustomer(customerloanApplication).subscribe();
-    alert("Loan Application Submited");
+    alert("Loan Application Submitted");
+    this.router.navigate(['reprofile/viewCustomer'])
+
   
   }
 
