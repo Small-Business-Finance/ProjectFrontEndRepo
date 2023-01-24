@@ -1,7 +1,7 @@
 
 form{
     
-    margin-left: 300px;
+    /* margin-left: 300px; */
 }
 /* .body{
     text-align: justify;
@@ -79,4 +79,13 @@ form{
 .body{
     background-color: #c8e8e9;
 }
+
+.right{
+  float: right;
+}
+.color{
+  background-color: #f0f0f0
+} 
+
+
 
