@@ -1,11 +1,12 @@
 
 form{
     
-    /* margin-left: 300px; */
+    margin-left: 10px;
 }
 /* .body{
     text-align: justify;
-    margin-left: 15cm;
+    margin-left: 0;
+    width:15cm;
  } */
  .label{
     text-transform: capitalize;
@@ -76,15 +77,16 @@ form{
            transform: scale(1.05) rotate(-1deg); 
          }
 
-.body{
+#green{
     background-color: #c8e8e9;
 }
 
 .right{
-  float: right;
+ text-align: center;
 }
-.color{
-  background-color: #f0f0f0
+#grey{
+  background-color: #f0f0f0;
+  height: 582px;
 } 
 
 

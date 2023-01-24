@@ -1,10 +1,10 @@
+<div class="row">
+<div class="col-md-6" id="green">
 
-<div class="col-md-6 login-sec">
-<div class="body">
-    <form [formGroup]="enquiryForm" (ngSubmit)="submit()">
+    <form [formGroup]="enquiryForm" (ngSubmit)="submit()"><br><br>
     <div class="two">
-        <h1>Enquiry Registration Form 
-        <span>Fill Details</span></h1>
+        <h1>Place An Enquiry to Us !
+        <span></span></h1>
     </div>
     
         <div *ngIf="steps==1">
@@ -93,12 +93,12 @@
     
     </form>
     </div>
-    </div>
 
-    <div class="col-md-6 login-sec">
-    <div class="right">
-        <h2 style="color: rgb(0, 145, 255);">Are You In Existing Customer</h2>
-        <form>
+
+    <div class="col-md-6" id="grey">
+    <div class="right"><br><br>
+        <h2 style="color: rgb(0, 145, 255);">Are You An Existing Customer?</h2>
+        <form><br>
         <div class="form-group">
             <label class="label">Enter Customer Id :</label><br>
                <input type="text" class="col-xs-8" formControlName="customerId">
@@ -107,8 +107,9 @@
         </form>
 
         
-    </div>
+    </div></div>
 </div>
+
 
 
 
