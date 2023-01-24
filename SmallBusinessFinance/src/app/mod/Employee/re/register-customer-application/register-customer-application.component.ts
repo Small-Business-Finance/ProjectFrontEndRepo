@@ -30,7 +30,7 @@ export class RegisterCustomerApplicationComponent {
   {
      this.registerForm=this._fb.group({
         applicationId:[],
-        applicationStatus:[''],
+        applicationStatus:['Registered'],
 
         customerDetails:this._fb.group({
           customerId:[],
@@ -87,6 +87,7 @@ export class RegisterCustomerApplicationComponent {
         rateOfInterest:[],
         loanStatus:[''],
         loanDisbursedStatus:[''],
+        defaulterCount:[0]
         // emitable:this._fb.array([{
         //   emiDetailsId:0,
         //   emiStatus:'',

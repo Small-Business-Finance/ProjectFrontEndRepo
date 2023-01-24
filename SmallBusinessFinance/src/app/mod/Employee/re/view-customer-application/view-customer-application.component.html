@@ -58,7 +58,7 @@
         <td *ngIf="c.applicationStatus=='Rejected'"><a [state]="c"><button (click)="rejectionMail(c)">rejection mail</button></a></td>
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
-        <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
+        <td *ngIf="c.applicationStatus=='Registered'"><a>verification process</a></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
       <td><a [routerLink]="['customerfulldetails',c.applicationId]">show details</a></td>  
       <td><button (click)="updatestatus(c)">Save</button></td> 
@@ -103,7 +103,7 @@
       <td><a routerLink="/fhprofile/sanction" [state]="c" *ngIf="c.applicationStatus=='Verified'">Generate Sanction</a></td> 
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
-        <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
+        <td *ngIf="c.applicationStatus=='Registered'"><a>verification process</a></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
   </tr>
      </tbody>
@@ -138,7 +138,7 @@
         <td>{{c.applicationStatus}}</td>
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
-        <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
+        <td *ngIf="c.applicationStatus=='Registered'"><a>verification process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><button (click)="generateemi(c)">Disburse</button></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><button routerLink="emi" [state]="c">View Emi</button></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generateExcel(c.applicationId)">Excel</button></td>
