@@ -21,12 +21,16 @@ export class ViewemitableComponent {
     this.objemi.sort((a: { emidate: string; },b: { emidate: any; }) => a.emidate.localeCompare(b.emidate));
   }
 
- 
-
-  // updatestatus(e:EmiTable)
-  // {
-  //   e.emiStatus=this.emiStatus;
-  //   //this.ls
-  //   //window.location.reload();
-  // }
+  modo(value:any)
+  {
+    this.emiStatus=value;
+  }
+  
+  updatestatus(e:EmiTable)
+  {
+    e.emiStatus=this.emiStatus;
+    this.ls.updateemi(e).subscribe();
+    // window.location.reload();
+  }
+  
 }

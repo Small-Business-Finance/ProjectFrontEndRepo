@@ -87,6 +87,7 @@ export class RegisterCustomerApplicationComponent {
         rateOfInterest:[],
         loanStatus:[''],
         loanDisbursedStatus:[''],
+        defaulterCount:[0]
         // emitable:this._fb.array([{
         //   emiDetailsId:0,
         //   emiStatus:'',
