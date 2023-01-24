@@ -138,19 +138,13 @@
          <td>{{c.customerLoanDetails.rateOfInterest}}</td>
          <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
         <td>{{c.applicationStatus}}</td>
-        <td *ngIf="c.applicationStatus=='Rejected'"><button (click)="rejectionMail(c)">rejection mail</button></td>
         <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
         <td *ngIf="c.applicationStatus=='registered'"><a>verification process</a></td>
         <td *ngIf="c.applicationStatus=='Sanctioned'"><button (click)="generateemi(c)">Disburse</button></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><button routerLink="emi" [state]="c">View Emi</button></td>
-        <td><button>PDF</button></td>
-       
-        <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
-        <td><button (click)="generateemi(c)">Disburse</button></td>
-        <td><button>PDF</button></td>
-        <td><button (click)="generateExcel(c.applicationId)">Excel</button></td>
-        <td><button (click)="generatePdf(c.applicationId)">PDF</button></td>
+        <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generateExcel(c.applicationId)">Excel</button></td>
+        <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generatePdf(c.applicationId)">PDF</button></td>
         
         <!-- <td><a routerLink="/bmprofile/" [state]="c">Generate Sanction</a></td>  -->
     </tr>
