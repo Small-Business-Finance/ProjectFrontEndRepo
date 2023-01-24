@@ -19,4 +19,7 @@ export class ViewemitableComponent {
     this.objemi=this.objectcaf.customerLoanDetails.emitable;
     this.objemi.sort((a: { emidate: string; },b: { emidate: any; }) => a.emidate.localeCompare(b.emidate));
   }
+  save123(){
+    
+  }
 }
