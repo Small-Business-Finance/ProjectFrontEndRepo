@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EnquiryService } from 'src/app/shared/enquiry.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class RegisterEnquiryComponent {
   enquiryForm: FormGroup;
 
 
-  constructor(private _fb: FormBuilder, public cs: EnquiryService) { }
+  constructor(private _fb: FormBuilder, public cs: EnquiryService,public router:Router) { }
 
   ngOnInit() {
     this.enquiryForm = this._fb.group({
@@ -47,6 +48,7 @@ export class RegisterEnquiryComponent {
 
   clickreg() {
     this.cs.postEnquiry(this.enquiryForm.value).subscribe();
+    this.router.navigate(['reprofile/viewenquiry'])
   }
 
 }

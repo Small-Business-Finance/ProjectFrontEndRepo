@@ -40,27 +40,27 @@ export class LoginComponent {
     
    if (u.username === 're' && u.password === 're') {
       console.log(u.username,u.password);
-      this.router.navigateByUrl("reprofile");
+      this.router.navigateByUrl("reprofile/viewenquiry");
     }
 
     if (u.username === 'oe' && u.password === 'oe') {
-      this.router.navigateByUrl("/oeprofile");
+      this.router.navigateByUrl("/oeprofile/viewenquiry");
     }
 
     if (u.username === 'bm' && u.password === 'bm') {
-      this.router.navigateByUrl("bmprofile");
+      this.router.navigateByUrl("bmprofile/viewCustomer");
     }
 
     if (u.username === 'fh' && u.password === 'fh') {
-      this.router.navigateByUrl("fhprofile");
+      this.router.navigateByUrl("fhprofile/viewCustomer");
     }
 
     if (u.username === 'th' && u.password === 'th') {
-      this.router.navigateByUrl("thprofile");
+      this.router.navigateByUrl("thprofile/viewemitable");
     }
 
     if (u.username === 'ca' && u.password === 'ca') {
-      this.router.navigateByUrl("caprofile");
+      this.router.navigateByUrl("caprofile/viewCustomer");
     }
 
     if (u.username === 'admin' && u.password === 'admin') {

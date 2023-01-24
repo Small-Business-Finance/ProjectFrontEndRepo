@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EmployeeService } from 'src/app/shared/employee.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class RegisterEmployeeComponent {
 
  
 
-  constructor(public cs:EmployeeService,private fb:FormBuilder){}
+  constructor(public cs:EmployeeService,private fb:FormBuilder,private router:Router){}
   regEmployee:FormGroup;
   ngOnInit()
   {
@@ -33,6 +34,7 @@ export class RegisterEmployeeComponent {
   saveemployee()
   {
     this.cs.saveemployee(this.regEmployee.value).subscribe();
+    this.router.navigate(['viewemployee'])
     
   }
 
