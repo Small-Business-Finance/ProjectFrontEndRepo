@@ -16,7 +16,7 @@ export class ApplyForLoanComponent {
   showData=false;
 
   customer:CustomerApplicationForm;
-  id:number=4;
+  id:number;
 
 
   constructor(private _fb: FormBuilder, public cs: EnquiryService,public api:CustomerapplicationService) { }
@@ -56,15 +56,17 @@ export class ApplyForLoanComponent {
   }
   login()
   {
-   
     this.api.getCustomer(this.id).subscribe((
       data:CustomerApplicationForm)=>{
         this.customer=data;
         this.showData=true;
         console.log(data);
-
-      }
-      )
+        
+      })
+      
+    }
+      
   }
 
-}
+
+
