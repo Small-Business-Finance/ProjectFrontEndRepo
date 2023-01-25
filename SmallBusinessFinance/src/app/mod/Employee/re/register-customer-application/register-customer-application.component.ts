@@ -75,9 +75,9 @@ export class RegisterCustomerApplicationComponent {
         previousLoanId:[],
         loanAmount:[],
         loanTenure:[],
-        paidAmount:[],
+        paidAmount:[100000],
         remainingAmount:[],
-        defaulterCount:[],
+        defaulterCount:[1],
         bankName:['']
        }),
        customerLoanDetails:this._fb.group({
@@ -85,16 +85,9 @@ export class RegisterCustomerApplicationComponent {
         expectedLoanAmount:[],
         expectedLoanTenure:[],
         rateOfInterest:[],
-        loanStatus:[''],
-        loanDisbursedStatus:[''],
-        defaulterCount:[]
-        // emitable:this._fb.array([{
-        //   emiDetailsId:0,
-        //   emiStatus:'',
-        //   emidate:'', 
-        //   emiTenure:0,
-        //   emiAmount:0
-        // }])
+        loanStatus:['Pending'],
+        loanDisbursedStatus:['Pending'],
+        defaulterCount:[0]       
        })
       
       })
@@ -109,10 +102,12 @@ this.registerForm.get('customerDetails.mobileNumber').setValue(obj.mobileNumber)
 this.registerForm.get('customerDetails.emailId').setValue(obj.emailId);
 this.registerForm.get('customerDetails.panCardNumber').setValue(obj.customerPancardNumber);
 this.registerForm.get('customerCompanyDetails.panCardNumber').setValue(obj.companyPancardNumber);
-      } 
+this.registerForm.get('customerCompanyDetails.companyOwnerName').setValue(obj.customerName);      
+} 
     submit()
     {
       this.steps=this.steps+1;
+
     
     }
   
