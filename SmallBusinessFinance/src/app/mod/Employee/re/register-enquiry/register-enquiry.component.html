@@ -12,12 +12,20 @@
         <div class="form-group">
             <label class="label"> Customer Name : </label><br>
            <input type="text" class="col-xs-3" formControlName="customerName">
+           <div *ngIf="f.customerName.touched && f.customerName.invalid" class=" alert alert-danger">
+            <div *ngIf="f.customerName.errors.required">customer Name is required.</div>  
+           
+           </div>
         </div>
     </div>
 <div class="col">
         <div class="form-group">
             <label class="label">Company Name : </label><br>
             <input type="text" class="col-xs-3" formControlName="companyName">
+            <div *ngIf="f.companyName.touched && f.companyName.invalid" class=" alert alert-danger">
+                <div *ngIf="f.companyName.errors.required">companyy Name is required.</div>  
+               
+               </div>
         </div>
             </div></div>
 
@@ -26,12 +34,18 @@
         <div class="form-group">
             <label class="label">Types OF Business : </label><br>
             <input type="text" class="col-xs-3" formControlName="typesOfBusiness">
+            <div *ngIf="f.typesOfBusiness.touched && f.typesOfBusiness.invalid" class=" alert alert-danger">
+                <div *ngIf="f.typesOfBusiness.errors.required">Type of business is required.</div> 
+               </div>
         </div>
     </div>
     <div class="col">
         <div class="form-group">
             <label class="label">Customer Address : </label><br>
             <input type="text" class="col-xs-3" formControlName="customerAddress">
+            <div *ngIf="f.customerAddress.touched && f.customerAddress.invalid" class=" alert alert-danger">
+                <div *ngIf="f.customerAddress.errors.required">customer address is required.</div> 
+               </div>
         </div>
 </div></div>
 
@@ -40,12 +54,28 @@
         <div class="form-group">
             <label class="label">Customer Pancard Number: </label><br>
             <input type="text" class="col-xs-3" formControlName="customerPancardNumber">
+            <div *ngIf="f.customerPancardNumber.touched && f.customerPancardNumber.invalid" class=" alert alert-danger">
+                <div *ngIf="f.customerPancardNumber.errors.required">customer pancard number is required.</div> 
+                <div *ngIf="f.customerPancardNumber.errors.pattern">Enter valid pancard number</div>
+               </div>
+            <!-- <span style="color:red" ng-show="enquiryForm.panCardNumber.$touched && enquiryForm.panCardNumber.$invalid">
+                <span ng-show="enquiryForm.panCardNumber.$error.required">Pancard Number is required.</span>
+                <span ng-show="enquiryForm.panCardNumber.$error.pattern">Please, Enter valid Pancard Number.</span>
+                </span> -->
         </div>
     </div>
     <div class="col">
         <div class="form-group">
             <label class="label">Company Pancard Number :</label><br>
             <input type="text" class="col-xs-3"  formControlName="companyPancardNumber">
+            <div *ngIf="f.companyPancardNumber.touched && f.companyPancardNumber.invalid" class=" alert alert-danger">
+                <div *ngIf="f.companyPancardNumber.errors.required">company pancard number is required.</div> 
+                <div *ngIf="f.companyPancardNumber.errors.pattern">Enter valid pancard number</div>
+               </div>
+            <!-- <span style="color:red" ng-show="enquiryForm.companyPancardNumber.$touched && enquiryForm.companyPancardNumber.$invalid">
+                <span ng-show="enquiryForm.companyPancardNumber.$error.required">Pancard Number is required.</span>
+                <span ng-show="enquiryForm.companyPancardNumber.$error.pattern">Please, Enter valid Pancard Number.</span>
+                </span> -->
         </div>
         </div></div>
     </div>
@@ -56,13 +86,30 @@
             <div class="col">
         <div class="form-group">
             <label class="label">Mobile Number : </label><br>
-            <input type="text" class="col-xs-3" formControlName="mobileNumber">
+            <input type="text" class="col-xs-3" formControlName="mobileNumber" >
+            <div *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid" class=" alert alert-danger">
+                <div *ngIf="f.mobileNumber.errors.required">mobile number is required.</div> 
+                <div *ngIf="f.mobileNumber.errors.pattern">Enter valid mobile number</div>
+               </div>
+            
+                <!-- <span style="color:red" ng-show="enquiryForm.mobileNumber.$touched && enquiryForm.mobileNumber.$invalid">
+                    <span ng-show="enquiryForm.mobileNumber.$error.required">Mobile Number is required.</span>
+                    <span ng-show="enquiryForm.mobileNumber.$error.pattern">Please, Enter 10 digit Mobile Number.</span>
+                    </span> -->
         </div>
     </div>
 <div class="col">
         <div class="form-group">
             <label class="label">Alternate Mobile Number : </label><br>
             <input type="text" class="col-xs-3" formControlName="alternateMobileNumber">
+            <!-- <span style="color:red" ng-show="enquiryForm.alternateMobileNumber.$touched && enquiryForm.alternateMobileNumber.$invalid">
+                <span ng-show="enquiryForm.alternateMobileNumber.$error.required">Mobile Number is required.</span>
+                <span ng-show="enquiryForm.alternateMobileNumber.$error.pattern">Please, Enter 10 digit Mobile Number.</span>
+                </span> -->
+                <div *ngIf="f.alternateMobileNumber.touched && f.alternateMobileNumber.invalid" class=" alert alert-danger">
+                    <div *ngIf="f.alternateMobileNumber.errors.required">mobile number is required.</div> 
+                    <div *ngIf="f.alternateMobileNumber.errors.pattern">Enter valid mobile number</div>
+                   </div>
         </div>
 </div></div>
 
@@ -71,6 +118,9 @@
         <div class="form-group">
             <label class="label">Email Id : </label><br>
             <input type="text" class="col-xs-3" formControlName="emailId">
+            <div *ngIf="f.emailId.touched && f.emailId.invalid" class=" alert alert-danger">
+                <div *ngIf="f.emailId.errors.required">emailid is required.</div> 
+               </div>
         </div>
     </div>
     <div class="col">
@@ -105,9 +155,9 @@
     </div>
 
     <div class="form-button">
-        <a class="button-33" *ngIf="steps!=1" (click)="previous()"><<</a> &nbsp;
+        <a class="button-33" *ngIf="steps!=1" (click)="previous()" ><<</a> &nbsp;
         <button type="submit" class="button-33" *ngIf="steps!=2">>></button>
-        <a class="button-33" *ngIf="steps==2" (click)="clickreg()">Submit</a>
+        <a class="button-33" *ngIf="steps==2" (click)="clickreg()"  >Submit</a>
     </div>
 
 </form>

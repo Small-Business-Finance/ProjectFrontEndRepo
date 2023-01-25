@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { EmailsendingserviceService } from './emailsending.service';
+import { EmailsendingService } from './emailsending.service';
 
 describe('EmailsendingserviceService', () => {
-  let service: EmailsendingserviceService;
+  let service: EmailsendingService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(EmailsendingserviceService);
+    service = TestBed.inject(EmailsendingService);
   });
 
   it('should be created', () => {
