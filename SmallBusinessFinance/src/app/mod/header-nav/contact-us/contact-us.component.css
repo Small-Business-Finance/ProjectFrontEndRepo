@@ -1,16 +1,16 @@
 body {
-    min-height: 100vh;
+    min-height: 79vh;
     width: 100%;
     background: #c8e8e9;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .container {
     width: 85%;
     background: rgb(70, 106, 205);
+    
     border-radius: 6px;
     padding: 20px 60px 30px 40px;
     box-shadow: 0 5px 10px rgba(251, 251, 20, 0.881);
@@ -29,7 +29,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 15px;
+    margin-top: 0px;
     position: relative;
     background: #f2f9b6;
 }
@@ -108,7 +108,7 @@ body {
 
 .right-side .button {
     display: inline-block;
-    margin-top: 12px;
+    margin-top: 0px;
 }
 
 .right-side .button input[type="button"] {

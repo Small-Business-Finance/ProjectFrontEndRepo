@@ -5,37 +5,37 @@
 <a routerLink="/updateemployee">UpdateEmployee</a><br>
 <a routerLink="/viewemployee">ViewEmployee</a> -->
 <div class="container" class="body">
-    <div class="row">
-      <div class="col-md-6 login-sec">
-          <h2 class="tp">Employee Login</h2>
-          <form class="login-form">
-    <div class="form-group">
-      <label for="exampleInputEmail1" class="label">Username :</label><br>
-      <input type="text" name="username" id="user" class="col-xs-4" [(ngModel)]=u.username>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1" class="label">Password :</label><br>
-       <input type="password" name="password" id="password" class="col-xs-4" [(ngModel)]=u.password>
-    </div>
-   
-      <button type="submit" class="tp1" (click)="login(u)">Submit</button>
-  
-    
-    </form>
-      </div>
-      <div class="col-md-6">
-        <div class="employee-notice">
-          <h3 class="employee-notice__title">Employee Notice</h3>
-          <p class="employee-notice__message">{{ noticeMessage1 }}</p>
-          <p class="employee-notice__message">{{ noticeMessage2 }}</p>
-          <p class="employee-notice__message">{{ noticeMessage3 }}</p>
-          <p class="employee-notice__message">{{ noticeMessage4 }}</p>
-          <p class="employee-notice__message">{{ noticeMessage5 }}</p>
+  <div class="row">
+    <div class="col-md-6 login-sec">
+      <br><br> <h2 class="tp">Employee Login</h2>
+      <form class="login-form">
+        <div class="form-group"><br>
+          <label for="exampleInputEmail1" class="label">Username :</label><br>
+          <input type="text" name="username" id="user" class="col-xs-4" [(ngModel)]=u.username>
         </div>
-        
+        <div class="form-group"><br>
+          <label for="exampleInputPassword1" class="label">Password :</label><br>
+          <input type="password" name="password" id="password" class="col-xs-4" [(ngModel)]=u.password>
+        </div>
+
+        <button type="submit" class="tp1" (click)="login(u)">Submit</button>
+
+
+      </form>
+    </div>
+    <div class="col-md-6">
+      <div class="employee-notice">
+        <h3 class="employee-notice__title">Employee Notice</h3>
+        <p class="employee-notice__message">{{ noticeMessage1 }}</p>
+        <p class="employee-notice__message">{{ noticeMessage2 }}</p>
+        <p class="employee-notice__message">{{ noticeMessage3 }}</p>
+        <p class="employee-notice__message">{{ noticeMessage4 }}</p>
+        <p class="employee-notice__message">{{ noticeMessage5 }}</p>
       </div>
+
     </div>
-   
-    
-    </div>
+  </div>
+
+
+</div>
 <router-outlet></router-outlet>

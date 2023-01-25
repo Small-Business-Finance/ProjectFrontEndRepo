@@ -1,6 +1,11 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
+
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+
+
+import { Router } from '@angular/router';
+
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 
 @Component({
@@ -23,14 +28,14 @@ export class RegisterCustomerApplicationComponent {
         tan1:any
         msmeCertificate1:any
 
-  constructor(private _fb:FormBuilder,public cs:CustomerapplicationService,private location:Location){}
+  constructor(private _fb:FormBuilder,public cs:CustomerapplicationService,private location:Location,public router:Router){}
   
   ngOnInit()
   {
      this.registerForm=this._fb.group({
         applicationId:[],
-        applicationStatus:[''],
-      // aadharId:['',[Validators.required]],
+        applicationStatus:['Registered'],
+
 
         customerDetails:this._fb.group({
           customerId:['', [Validators.required]],
@@ -72,10 +77,11 @@ export class RegisterCustomerApplicationComponent {
         occupation:['',[Validators.required]]
        }),
        previousLoanDetails:this._fb.group({
+
         previousLoanId:['',[Validators.required]],
         loanAmount:['',[Validators.required]],
         loanTenure:['',[Validators.required]],
-        paidAmount:['',[Validators.required]],
+         paidAmount:[100000],
         remainingAmount:['',[Validators.required]],
         defaulterCount:['',[Validators.required]],
         bankName:['',[Validators.required]]
@@ -85,8 +91,9 @@ export class RegisterCustomerApplicationComponent {
         expectedLoanAmount:['',[Validators.required]],
         expectedLoanTenure:['',[Validators.required]],
         rateOfInterest:['',[Validators.required]],
-        loanStatus:['',[Validators.required]],
-        loanDisbursedStatus:['',[Validators.required]],
+       loanStatus:['Pending'],
+        loanDisbursedStatus:['Pending'],
+        defaulterCount:[0] 
         // emitable:this._fb.array([{
         //   emiDetailsId:0,
         //   emiStatus:'',
@@ -94,6 +101,7 @@ export class RegisterCustomerApplicationComponent {
         //   emiTenure:0,
         //   emiAmount:0
         // }])
+
        })
       
       })
@@ -114,12 +122,14 @@ this.registerForm.get('customerDetails.mobileNumber').setValue(obj.mobileNumber)
 this.registerForm.get('customerDetails.emailId').setValue(obj.emailId);
 this.registerForm.get('customerDetails.panCardNumber').setValue(obj.customerPancardNumber);
 this.registerForm.get('customerCompanyDetails.panCardNumber').setValue(obj.companyPancardNumber);
-      } 
 
-      
+this.registerForm.get('customerCompanyDetails.companyOwnerName').setValue(obj.customerName);      
+} 
+
     submit()
     {
       this.steps=this.steps+1;
+
     
     }
   
@@ -148,7 +158,9 @@ this.registerForm.get('customerCompanyDetails.panCardNumber').setValue(obj.compa
   
     
     this.cs.saveCustomer(customerloanApplication).subscribe();
-    alert("Loan Application Submited");
+    alert("Loan Application Submitted");
+    this.router.navigate(['reprofile/viewCustomer'])
+
   
   }
 

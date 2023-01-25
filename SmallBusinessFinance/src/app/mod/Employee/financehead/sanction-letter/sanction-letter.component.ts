@@ -67,6 +67,8 @@ export class SanctionLetterComponent {
     let obj:any=this.location.getState();
     obj.applicationStatus="Sanctioned";
     obj.customerLoanDetails.expectedLoanAmount=this.sanctionForm.controls['expectedLoanAmount'].value;
+    obj.customerLoanDetails.expectedLoanTenure=this.sanctionForm.controls['expectedLoanTenure'].value;
+    obj.customerLoanDetails.rateOfInterest=this.sanctionForm.controls['rateOfInterest'].value;
     this.cs.updateCustomer(obj).subscribe();
     //window.location.reload();
     

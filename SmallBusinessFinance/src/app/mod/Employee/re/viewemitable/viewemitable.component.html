@@ -1,23 +1,29 @@
-<p>viewemitable works!</p>
+
 <div class="body">
     <h4 style="margin-left: 300px; margin-top: 20px;">EMI Details</h4>
     
     <table id="customers">
       <tr>
-        <th>EMI Details Id</th>
-        <th>EMI Status</th>
+        <th>EMI Details Id</th> 
         <th>EMI Tenure</th>
         <th>EMI Amount</th>
         <th>EMI Date</th>
+        <th>EMI Status</th>
       </tr>
       <tr *ngFor="let item of objemi | paginate: { itemsPerPage: 10, currentPage: p} ">
-        <td>{{item.emiDetailsId}}</td>
-        <td>{{item.emiStatus}}</td>
+        <td>{{item.emiDetailsId}}</td> 
         <td>{{item.emiTenure}}</td>
         <td>{{item.emiAmount}}</td>
         <td>{{item.emidate}}</td>
         <td>{{item.defaultorCount}}</td>
-                
+        <td><select value="item.emiStatus" (change)="modo($event.target.value)">
+          <option value="item.emiStatus">{{item.emiStatus}}*</option>
+         <option value="Paid">Paid</option>
+         <option value="Unpaid">Unpaid </option>
+       </select>
+         </td>   
+         <td><button (click)="updatestatus(item)">Save</button></td>
+         <!-- <td *ngIf="objectcaf.customerLoanDetails.defaultorCount >'2'"><button>Send Notice</button></td>       -->
       </tr>
       <tr>
       <td colspan="4"><pagination-controls (pageChange)="p = $event"></pagination-controls> </td> </tr>
