@@ -13,9 +13,10 @@ import { EnquiryService } from 'src/app/shared/enquiry.service';
 export class ApplyForLoanComponent {
   steps: any = 1;
   enquiryForm: FormGroup;
+  showData=false;
 
   customer:CustomerApplicationForm;
-  id:number;
+  id:number=4;
 
 
   constructor(private _fb: FormBuilder, public cs: EnquiryService,public api:CustomerapplicationService) { }
@@ -33,7 +34,7 @@ export class ApplyForLoanComponent {
       alternateMobileNumber: [''],
       emailId: [''],
       itrStatus: [''],
-      enquiryStatus: ['pending'],
+      enquiryStatus: ['Pending'],
       registrationStatus: ['Not Registered'],
       cibilscore: this._fb.group({
         cibilRemark: ['Not Generated']
@@ -55,10 +56,13 @@ export class ApplyForLoanComponent {
   }
   login()
   {
+   
     this.api.getCustomer(this.id).subscribe((
       data:CustomerApplicationForm)=>{
         this.customer=data;
+        this.showData=true;
         console.log(data);
+
       }
       )
   }

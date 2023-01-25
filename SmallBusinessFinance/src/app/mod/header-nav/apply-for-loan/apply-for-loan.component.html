@@ -98,14 +98,15 @@
     <div class="col-md-6" id="grey">
     <div class="right"><br><br>
         <h2 style="color: rgb(0, 145, 255);">Are You An Existing Customer?</h2>
-        <form><br>
+        <br>
         <div class="form-group">
-            <label class="label">Enter Customer Id :</label><br>
-               <input type="text" class="col-xs-8" formControlName="customerId">
+            <label class="label">Enter Application Id :</label><br>
+               <input type="text" class="col-xs-8" [(ngModel)]="id">
         </div>
         <a class="button-33" (click)="login()">Submit</a>
-        </form>
+        
 
+       <div *ngIf="showData">{{customer.applicationStatus}}</div>
         
     </div></div>
 </div>
