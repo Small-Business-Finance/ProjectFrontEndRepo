@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EnquiryService } from 'src/app/shared/enquiry.service';
 
 @Component({
@@ -18,25 +18,26 @@ export class RegisterEnquiryComponent {
 
   ngOnInit() {
     this.enquiryForm = this._fb.group({
-      enquiryId: [],
-      customerName: [''],
-      companyName: [''],
-      typesOfBusiness: [''],
-      customerAddress: [''],
-      customerPancardNumber: [''],
-      companyPancardNumber: [''],
-      mobileNumber: [''],
-      alternateMobileNumber: [''],
-      emailId: [''],
-      itrStatus: [''],
-      enquiryStatus: ['Pending'],
-      registrationStatus: ['Not Registered'],
+      enquiryId: ['', [Validators.required]],
+      customerName: ['', [Validators.required]],
+      companyName: ['', [Validators.required]],
+      typesOfBusiness: ['', [Validators.required]],
+      customerAddress: ['', [Validators.required]],
+      customerPancardNumber: ['', [Validators.required,Validators.pattern("^([A-Z]{5}[0-9]{4}[A-Z]{1})$")]],
+      companyPancardNumber: ['', [Validators.required,Validators.pattern("^([A-Z]{5}[0-9]{4}[A-Z]{1})$")]],
+      mobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[789][0-9]{9}$")]],
+      alternateMobileNumber: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[789][0-9]{9}$")]],
+      emailId: ['', [Validators.required]],
+      itrStatus: ['', [Validators.required]],
+      enquiryStatus: ['Pending', [Validators.required]],
+      registrationStatus: ['Not Registered', [Validators.required]],
       cibilscore:this._fb.group({
-      cibilRemark: ['Not Generated']
+      cibilRemark: ['Not Generated', [Validators.required]]
     })
     })
   }
 
+  get f() { return this.enquiryForm.controls; }
   submit() {
     this.steps = this.steps + 1;
 

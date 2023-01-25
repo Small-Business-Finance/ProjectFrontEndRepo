@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 
 @Component({
@@ -30,62 +30,63 @@ export class RegisterCustomerApplicationComponent {
      this.registerForm=this._fb.group({
         applicationId:[],
         applicationStatus:[''],
+      // aadharId:['',[Validators.required]],
 
         customerDetails:this._fb.group({
-          customerId:[],
-          aadharId:[],
-          customerName:[''],
-          address:[''],
-          emailId:[''],
-          mobileNumber:[],
-          panCardNumber:[''],
-          dateOfBirth:[''],
-          gender:['']
+          customerId:['', [Validators.required]],
+          aadharId:['', [Validators.required]],
+          customerName:['', [Validators.required]],
+          address:['', [Validators.required]],
+          emailId:['', [Validators.required]],
+          mobileNumber:['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[789][0-9]{9}$")]],
+          panCardNumber:['', [Validators.required,Validators.pattern("^([A-Z]{5}[0-9]{4}[A-Z]{1})$")]],
+          dateOfBirth:['', [Validators.required]],
+          gender:['', [Validators.required]]
         }),
        
        customerCompanyDetails:this._fb.group({
-        companyId:[],
-        registrationNumber:[],
-	      companyName:[''],
-	      companyOwnerName:[''],
-	      typeOfBusiness:[''],
-	      panCardNumber:[],
-	      companyTurnover:[],
-        telephoneNo:[],
-        faxNumber:[]
+        companyId:['',[Validators.required]],
+        registrationNumber:['',[Validators.required]],
+	      companyName:['',[Validators.required]],
+	      companyOwnerName:['',[Validators.required]],
+	      typeOfBusiness:['',[Validators.required]],
+	      panCardNumber:['',[Validators.required,Validators.pattern("^([A-Z]{5}[0-9]{4}[A-Z]{1})$")]],
+	      companyTurnover:['',[Validators.required]],
+        telephoneNo:['',[Validators.required]],
+        faxNumber:['',[Validators.required]]
        }),
        customerBankDetails:this._fb.group({
-        bankId:[],
-        accountNumber:[],
-        bankName:[''],
-        ifscCode:[],
-        branchCode:[],
-        branchAddress:['']
+        bankId:['',[Validators.required]],
+        accountNumber:['',[Validators.required]],
+        bankName:['',[Validators.required]],
+        ifscCode:['',[Validators.required]],
+        branchCode:['',[Validators.required]],
+        branchAddress:['',[Validators.required]]
        }),
        guarantorDetails:this._fb.group({
-        guarantorId:[],
-        guarantorName:[''],
-        guarantorPanCardNumber:[],
-        relation:[''],
-        mobileNumber:[],
-        occupation:['']
+        guarantorId:['',[Validators.required]],
+        guarantorName:['',[Validators.required]],
+        guarantorPanCardNumber:['',[Validators.required]],
+        relation:['',[Validators.required]],
+        mobileNumber:['',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[789][0-9]{9}$")]],
+        occupation:['',[Validators.required]]
        }),
        previousLoanDetails:this._fb.group({
-        previousLoanId:[],
-        loanAmount:[],
-        loanTenure:[],
-        paidAmount:[],
-        remainingAmount:[],
-        defaulterCount:[],
-        bankName:['']
+        previousLoanId:['',[Validators.required]],
+        loanAmount:['',[Validators.required]],
+        loanTenure:['',[Validators.required]],
+        paidAmount:['',[Validators.required]],
+        remainingAmount:['',[Validators.required]],
+        defaulterCount:['',[Validators.required]],
+        bankName:['',[Validators.required]]
        }),
        customerLoanDetails:this._fb.group({
-        loanId:[],
-        expectedLoanAmount:[],
-        expectedLoanTenure:[],
-        rateOfInterest:[],
-        loanStatus:[''],
-        loanDisbursedStatus:[''],
+        loanId:['',[Validators.required]],
+        expectedLoanAmount:['',[Validators.required]],
+        expectedLoanTenure:['',[Validators.required]],
+        rateOfInterest:['',[Validators.required]],
+        loanStatus:['',[Validators.required]],
+        loanDisbursedStatus:['',[Validators.required]],
         // emitable:this._fb.array([{
         //   emiDetailsId:0,
         //   emiStatus:'',
@@ -98,7 +99,13 @@ export class RegisterCustomerApplicationComponent {
       })
       this.regcust();
       }
+      // get f() { 
+      //   return {a:this.registerForm.controls,
+      //     b:this.registerForm.customerDetails.controls
+      //   };
+      //  }
       regcust(){
+        
         let obj:any=this.location.getState();
 this.registerForm.get('customerDetails.customerName').setValue(obj.customerName);
 this.registerForm.get('customerDetails.address').setValue(obj.customerAddress);
@@ -108,6 +115,8 @@ this.registerForm.get('customerDetails.emailId').setValue(obj.emailId);
 this.registerForm.get('customerDetails.panCardNumber').setValue(obj.customerPancardNumber);
 this.registerForm.get('customerCompanyDetails.panCardNumber').setValue(obj.companyPancardNumber);
       } 
+
+      
     submit()
     {
       this.steps=this.steps+1;

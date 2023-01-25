@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployeeService } from 'src/app/shared/employee.service';
 
 @Component({
@@ -17,19 +17,33 @@ export class RegisterEmployeeComponent {
   {
     this.regEmployee=this.fb.group({
     empId:[],
-    empName:[''],
-    empDateofBirth:[''],
-    empGender:[''],
-    empSalary:[],
-    empRole:[''],
-    empAddress:[''],
-    empMobileno:[],
+    empName:['',[Validators.required]],
+    empDateofBirth:['',[Validators.required]],
+    empGender:['',[Validators.required]],
+    empSalary:['',[Validators.required]],
+    empRole:['',[Validators.required]],
+    empAddress:['',[Validators.required]],
+    empMobileno:['',[Validators.required, Validators.pattern("^((\\+91-?)|0)?[789][0-9]{9}$")]],
     empEmailId:[''],
-    username:[''],
-    password:['']
+    username:['',[Validators.required]],
+    password:['',[Validators.required]]
     })
+    // this.regEmployee=this.fb.group({
+    //   empId:[],
+    //   empName:[''],
+    //   empDateofBirth:[''],
+    //   empGender:[''],
+    //   empSalary:[''],
+    //   empRole:[''],
+    //   empAddress:[''],
+    //   empMobileno:[''],
+    //   empEmailId:[''],
+    //   username:[''],
+    //   password:['']
+    //   })
   }
 
+  get k() { return this.regEmployee.controls; }
   saveemployee()
   {
     this.cs.saveemployee(this.regEmployee.value).subscribe();
