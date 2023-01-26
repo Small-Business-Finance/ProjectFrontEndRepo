@@ -24,11 +24,11 @@ export class ViewEmployeeComponent {
      })
   }
 
-  // deleteEmployee(empId:number)
-  // {
-  //   this.cs.deleteEmployee(empId).subscribe();
-  //   window.location.reload();
-  // }
+  deleteEmployee(empId:number)
+  {
+    this.cs.deleteEmployee(empId).subscribe();
+   // window.location.reload();
+  }
 
   // Search()
   // {

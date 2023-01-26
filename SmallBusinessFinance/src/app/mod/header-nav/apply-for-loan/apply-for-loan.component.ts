@@ -1,6 +1,9 @@
 
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { CustomerApplicationForm } from 'src/app/classes/customer-application-form';
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 import { EnquiryService } from 'src/app/shared/enquiry.service';
@@ -19,7 +22,7 @@ export class ApplyForLoanComponent {
   id:number;
 
 
-  constructor(private _fb: FormBuilder, public cs: EnquiryService,public api:CustomerapplicationService) { }
+  constructor(private _fb: FormBuilder, public cs: EnquiryService,public api:CustomerapplicationService,private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.enquiryForm = this._fb.group({
@@ -54,19 +57,27 @@ export class ApplyForLoanComponent {
   clickreg() {
     this.cs.postEnquiry(this.enquiryForm.value).subscribe();
   }
+
   login()
   {
-    this.api.getCustomer(this.id).subscribe((
-      data:CustomerApplicationForm)=>{
-        this.customer=data;
-        this.showData=true;
-        console.log(data);
-        
-      })
-      
-    }
-      
-  }
+    this.api.getCustomer(this.id).subscribe((data:CustomerApplicationForm)=>{
+            this.customer=data;
+            this.showData=true;
+          console.log(data);
+          },
 
+          (error:HttpErrorResponse)=>{
+            //alert(error.message);
+            alert("Id not found, Please enter correct Id")
+          }
+          
+          );
+          
+       }
 
-
+       excel(id:number)
+       {
+        window.open("http://localhost:9090/pdfapi/genExcel/"+id);
+       }
+       
+      }

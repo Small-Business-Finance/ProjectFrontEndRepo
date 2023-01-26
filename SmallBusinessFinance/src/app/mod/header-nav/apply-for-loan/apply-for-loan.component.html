@@ -1,116 +1,126 @@
 <div class="row">
-<div class="col-md-6" id="green">
+    <div class="col-md-6" id="green">
 
-    <form [formGroup]="enquiryForm" (ngSubmit)="submit()"><br><br>
-    <div class="two">
-        <h1>Place An Enquiry to Us !
-        <span></span></h1>
-    </div>
-    
-        <div *ngIf="steps==1">
-            <h3>Enquiry Details</h3>
-            <div class="row">
-                <div class="col">
-            <div class="form-group">
-                <label class="label"> Customer Name : </label><br>
-               <input type="text" class="col-xs-3" formControlName="customerName">
+        <form [formGroup]="enquiryForm" (ngSubmit)="submit()"><br><br>
+            <div class="two">
+                <h1>Place An Enquiry to Us !
+                    <span></span>
+                </h1>
             </div>
-        </div>
-    <div class="col">
-            <div class="form-group">
-                <label class="label">Company Name : </label><br>
-                <input type="text" class="col-xs-3" formControlName="companyName">
-            </div>
-                </div></div>
-    
+
+            <div *ngIf="steps==1">
+                <h3>Enquiry Details</h3>
                 <div class="row">
                     <div class="col">
-            <div class="form-group">
-                <label class="label">Types OF Business : </label><br>
-                <input type="text" class="col-xs-3" formControlName="typesOfBusiness">
+                        <div class="form-group">
+                            <label class="label"> Customer Name : </label><br>
+                            <input type="text" class="col-xs-3" formControlName="customerName">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="label">Company Name : </label><br>
+                            <input type="text" class="col-xs-3" formControlName="companyName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="label">Types OF Business : </label><br>
+                            <input type="text" class="col-xs-3" formControlName="typesOfBusiness">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="label">Customer Address : </label><br>
+                            <input type="text" class="col-xs-3" formControlName="customerAddress">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="label">Customer Pancard Number: </label><br>
+                            <input type="text" class="col-xs-3" formControlName="customerPancardNumber">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="label">Company Pancard Number :</label><br>
+                            <input type="text" class="col-xs-3" formControlName="companyPancardNumber">
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="form-group">
-                <label class="label">Customer Address : </label><br>
-                <input type="text" class="col-xs-3" formControlName="customerAddress">
+
+            <div *ngIf="steps==2">
+                <h3>Enquiry Details </h3>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="label">Mobile Number : </label><br>
+                            <input type="text" class="col-xs-3" formControlName="mobileNumber">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="label">Alternate Mobile Number : </label><br>
+                            <input type="text" class="col-xs-3" formControlName="alternateMobileNumber">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label class="label">Email Id : </label><br>
+                            <input type="text" class="col-xs-3" formControlName="emailId">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-md-6">
+                            <label class="label">ITR Status : </label><br>
+                            <select class="form-control" formControlName="itrStatus">
+                                <option value="Filed"> Filed </option>
+                                <option value="Not Filed"> Not Filed </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
-    </div></div>
-    
-    <div class="row">
-        <div class="col">
-            <div class="form-group">
-                <label class="label">Customer Pancard Number: </label><br>
-                <input type="text" class="col-xs-3" formControlName="customerPancardNumber">
+
+            <div class="form-button">
+                <a class="button-33" *ngIf="steps!=1" (click)="previous()"><< </a> &nbsp;
+                        <button type="submit" class="button-33" *ngIf="steps!=2">>></button>
+                        <a class="button-33" *ngIf="steps==2" (click)="clickreg()">Submit</a>
             </div>
-        </div>
-        <div class="col">
-            <div class="form-group">
-                <label class="label">Company Pancard Number :</label><br>
-                <input type="text" class="col-xs-3"  formControlName="companyPancardNumber">
-            </div>
-            </div></div>
-        </div>
-    
-        <div *ngIf="steps==2">
-            <h3>Enquiry Details </h3>
-            <div class="row">
-                <div class="col">
-            <div class="form-group">
-                <label class="label">Mobile Number : </label><br>
-                <input type="text" class="col-xs-3" formControlName="mobileNumber">
-            </div>
-        </div>
-    <div class="col">
-            <div class="form-group">
-                <label class="label">Alternate Mobile Number : </label><br>
-                <input type="text" class="col-xs-3" formControlName="alternateMobileNumber">
-            </div>
-    </div></div>
-    
-    <div class="row">
-        <div class="col">
-            <div class="form-group">
-                <label class="label">Email Id : </label><br>
-                <input type="text" class="col-xs-3" formControlName="emailId">
-            </div>
-        </div>
-        <div class="col">
-            <div class="col-md-6">
-                <label class="label">ITR Status : </label><br>
-                <select class="form-control" formControlName="itrStatus">
-                    <option value="Filed">  Filed  </option><option value="Not Filed">  Not  Filed  </option>
-                </select>
-            </div>
-    </div></div>
-        </div>
-    
-        <div class="form-button">
-            <a class="button-33" *ngIf="steps!=1" (click)="previous()"><<</a> &nbsp;
-            <button type="submit" class="button-33" *ngIf="steps!=2">>></button>
-            <a class="button-33" *ngIf="steps==2" (click)="clickreg()">Submit</a>
-        </div>
-    
-    </form>
+
+        </form>
     </div>
 
 
     <div class="col-md-6" id="grey">
-    <div class="right"><br><br>
-        <h2 style="color: rgb(0, 145, 255);">Are You An Existing Customer?</h2>
-        <br>
-        <div class="form-group">
-            <label class="label">Enter Application Id :</label><br>
-               <input type="text" class="col-xs-8" [(ngModel)]="id">
+        <div class="right"><br><br>
+            <h2 style="color: rgb(0, 145, 255);">Are You An Existing Customer?</h2>
+            <br>
+            <div class="form-group">
+                <label class="label">Enter Application Id :</label><br>
+                <input type="text" class="col-xs-8" [(ngModel)]="id">
+            </div>
+            <a class="button-33" (click)="login()">Submit</a>
+
+
+            <div class="align" *ngIf="showData"><br><br><br>
+                Application Status : {{customer.applicationStatus}}<br>
+                Applicant Name : {{customer.customerDetails.customerName}}<br>
+                Loan Amount : {{customer.customerLoanDetails.expectedLoanAmount}}<br>
+                <div *ngIf="customer.applicationStatus=='Disbursed'">
+                 Download EMI Details :  <button (click)="excel(customer.applicationId)">Download</button>
+                </div>
+            </div>
         </div>
-        <a class="button-33" (click)="login()">Submit</a>
-        
-
-       <div *ngIf="showData">{{customer.applicationStatus}}</div>
-        
-    </div></div>
+    </div>
 </div>
-
-
-
-
