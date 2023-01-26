@@ -74,5 +74,10 @@ export class ApplyForLoanComponent {
           );
           
        }
+
+       excel(id:number)
+       {
+        window.open("http://localhost:9090/pdfapi/genExcel/"+id);
+       }
        
       }
