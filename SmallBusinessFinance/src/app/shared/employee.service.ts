@@ -43,4 +43,8 @@ export class EmployeeService {
   {
     return this.http.delete("http://localhost:9090/employeeapi/employee/"+empId)
   }
+  getEmployeeUnP(uname:string,password:string){
+    alert(uname+password);
+    return this.http.get<Employee>("http://localhost:9090/employeeapi/getbyusernameandpassword/"+uname+"/"+password);
+  }
 }
