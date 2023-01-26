@@ -19,7 +19,7 @@ export class ApplyForLoanComponent {
   showData=false;
 
   customer:CustomerApplicationForm;
-  id:number=4;
+  id:number;
 
 
   constructor(private _fb: FormBuilder, public cs: EnquiryService,public api:CustomerapplicationService,private route: ActivatedRoute) { }
