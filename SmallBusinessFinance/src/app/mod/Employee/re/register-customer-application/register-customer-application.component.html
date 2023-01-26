@@ -14,6 +14,7 @@
       <div class="form-group">
         <label class="label">Application Status :</label><br>
            <input type="text" class="col-xs-3" formControlName="applicationStatus">
+          
     </div>
     
   </div>
@@ -27,12 +28,18 @@
   <div class="form-group">
     <label class="label">Aadhar Card Number :</label><br>
        <input type="text" class="col-xs-3" formControlName="aadharId">
+       <div *ngIf="f.aadharId.touched && f.aadharId.invalid" class=" alert alert-danger">
+        <div *ngIf="f.aadharId.errors.required">aadharID is required.</div> 
+       </div>
 </div>
 </div>
 <div class="col">
 <div class="form-group">
     <label class="label">Customer Name :</label><br>
        <input type="text" class="col-xs-3"  formControlName="customerName">
+       <div *ngIf="f.customerName.touched && f.customerName.invalid" class=" alert alert-danger">
+        <div *ngIf="f.customerName.errors.required">customer Name is required.</div> 
+       </div>
 </div>
 </div>
 </div>
@@ -41,12 +48,18 @@
 <div class="form-group">
   <label class="label">Email Id :</label><br>
      <input type="text" class="col-xs-3"  formControlName="emailId">
+     <div *ngIf="f.emailId.touched && f.emailId.invalid" class=" alert alert-danger">
+      <div *ngIf="f.emailId.errors.required">emailId is required.</div> 
+     </div>
 </div>
 </div>
 <div class="col">
 <div class="form-group">
   <label class="label">Address :</label><br>
      <input type="text" class="col-xs-3"  formControlName="address">
+     <div *ngIf="f.address.touched && f.address.invalid" class=" alert alert-danger">
+      <div *ngIf="f.address.errors.required">address is required.</div> 
+     </div>
 </div>
 </div></div>
 
@@ -54,13 +67,31 @@
   <div class="col">
 <div class="form-group">
   <label class="label">Mobile Number :</label><br>
+
    <input type="text" class="col-xs-3"  formControlName="mobileNumber">
+   <div *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid" class=" alert alert-danger">
+    <div *ngIf="f.mobileNumber.errors.required">mobile number is required.</div> 
+    <div *ngIf="f.mobileNumber.errors.pattern">Enter valid mobile number</div>
+   </div>
+    <!-- <span style="color:red" ng-show="registerForm.mobileNumber.$touched && registerForm.mobileNumber.$invalid">
+      <span ng-show="registerForm.mobileNumber.$error.required">Mobile Number is required.</span>
+      <span ng-show="registerForm.mobileNumber.$error.pattern">Please, Enter 10 digit Mobile Number.</span>
+      </span> -->
 </div>
 </div>
 <div class="col">
 <div class="form-group">
     <label class="label">Pan Card Number :</label><br>
      <input type="text" class="col-xs-3" formControlName="panCardNumber">
+     <div *ngIf="f.customerPancardNumber.touched && f.customerPancardNumber.invalid" class=" alert alert-danger">
+      <div *ngIf="f.customerPancardNumber.errors.required">customer pancard number is required.</div> 
+      <div *ngIf="f.customerPancardNumber.errors.pattern">Enter valid pancard number</div>
+     </div>
+      <!-- <span style="color:red" ng-show="registerForm.panCardNumber.$touched && registerForm.panCardNumber.$invalid">
+        <span ng-show="registerForm.panCardNumber.$error.required">Mobile Number is required.</span>
+        <span ng-show="registerForm.panCardNumber.$error.pattern">Please, Enter 10 digit Mobile Number.</span>
+        </span> -->
+      
 </div>
 </div></div>
 
@@ -231,7 +262,7 @@
   </div>
   </div></div>
 
-  <div class="row">
+  <!-- <div class="row">
     <div class="col">
   <div class="form-group">
     <label class="label">paid amount :  </label><br>
@@ -239,17 +270,18 @@
   </div>
 </div>
 <div class="col">
-  <div class="form-group">
-    <label class="label">Remaining amout: </label><br>
-    <input type="text" class="col-xs-3"  formControlName="remainingAmount">
-  </div>
-  </div></div>
+  
+  </div></div> -->
 
   <div class="row">
     <div class="col">
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label class="label">Defaulter count: </label><br>
     <input type="text" class="col-xs-3"  formControlName="defaulterCount">
+  </div> -->
+  <div class="form-group">
+    <label class="label">Remaining amout: </label><br>
+    <input type="text" class="col-xs-3"  formControlName="remainingAmount">
   </div>
 </div>
 <div class="col">
@@ -280,32 +312,33 @@
 
   <div class="row">
     <div class="col">
-  <div class="form-group">
+  <!-- <div class="form-group">
     <label class="label">Emi Amount :  </label><br>
     <input type="text" class="col-xs-3">
     <!-- formControlName="emiAmount" -->
-  </div>
+  <!-- </div>
 </div>
 <div class="col">
   <div class="form-group">
     <label class="label">Loan Status: </label><br>
     <input type="text" class="col-xs-3" formControlName="loanStatus">
-  </div>
+  </div>  -->
   </div></div>
 
   <div class="row">
     <div class="col">
-    <div class="form-group">
+      <div class="form-group">
+        <label class="label">Expected ROI : </label><br>
+        <input type="text" class="col-xs-3" formControlName="rateOfInterest">
+      </div>
+    <!-- <div class="form-group">
     <label class="label">Loan disbursed status : </label><br>
     <input type="text" class="col-xs-3" formControlName="loanDisbursedStatus">
-  </div>
+  </div> -->
     </div>
 
   <div class="col">
-  <div class="form-group">
-    <label class="label">Rate of Interest : </label><br>
-    <input type="text" class="col-xs-3" formControlName="rateOfInterest">
-  </div>
+  
 </div></div>
 </h3>
   </div>
