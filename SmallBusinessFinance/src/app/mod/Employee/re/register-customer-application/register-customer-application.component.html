@@ -14,7 +14,7 @@
       <div class="form-group">
         <label class="label">Application Status :</label><br>
            <input type="text" class="col-xs-3" formControlName="applicationStatus">
-          
+         
     </div>
     
   </div>
@@ -22,23 +22,29 @@
 <div *ngIf="steps==2"> 
 <h3>Customer Details</h3>
 <br>
-<h3 formGroupName="customerDetails">
+<h3 formGroupName="customerDetails" >
+
   <div class="row">
     <div class="col">    
   <div class="form-group">
     <label class="label">Aadhar Card Number :</label><br>
        <input type="text" class="col-xs-3" formControlName="aadharId">
-       <div *ngIf="f.aadharId.touched && f.aadharId.invalid" class=" alert alert-danger">
-        <div *ngIf="f.aadharId.errors.required">aadharID is required.</div> 
+      
+       <div *ngIf="g.controls.aadharId.touched && g.controls.aadharId.invalid" class=" alert alert-danger">
+        <div *ngIf="g.controls.aadharId.errors.required "> aadharID is required. </div> 
        </div>
+       <!-- <div *ngIf="f.get('customerDetails').controls.aadharId.touched && f.get('customerDetails').controls.aadharId.invalid" class=" alert alert-danger">
+        <div *ngIf="f.get('customerDetails').controls.aadharId.errors.required "> aadharID is required. </div> 
+       </div> -->
 </div>
 </div>
 <div class="col">
 <div class="form-group">
     <label class="label">Customer Name :</label><br>
        <input type="text" class="col-xs-3"  formControlName="customerName">
-       <div *ngIf="f.customerName.touched && f.customerName.invalid" class=" alert alert-danger">
-        <div *ngIf="f.customerName.errors.required">customer Name is required.</div> 
+
+       <div *ngIf="g.controls.customerName.touched && g.controls.customerName.invalid" class=" alert alert-danger">
+        <div *ngIf="g.controls.customerName.errors.required"> customer Name is required.</div> 
        </div>
 </div>
 </div>
@@ -48,8 +54,8 @@
 <div class="form-group">
   <label class="label">Email Id :</label><br>
      <input type="text" class="col-xs-3"  formControlName="emailId">
-     <div *ngIf="f.emailId.touched && f.emailId.invalid" class=" alert alert-danger">
-      <div *ngIf="f.emailId.errors.required">emailId is required.</div> 
+     <div *ngIf="g.controls.emailId.touched && g.controls.emailId.invalid" class=" alert alert-danger">
+      <div *ngIf="g.controls.emailId.errors.required">emailId is required.</div> 
      </div>
 </div>
 </div>
@@ -57,8 +63,8 @@
 <div class="form-group">
   <label class="label">Address :</label><br>
      <input type="text" class="col-xs-3"  formControlName="address">
-     <div *ngIf="f.address.touched && f.address.invalid" class=" alert alert-danger">
-      <div *ngIf="f.address.errors.required">address is required.</div> 
+     <div *ngIf="g.controls.address.touched && g.controls.address.invalid" class=" alert alert-danger">
+      <div *ngIf="g.controls.address.errors.required">address is required.</div> 
      </div>
 </div>
 </div></div>
@@ -69,9 +75,9 @@
   <label class="label">Mobile Number :</label><br>
 
    <input type="text" class="col-xs-3"  formControlName="mobileNumber">
-   <div *ngIf="f.mobileNumber.touched && f.mobileNumber.invalid" class=" alert alert-danger">
-    <div *ngIf="f.mobileNumber.errors.required">mobile number is required.</div> 
-    <div *ngIf="f.mobileNumber.errors.pattern">Enter valid mobile number</div>
+   <div *ngIf="g.controls.mobileNumber.touched && g.controls.mobileNumber.invalid" class=" alert alert-danger">
+    <div *ngIf="g.controls.mobileNumber.errors.required">mobile number is required.</div> 
+    <div *ngIf="g.controls.mobileNumber.errors.pattern">Enter valid mobile number</div>
    </div>
     <!-- <span style="color:red" ng-show="registerForm.mobileNumber.$touched && registerForm.mobileNumber.$invalid">
       <span ng-show="registerForm.mobileNumber.$error.required">Mobile Number is required.</span>
@@ -83,9 +89,9 @@
 <div class="form-group">
     <label class="label">Pan Card Number :</label><br>
      <input type="text" class="col-xs-3" formControlName="panCardNumber">
-     <div *ngIf="f.customerPancardNumber.touched && f.customerPancardNumber.invalid" class=" alert alert-danger">
-      <div *ngIf="f.customerPancardNumber.errors.required">customer pancard number is required.</div> 
-      <div *ngIf="f.customerPancardNumber.errors.pattern">Enter valid pancard number</div>
+     <div *ngIf="g.controls.panCardNumber.touched && g.controls.panCardNumber.invalid" class=" alert alert-danger">
+      <div *ngIf="g.controls.panCardNumber.errors.required">customer pancard number is required.</div> 
+      <div *ngIf="g.controls.panCardNumber.errors.pattern">Enter valid pancard number</div>
      </div>
       <!-- <span style="color:red" ng-show="registerForm.panCardNumber.$touched && registerForm.panCardNumber.$invalid">
         <span ng-show="registerForm.panCardNumber.$error.required">Mobile Number is required.</span>
@@ -106,8 +112,12 @@
 <div class="form-group">
     <label class="label">Gender :</label> <br>
     <input type="text" class="col-xs-3"  formControlName="gender">
+    <div *ngIf="g.controls.gender.touched && g.controls.gender.invalid" class=" alert alert-danger">
+      <div *ngIf="g.controls.gender.errors.required">gender is required.</div> 
+     </div>
 </div>
 </div></div>
+
 </h3>
 </div>
 
@@ -119,12 +129,18 @@
 <div class="form-group">
   <label class="label">registrationNumber :</label><br>
    <input type="text" class="col-xs-3"  formControlName="registrationNumber">
+   <div *ngIf="h.controls.registrationNumber.touched && h.controls.registrationNumber.invalid" class=" alert alert-danger">
+    <div *ngIf="h.controls.registrationNumber.errors.required">registrationNumber is required.</div> 
+   </div>
 </div>
 </div>
 <div class="col">
 <div class="form-group">
   <label class="label">companyName :</label><br>
    <input type="text" class="col-xs-3" formControlName="companyName">
+   <div *ngIf="h.controls.companyName.touched && h.controls.companyName.invalid" class=" alert alert-danger">
+    <div *ngIf="h.controls.companyName.errors.required">companyName is required.</div> 
+   </div>
 </div>
 </div></div>
 
@@ -133,12 +149,18 @@
 <div class="form-group">
   <label class="label">companyOwnerName :</label><br>
    <input type="text" class="col-xs-3" formControlName="companyOwnerName">
+   <div *ngIf="h.controls.companyName.touched && h.controls.companyName.invalid" class=" alert alert-danger">
+    <div *ngIf="h.controls.companyName.errors.required">companyName is required.</div> 
+   </div>
 </div>
 </div>
 <div class="col">
 <div class="form-group">
   <label class="label">typeOfBusiness : </label><br>
   <input type="text" class="col-xs-3"  formControlName="typeOfBusiness">
+  <div *ngIf="h.controls.companyName.touched && h.controls.companyName.invalid" class=" alert alert-danger">
+    <div *ngIf="h.controls.companyName.errors.required">companyName is required.</div> 
+   </div>
 </div>
 </div></div>
 
@@ -147,12 +169,20 @@
 <div class="form-group">
   <label class="label">PanCardNumber :</label><br>
  <input type="text" class="col-xs-3" formControlName="panCardNumber">
+ <div *ngIf="h.controls.panCardNumber.touched && h.controls.panCardNumber.invalid" class=" alert alert-danger">
+  <div *ngIf="h.controls.panCardNumber.errors.required">customer pancard number is required.</div> 
+  <div *ngIf="h.controls.panCardNumber.errors.pattern">Enter valid pancard number</div>
+ </div>
+ 
 </div>
 </div>
 <div class="col">
 <div class="form-group">
   <label class="label">companyTurnover :</label><br>
  <input type="text" class="col-xs-3" formControlName="companyTurnover">
+ <div *ngIf="h.controls.companyName.touched && h.controls.companyName.invalid" class=" alert alert-danger">
+  <div *ngIf="h.controls.companyName.errors.required">companyName is required.</div> 
+ </div>
 </div>
 </div></div>
 
@@ -161,12 +191,18 @@
 <div class="form-group">
   <label class="label">telephoneNo :</label><br>
  <input type="text" class="col-xs-3" formControlName="telephoneNo">
+ <div *ngIf="h.controls.telephoneNo.touched && h.controls.telephoneNo.invalid" class=" alert alert-danger">
+  <div *ngIf="h.controls.telephoneNo.errors.required">telephoneNo is required.</div> 
+ </div>
 </div>
 </div>
 <div class="col">
 <div class="form-group">
   <label class="label">faxNumber :</label><br>
  <input type="text" class="col-xs-3" formControlName="faxNumber">
+ <div *ngIf="h.controls.faxNumber.touched && h.controls.faxNumber.invalid" class=" alert alert-danger">
+  <div *ngIf="h.controls.faxNumber.errors.required">faxNumber is required.</div> 
+ </div>
 </div>
 </div></div>
 </h3>
@@ -179,12 +215,18 @@
     <div class="form-group">
       <label class="label"> accountNumber :  </label><br>
       <input type="text" class="col-xs-3" formControlName="accountNumber">
+      <div *ngIf="i.controls.accountNumber.touched && i.controls.accountNumber.invalid" class=" alert alert-danger">
+        <div *ngIf="i.controls.accountNumber.errors.required">accountNumber is required.</div> 
+       </div>
     </div>
   </div>
   <div class="col">
   <div class="form-group">
     <label class="label"> Bank Name :  </label><br>
     <input type="text" class="col-xs-3" formControlName="bankName">
+    <div *ngIf="i.controls.bankName.touched && i.controls.bankName.invalid" class=" alert alert-danger">
+      <div *ngIf="i.controls.bankName.errors.required">bankName is required.</div> 
+     </div>
   </div>
   </div></div>
 
@@ -193,17 +235,26 @@
   <div class="form-group">
     <label class="label">IFSC code : </label><br>
     <input type="text" class="col-xs-3"  formControlName="ifscCode">
+    <div *ngIf="i.controls.ifscCode.touched && i.controls.ifscCode.invalid" class=" alert alert-danger">
+      <div *ngIf="i.controls.ifscCode.errors.required">ifscCode is required.</div> 
+     </div>
   </div>
 </div>
 <div class="col">
   <div class="form-group">
     <label class="label">Branch code :  </label><br>
     <input type="text" class="col-xs-3" formControlName="branchCode">
+    <div *ngIf="i.controls.branchCode.touched && i.controls.branchCode.invalid" class=" alert alert-danger">
+      <div *ngIf="i.controls.branchCode.errors.required">branchCode is required.</div> 
+     </div>
   </div>
       </div></div>
   <div class="form-group">
     <label class="label">Branch address: </label><br>
     <input type="text" class="col-xs-3" formControlName="branchAddress">
+    <div *ngIf="i.controls.branchAddress.touched && i.controls.branchAddress.invalid" class=" alert alert-danger">
+      <div *ngIf="i.controls.branchAddress.errors.required">branchAddress is required.</div> 
+     </div>
   </div>
 </h3>
   </div>
@@ -215,12 +266,19 @@
   <div class="form-group">
     <label class="label">Guarrantor Name : </label><br>
     <input type="text" class="col-xs-3" formControlName="guarantorName">
+    <div *ngIf="j.controls.guarantorName.touched && j.controls.guarantorName.invalid" class=" alert alert-danger">
+      <div *ngIf="j.controls.guarantorName.errors.required">guarantorName is required.</div> 
+     </div>
   </div>
 </div>
 <div class="col">
   <div class="form-group">
     <label class="label">pan card number : </label><br>
     <input type="text" class="col-xs-3" formControlName="guarantorPanCardNumber">
+    <div *ngIf="j.controls.guarantorPanCardNumber.touched && j.controls.guarantorPanCardNumber.invalid" class=" alert alert-danger">
+      <div *ngIf="j.controls.guarantorPanCardNumber.errors.required"> pancard number is required.</div> 
+      <div *ngIf="j.controls.guarantorPanCardNumber.errors.pattern">Enter valid pancard number</div>
+     </div>
   </div>
   </div></div>
 
@@ -229,18 +287,28 @@
   <div class="form-group">
     <label class="label">relation : </label><br>
     <input type="text" class="col-xs-3" formControlName="relation">
+    <div *ngIf="j.controls.relation.touched && j.controls.relation.invalid" class=" alert alert-danger">
+      <div *ngIf="j.controls.relation.errors.required">relation is required.</div> 
+     </div>
   </div>
 </div>
 <div class="col">
   <div class="form-group">
     <label class="label">mobile no: </label><br>
     <input type="text" class="col-xs-3"  formControlName="mobileNumber">
+    <div *ngIf="j.controls.mobileNumber.touched && j.controls.mobileNumber.invalid" class=" alert alert-danger">
+      <div *ngIf="j.controls.mobileNumber.errors.required">Mobile number is required.</div> 
+      <div *ngIf="j.controls.mobileNumber.errors.pattern">Enter valid mobile number</div>
+     </div>
   </div>
   </div></div>
 
   <div class="form-group">
     <label class="label">Occupation : </label><br>
     <input type="text" class="col-xs-3" formControlName="occupation">
+    <div *ngIf="j.controls.occupation.touched && j.controls.occupation.invalid" class=" alert alert-danger">
+      <div *ngIf="j.controls.occupation.errors.required">occupation is required.</div> 
+     </div>
   </div>
 </h3>
   </div>
@@ -253,12 +321,18 @@
   <div class="form-group">
     <label class="label">Loan Amount : </label><br>
     <input type="text" class="col-xs-3" formControlName="loanAmount">
+    <div *ngIf="k.controls.loanAmount.touched && k.controls.loanAmount.invalid" class=" alert alert-danger">
+      <div *ngIf="k.controls.loanAmount.errors.required">loanAmount is required.</div> 
+     </div>
   </div>
 </div>
 <div class="col">
   <div class="form-group">
     <label class="label">Loan tenure : </label><br>
     <input type="text" class="col-xs-3" formControlName="loanTenure">
+    <div *ngIf="k.controls.loanTenure.touched && k.controls.loanTenure.invalid" class=" alert alert-danger">
+      <div *ngIf="k.controls.loanTenure.errors.required">loanTenure is required.</div> 
+     </div>
   </div>
   </div></div>
 
@@ -282,12 +356,18 @@
   <div class="form-group">
     <label class="label">Remaining amout: </label><br>
     <input type="text" class="col-xs-3"  formControlName="remainingAmount">
+    <div *ngIf="k.controls.remainingAmount.touched && k.controls.remainingAmount.invalid" class=" alert alert-danger">
+      <div *ngIf="k.controls.remainingAmount.errors.required">remainingAmount is required.</div> 
+     </div>
   </div>
 </div>
 <div class="col">
   <div class="form-group">
     <label class="label">Bank Name :</label><br>
      <input type="text" class="col-xs-3" formControlName="bankName">
+     <div *ngIf="k.controls.bankName.touched && k.controls.bankName.invalid" class=" alert alert-danger">
+      <div *ngIf="k.controls.bankName.errors.required">bankName is required.</div> 
+     </div>
     </div>
     </div></div>
   </h3>
@@ -301,12 +381,18 @@
   <div class="form-group">
     <label class="label">expected Loan Amount :  </label><br>
     <input type="text" class="col-xs-3" formControlName="expectedLoanAmount">
+    <div *ngIf="l.controls.expectedLoanAmount.touched && l.controls.expectedLoanAmount.invalid" class=" alert alert-danger">
+      <div *ngIf="l.controls.expectedLoanAmount.errors.required">expectedLoanAmount is required.</div> 
+     </div>
   </div>
 </div>
 <div class="col">
   <div class="form-group">
     <label class="label">expected Loan Tenure :</label><br>
     <input type="text" class="col-xs-3" formControlName="expectedLoanTenure">
+    <div *ngIf="l.controls.expectedLoanTenure.touched && l.controls.expectedLoanTenure.invalid" class=" alert alert-danger">
+      <div *ngIf="l.controls.expectedLoanTenure.errors.required">expectedLoanTenure is required.</div> 
+     </div>
   </div>
   </div></div>
 
@@ -330,6 +416,9 @@
       <div class="form-group">
         <label class="label">Expected ROI : </label><br>
         <input type="text" class="col-xs-3" formControlName="rateOfInterest">
+        <div *ngIf="l.controls.rateOfInterest.touched && l.controls.rateOfInterest.invalid" class=" alert alert-danger">
+          <div *ngIf="l.controls.rateOfInterest.errors.required">rateOfInterest is required.</div> 
+         </div>
       </div>
     <!-- <div class="form-group">
     <label class="label">Loan disbursed status : </label><br>

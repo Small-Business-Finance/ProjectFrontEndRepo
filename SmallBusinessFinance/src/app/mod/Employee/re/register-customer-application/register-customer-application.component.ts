@@ -71,7 +71,7 @@ export class RegisterCustomerApplicationComponent {
        guarantorDetails:this._fb.group({
         guarantorId:['',[Validators.required]],
         guarantorName:['',[Validators.required]],
-        guarantorPanCardNumber:['',[Validators.required]],
+        guarantorPanCardNumber:['',[Validators.required,Validators.pattern("^([A-Z]{5}[0-9]{4}[A-Z]{1})$")]],
         relation:['',[Validators.required]],
         mobileNumber:['',[Validators.required,Validators.pattern("^((\\+91-?)|0)?[789][0-9]{9}$")]],
         occupation:['',[Validators.required]]
@@ -93,7 +93,8 @@ export class RegisterCustomerApplicationComponent {
         rateOfInterest:['',[Validators.required]],
        loanStatus:['Pending'],
         loanDisbursedStatus:['Pending'],
-        // defaulterCount:[0] 
+        //defaulterCount:[] 
+
         // emitable:this._fb.array([{
         //   emiDetailsId:0,
         //   emiStatus:'',
@@ -107,11 +108,30 @@ export class RegisterCustomerApplicationComponent {
       })
       this.regcust();
       }
-      // get f() { 
-      //   return {a:this.registerForm.controls,
-      //     b:this.registerForm.customerDetails.controls
-      //   };
-      //  }
+      get f() { 
+        return this.registerForm.controls;
+        }
+        get g() { 
+          return this.registerForm.get('customerDetails');
+          }
+          get h() { 
+            return this.registerForm.get('customerCompanyDetails');
+            }
+
+            get i() { 
+              return this.registerForm.get('customerBankDetails');
+              }
+
+              get j() { 
+                return this.registerForm.get('guarantorDetails');
+                }
+            
+                get k() { 
+                  return this.registerForm.get('previousLoanDetails');
+                  }
+                  get l() { 
+                    return this.registerForm.get('customerLoanDetails');
+                    }
       regcust(){
         
         let obj:any=this.location.getState();
