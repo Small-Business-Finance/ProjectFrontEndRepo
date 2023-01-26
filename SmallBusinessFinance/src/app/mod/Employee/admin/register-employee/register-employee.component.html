@@ -1,53 +1,123 @@
 
-<br><br><br>
+<br><br>
 <div class="body">
 <div style="background-color: #c8e8e9;">
   <h3 style="margin-left: 300px;"> New Employee Registration </h3><br><br>
 <form [formGroup]="regEmployee" (ngSubmit)="saveemployee(); regEmployee.reset();">
 <div class="container">
 
+  <div class="row">
+    <div class="col">
     <div class="form-group">
       <label class="label">Employee Name :</label><br>
         <input type="text" class="col-xs-3" formControlName="empName" required>
-      </div>
+        <div *ngIf="k['empName'].touched && k['empName'].invalid" class=" alert alert-danger">
+          <div *ngIf="k['empName'].errors['required']">employee name is required.</div> 
+        </div>
+         </div>
+      </div> 
+
+      <div class="col">
       <div class="form-group">
         <label class="label">Employee Date Of Birth</label><br>
+
         <input type="date" class="col-xs-3" formControlName="empDateofBirth" required>
+        <div *ngIf="k['empDateofBirth'].touched && k['empDateofBirth'].invalid" class=" alert alert-danger">
+          <div *ngIf="k['empDateofBirth'].errors['required']">employee birthdate is required.</div> 
+        </div>
       </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
       <div class="form-group">
         <label class="label">Employee Gender</label><br>
         <input type="text" class="col-xs-3" formControlName="empGender" required>
+        <div *ngIf="k['empGender'].touched && k['empGender'].invalid" class=" alert alert-danger">
+          <div *ngIf="k['empGender'].errors['required']">employee gender is required.</div> 
+        </div>
+         </div>
       </div>
+      <div class="col">
       <div class="form-group">
         <label class="label">Employee Salary</label><br>
         <input type="text" class="col-xs-3" formControlName="empSalary" required>
+        <div *ngIf="k['empSalary'].touched && k['empSalary'].invalid" class=" alert alert-danger">
+          <div *ngIf="k['empSalary'].errors['required']">employee salary is required.</div> 
+        </div>
+         </div>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
       <div class="form-group">
         <label class="label">Employee Role</label><br>
         <input type="text" class="col-xs-3" formControlName="empRole" required>
+        <div *ngIf="k['empRole'].touched && k['empRole'].invalid" class=" alert alert-danger">
+          <div *ngIf="k['empRole'].errors['required']">employee role is required.</div> 
+        </div>
+         </div>
       </div>
+
+      <div class="col">
       <div class="form-group">
         <label class="label">Employee Address</label><br>
         <input type="text" class="col-xs-3" formControlName="empAddress" required>
+        <div *ngIf="k['empAddress'].touched && k['empAddress'].invalid" class=" alert alert-danger">
+          <div *ngIf="k['empAddress'].errors['required']">employee address is required.</div> 
+        </div>
       </div>
+         </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
       <div class="form-group">
         <label class="label">Employee Mobile No</label><br>
         <input type="text" class="col-xs-3" formControlName="empMobileno" required>
+        <div *ngIf="k['empMobileno'].touched && k['empMobileno'].invalid" class=" alert alert-danger">
+          <div *ngIf="k['empMobileno'].errors['required']">employee mobileno is required.</div> 
+          <div *ngIf="k['empMobileno'].errors['pattern']">enter 10 digit mobile number</div> 
+         </div>
       </div>
+    </div>
+
+    <div class="col">
       <div class="form-group">
         <label class="label">Employee Email ID</label><br>
         <input type="text" class="col-xs-3" formControlName="empEmailId" required>
+        <div *ngIf="k['empEmailId'].touched && k['empEmailId'].invalid" class=" alert alert-danger">
+          <div *ngIf="k['empEmailId'].errors['required']">employee emailid is required.</div> 
+        </div>
       </div>
+         </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
       <div class="form-group">
         <label class="label">Username</label><br>
         <input type="text" class="col-xs-3" formControlName="username" required>
+        <div *ngIf="k['username'].touched && k['username'].invalid" class=" alert alert-danger">
+          <div *ngIf="k['username'].errors['required']">username is required.</div> 
+        </div>
+         </div>
       </div>
+
+      <div class="col">
       <div class="form-group">
         <label class="label">Password</label><br>
         <input type="text" class="col-xs-3" formControlName="password" required>
+        <div *ngIf="k['password'].touched && k['password'].invalid" class=" alert alert-danger">
+          <div *ngIf="k['password'].errors['required']">password is required.</div> 
+         </div>
+        </div>
+         </div>
       </div>
 
-    <div class="form-button">
+    <div class="form-button" >
       <button type="submit" class="button-33">Save Employee</button>
       <button type="submit" class="button-33" (click)="reset()">Reset</button>
     </div>

@@ -6,6 +6,7 @@ import { CustomerDocuments } from '../classes/customer-documents';
 import { CustomerLoanDetails } from '../classes/customer-loan-details';
 import { GuarantorDetails } from '../classes/guarantor-details';
 import { PreviousLoanDetails } from '../classes/previous-loan-details';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
   providedIn: 'root'
@@ -95,7 +96,8 @@ export class CustomerapplicationService {
     return this.http.get<CustomerApplicationForm[]>("http://localhost:9090/customerapi/applications/");
   }
 
-  getCustomer(applicationId: number) {
+  getCustomer(applicationId: number):Observable<CustomerApplicationForm>
+  {
     return this.http.get<CustomerApplicationForm>("http://localhost:9090/customerapi/applications/"+applicationId);
   }
 
