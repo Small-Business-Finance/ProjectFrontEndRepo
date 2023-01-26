@@ -1,11 +1,12 @@
 <div class="body">
   <h4 style="margin-left: 300px; margin-top: 30px; color: rgb(0, 145, 255);">Employee Details : </h4>
   <h6 style="margin-left:300px;">
-    <tr *ngFor="let employee of e">
+    <tr >
+      <!-- *ngFor="let employee of e" -->
       <div class="one"> 
-        Employee Id : {{employee.empId}}<br>
-        Employee Name : {{employee.empName}}<br>
-        Employee DOB : {{employee.empDateofBirth}}<br>
+        Employee Id : {{employee.empId}} <br>
+        Employee Name : {{employee.empName}} <br>
+        Employee DOB : {{employee.empDateofBirth}} <br>
         Gender : {{employee.empGender}}<br>
         Salary : {{employee.empSalary}}<br>
         Role : {{employee.empRole}}
