@@ -28,14 +28,17 @@ export class LeaveApplicationService {
   {
     return this.http.get("http://localhost:9090/leaveapi/getallleavedetail");
   }
+
   updateLeave(l:LeaveDetails)
   {
     return this.http.put("http://localhost:9090/leaveapi/leavedetail/"+l.leaveAppId,l);
   }
+
   deleteLeavedetails(leaveAppId:number)
   {
     return this.http.delete("http://localhost:9090/leaveapi//leavedetail/"+leaveAppId)
   }
+  
   getById(leaveAppId:number) 
   {
     return this.http.get<LeaveDetails[]>("http://localhost:9090/leaveapi/getbyId/"+leaveAppId);

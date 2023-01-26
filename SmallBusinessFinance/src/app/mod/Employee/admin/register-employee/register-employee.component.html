@@ -54,10 +54,16 @@
       <div class="col">
       <div class="form-group">
         <label class="label">Employee Role</label><br>
-        <input type="text" class="col-xs-3" formControlName="empRole" required>
-        <div *ngIf="k['empRole'].touched && k['empRole'].invalid" class=" alert alert-danger">
+        <select class="col-xs-3" formControlName="empRole" required>
+          <option value="bm">Branch Manager</option>
+          <option value="fh">Finance Head</option>
+          <option value="oe">Operational Executive</option>
+          <option value="th">Tele Head</option>
+          <option value="ca">Credit Analyst</option>
+        </select>
+        <!-- <div *ngIf="k['empRole'].touched && k['empRole'].invalid" class=" alert alert-danger">
           <div *ngIf="k['empRole'].errors['required']">employee role is required.</div> 
-        </div>
+        </div> -->
          </div>
       </div>
 
