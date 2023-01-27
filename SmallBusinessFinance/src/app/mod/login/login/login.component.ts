@@ -42,7 +42,7 @@ employee:Employee;
     console.log(u.username,u.password);
     this.es.getEmployeeUnP(u.username,u.password).subscribe((data:Employee)=>{
       this.employee=data;
-      
+      sessionStorage.setItem('employee', JSON.stringify(this.employee));
       if(this.employee.empRole =='bm'){
         this.router.navigateByUrl("bmprofile/viewCustomer");
       }
