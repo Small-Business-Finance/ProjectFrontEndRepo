@@ -11,30 +11,30 @@ import { LeaveApplicationService } from 'src/app/shared/leave-application.servic
 })
 export class ThPersonalComponent {
 
-  constructor(private cs:LeaveApplicationService,public api:EmployeeService) {}
+  constructor(private cs: LeaveApplicationService, public api: EmployeeService) { }
 
-  e:Employee[];
+  employee: Employee;
 
-   leave:LeaveDetails[];
-  id:number=2345;
+  leave: LeaveDetails[];
+  id: number;
 
-  ngOnInit(){
+  ngOnInit() {
 
+    this.employee = JSON.parse(sessionStorage.getItem('employee'));
+    this.id = this.employee.empId;
     this.cs.getById(this.id).subscribe((
 
-      data:LeaveDetails[])=>
-      {
-          this.leave=data;
+      data: LeaveDetails[]) => {
+      this.leave = data;
 
-      }
+    }
     )
-    
-    this.api.getAllEmployees().subscribe((
-      employee:Employee[])=>
-      {
-        console.log(employee);
-      this.e=employee;
-    })
-    
+
+    // this.api.getAllEmployees().subscribe((
+    //   employee: Employee[]) => {
+    //   console.log(employee);
+    //   this.e = employee;
+    // })
+
   }
 }

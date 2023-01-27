@@ -1,40 +1,41 @@
 <div class="body">
-<h3 style="color: red; text-align: center;">Leave Form </h3>
+    <!-- <h3 style="color: red; text-align: center;">Leave Form </h3> -->
 
-<form [formGroup]="regLeave" (ngSubmit)="leaveSubmit(); regLeave.reset();">
+    <form [formGroup]="regLeave" (ngSubmit)="leaveSubmit(); regLeave.reset();">
 
 
-    <div>
-        <h3>Leave Application</h3>
-        <br>
-        <div class="form-group">
+        <div><br>
+            <h1>Leave Application</h1>
+            <br>
+            <!-- <div class="form-group">
             Employee ID : <input type="text" class="form-control" placeholder="Enter Employee Id"
                 formControlName="empId">
+        </div> -->
+            <div class="form-group"><label>
+                    From Date : </label><br><input type="date" class="col-xs-4" placeholder="Enter From Date"
+                    formControlName="fromDate">
+            </div>
+
+            <div class="form-group"><label>
+                    To Date : </label><br><input type="date" class="col-xs-4" placeholder="Enter To Date"
+                    formControlName="toDate">
+            </div>
+
+            <div class="form-group"><label>
+                    Leave Types : </label><br><input type="text" class="col-xs-4" placeholder="Enter Type Of Leave"
+                    formControlName="leaveType">
+            </div>
+
+            <!-- <div class="form-group"><label>
+                    Leave Status : </label><br><input type="text" class="col-xs-4" placeholder="Enter Leave Status"
+                    formControlName="leaveappstatus">
+            </div> -->
+            <br>
         </div>
-        <div class="form-group">
-            From Date : <input type="date" class="form-control" placeholder="Enter From Date"
-                formControlName="fromDate">
+        <div class="form-button">
+            <button type="submit" class="button-33">Submit</button>&nbsp;&nbsp;&nbsp;
+            <button type="submit" class="button-33" (click)="reset()">Reset</button>
         </div>
 
-        <div class="form-group">
-            To Date : <input type="date" class="form-control" placeholder="Enter To Date" formControlName="toDate">
-        </div>
-
-        <div class="form-group">
-            Leave Types : <input type="text" class="form-control" placeholder="Enter Type Of Leave"
-                formControlName="leaveType">
-        </div>
-
-        <div class="form-group">
-            Leave Status : <input type="text" class="form-control" placeholder="Enter Leave Status"
-                formControlName="leaveappstatus">
-        </div>
-
-    </div>
-    <div class="form-button">
-        <button type="submit" class="button-33">Submit</button>
-      <button type="submit" class="button-33" (click)="reset()">Reset</button>
-    </div>
-
-</form>
+    </form>
 </div>

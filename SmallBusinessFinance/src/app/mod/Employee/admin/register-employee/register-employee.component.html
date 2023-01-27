@@ -21,7 +21,7 @@
       <div class="form-group">
         <label class="label">Employee Date Of Birth</label><br>
 
-        <input type="date" class="col-xs-3" formControlName="empDateofBirth" required>
+        <input type="date" class="col-xs-6" formControlName="empDateofBirth" required>
         <div *ngIf="k['empDateofBirth'].touched && k['empDateofBirth'].invalid" class=" alert alert-danger">
           <div *ngIf="k['empDateofBirth'].errors['required']">employee birthdate is required.</div> 
         </div>
@@ -54,7 +54,7 @@
       <div class="col">
       <div class="form-group">
         <label class="label">Employee Role</label><br>
-        <select class="col-xs-3" formControlName="empRole" required>
+        <select class="col-xs-6" formControlName="empRole" required>
           <option value="bm">Branch Manager</option>
           <option value="fh">Finance Head</option>
           <option value="oe">Operational Executive</option>
@@ -125,7 +125,7 @@
       </div>
 
     <div class="form-button" >
-      <button type="submit" class="button-33">Save Employee</button>
+      <button type="submit" class="button-33">Register</button>&nbsp;&nbsp;&nbsp;
       <button type="submit" class="button-33" (click)="reset()">Reset</button>
     </div>
   </div>

@@ -27,6 +27,7 @@ import { RegisterLeaveApplicationComponent } from '../Employee/re/register-leave
 import { ViewLeaveDetailsComponent } from '../Employee/re/view-leave-details/view-leave-details.component';
 import { UpdateCustomerApplicationComponent } from '../Employee/re/update-customer-application/update-customer-application.component';
 import { ViewemitableComponent } from '../Employee/re/viewemitable/viewemitable.component';
+import { ViewemployeeleaveComponent } from '../Employee/re/viewemployeeleave/viewemployeeleave.component';
 
 
 
@@ -96,6 +97,9 @@ export const loginroutes: Routes = [
 
       {
         path: 'bmpersonal', component: BmPersonalComponent
+      },
+      {
+        path:'viewemployeeleave', component:ViewemployeeleaveComponent
       },
 
       {
@@ -197,6 +201,9 @@ export const loginroutes: Routes = [
       },
       {
         path: 'updateemployee', component: UpdateEmployeeComponent
+      },
+      {
+        path:'viewemployeeleave', component:ViewemployeeleaveComponent
       }
     ]
 
