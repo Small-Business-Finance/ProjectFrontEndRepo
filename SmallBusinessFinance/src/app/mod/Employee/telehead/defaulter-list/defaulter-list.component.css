@@ -4,3 +4,11 @@
 a{
     margin-left: 300px;
 }
+
+table{
+   width: 1140px;
+}
+
+th{
+    text-align: center;
+}

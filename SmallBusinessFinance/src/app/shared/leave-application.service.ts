@@ -31,6 +31,7 @@ export class LeaveApplicationService {
 
   updateLeave(l:LeaveDetails)
   {
+    alert(l.leaveappstatus)
     return this.http.put("http://localhost:9090/leaveapi/leavedetail/"+l.leaveAppId,l);
   }
 

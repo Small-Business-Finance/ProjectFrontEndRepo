@@ -77,7 +77,8 @@ export class SanctionLetterComponent {
     
   }
   simpleAlert(){
-    Swal.fire("Sanction Letter Sent Successfully")
+
+    Swal.fire("Sanction mail Sent Successfully",' ','success');
    
   }
 

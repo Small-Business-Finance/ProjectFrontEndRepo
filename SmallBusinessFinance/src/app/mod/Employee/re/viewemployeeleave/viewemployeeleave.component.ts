@@ -23,5 +23,7 @@ modo(event:string){
 }
 approval(leave:LeaveDetails){
 leave.leaveappstatus=this.leavestatus;
+this.cs.updateLeave(leave).subscribe();
+
 }
 }

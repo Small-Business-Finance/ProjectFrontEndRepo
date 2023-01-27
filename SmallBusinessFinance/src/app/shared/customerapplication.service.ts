@@ -98,7 +98,7 @@ export class CustomerapplicationService {
 
   getCustomer(applicationId: number):Observable<CustomerApplicationForm>
   {
-    return this.http.get<CustomerApplicationForm>("http://localhost:9090/customerapi/applications/"+applicationId);
+    return this.http.get<CustomerApplicationForm>("http://localhost:9090/customerapi/applications/"+applicationId,{responseType:'text' as 'json'});
   }
 
   deleteCustomer(applicationId:number)

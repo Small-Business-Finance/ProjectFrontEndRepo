@@ -1,7 +1,5 @@
-<!-- <div class="body">
-<p style="margin-left: 300px;">defaulter-list works!</p>
-</div> -->
-<div > 
+<div class="body">
+
     <h4 style="margin-left: 300px; margin-top: 20px;">Defaulter list</h4>
     <table class="table" style="margin-left: 300px" id="custapplications">
       <thead>
@@ -14,7 +12,9 @@
           <th scope="col">Tenure</th>
           <th scope="col">Application Status</th>
           <th scope="col">Defaulter Count</th>
-          <th scope="col">Action</th>
+          <th colspan="2">Action</th>
+          <!-- <th scope="col">Action</th> -->
+          
           
         </tr>
       </thead>
@@ -27,9 +27,7 @@
            <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
           <td>{{c.applicationStatus}}</td>
           <td>{{c.customerLoanDetails.defaultorCount}}</td>
-          <td *ngIf="c.applicationStatus=='Verified'"><a>sanction process</a></td>
-          <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
-          <td *ngIf="c.applicationStatus=='Registered'"><a>verification process</a></td>          
+          <td *ngIf="c.customerLoanDetails.defaultorCount>2"><button (click)="notice(c)">send notice</button></td>          
           <td *ngIf="c.applicationStatus=='Disbursed'"><button routerLink="emi" [state]="c">View Emi</button></td>
           <!-- <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generateExcel(c.applicationId)">Excel</button></td>
           <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generatePdf(c.applicationId)">PDF</button></td> -->
@@ -37,7 +35,7 @@
           <!-- <td><a routerLink="/bmprofile/" [state]="c">Generate Sanction</a></td>  -->
       </tr>
          </tbody>
-    </table></div>
-
+    </table>
+  </div>
 
 <router-outlet></router-outlet>

@@ -83,7 +83,15 @@ export const loginroutes: Routes = [
     children: [
 
       {
-        path: 'oepersonal', component: OePersonalComponent
+        path: 'oepersonal', component: OePersonalComponent,
+        children: [
+          {
+            path: 'registerleave', component: RegisterLeaveApplicationComponent,
+          },
+          {
+            path: 'viewleavedetails', component: ViewLeaveDetailsComponent,
+          }
+        ]
       },
 
       {
@@ -96,7 +104,15 @@ export const loginroutes: Routes = [
     children: [
 
       {
-        path: 'bmpersonal', component: BmPersonalComponent
+        path: 'bmpersonal', component: BmPersonalComponent,
+        children: [
+          {
+            path: 'registerleave', component: RegisterLeaveApplicationComponent,
+          },
+          {
+            path: 'viewleavedetails', component: ViewLeaveDetailsComponent,
+          }
+        ]
       },
       {
         path:'viewemployeeleave', component:ViewemployeeleaveComponent
@@ -114,7 +130,12 @@ export const loginroutes: Routes = [
         path: 'registerCustomer', component: RegisterCustomerApplicationComponent
       },
       {
-        path: 'defaulter', component: DefaulterListComponent
+        path: 'defaulter', component: DefaulterListComponent,
+        children:[
+          {
+            path:'emi',component:ViewemitableComponent,
+          }
+        ]
       }
     ],
 
@@ -124,7 +145,15 @@ export const loginroutes: Routes = [
     path: 'fhprofile', component: FhprofileComponent,
     children: [
       {
-        path: 'fhpersonal', component: FhPersonalComponent
+        path: 'fhpersonal', component: FhPersonalComponent,
+        children: [
+          {
+            path: 'registerleave', component: RegisterLeaveApplicationComponent,
+          },
+          {
+            path: 'viewleavedetails', component: ViewLeaveDetailsComponent,
+          }
+        ]
       },
 
       {
@@ -156,7 +185,15 @@ export const loginroutes: Routes = [
     children: [
 
       {
-        path: 'thpersonal', component: ThPersonalComponent
+        path: 'thpersonal', component: ThPersonalComponent,
+        children: [
+          {
+            path: 'registerleave', component: RegisterLeaveApplicationComponent,
+          },
+          {
+            path: 'viewleavedetails', component: ViewLeaveDetailsComponent,
+          }
+        ]
       },
       {
         path: 'registerCustomer', component: RegisterCustomerApplicationComponent
@@ -165,7 +202,12 @@ export const loginroutes: Routes = [
         path: 'viewCustomer', component: ViewCustomerApplicationComponent
       },
       {
-        path: 'defaulter', component: DefaulterListComponent
+        path: 'defaulter', component: DefaulterListComponent,
+        children:[
+          {
+            path:'emi',component:ViewemitableComponent,
+          }
+        ]
       },
       {
         path:'viewemitable', component:ViewemitableComponent
@@ -177,7 +219,15 @@ export const loginroutes: Routes = [
     children: [
 
       {
-        path: 'capersonal', component: CaPersonalComponent
+        path: 'capersonal', component: CaPersonalComponent,
+        children: [
+          {
+            path: 'registerleave', component: RegisterLeaveApplicationComponent,
+          },
+          {
+            path: 'viewleavedetails', component: ViewLeaveDetailsComponent,
+          }
+        ]
       },
       {
         path: 'registerCustomer', component: RegisterCustomerApplicationComponent
