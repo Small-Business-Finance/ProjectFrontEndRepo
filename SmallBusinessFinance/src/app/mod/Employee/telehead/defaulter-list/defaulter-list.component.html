@@ -13,10 +13,9 @@
           <th scope="col">Rate of Interest</th>
           <th scope="col">Tenure</th>
           <th scope="col">Application Status</th>
-          <th scope="col">Disbursement</th>
           <th scope="col">Defaulter Count</th>
           <th scope="col">Action</th>
-          <th scope="col">Action</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -32,8 +31,8 @@
           <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
           <td *ngIf="c.applicationStatus=='Registered'"><a>verification process</a></td>          
           <td *ngIf="c.applicationStatus=='Disbursed'"><button routerLink="emi" [state]="c">View Emi</button></td>
-          <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generateExcel(c.applicationId)">Excel</button></td>
-          <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generatePdf(c.applicationId)">PDF</button></td>
+          <!-- <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generateExcel(c.applicationId)">Excel</button></td>
+          <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generatePdf(c.applicationId)">PDF</button></td> -->
           
           <!-- <td><a routerLink="/bmprofile/" [state]="c">Generate Sanction</a></td>  -->
       </tr>
