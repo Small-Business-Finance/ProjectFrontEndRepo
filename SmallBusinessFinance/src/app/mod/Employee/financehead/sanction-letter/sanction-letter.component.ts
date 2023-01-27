@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { CustomerApplicationForm } from 'src/app/classes/customer-application-form';
 import { EmailSender } from 'src/app/classes/email-sender';
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -74,6 +75,10 @@ export class SanctionLetterComponent {
     this.cs.updateCustomer(obj).subscribe();
     //window.location.reload();
     
+  }
+  simpleAlert(){
+    Swal.fire("Sanction Letter Sent Successfully")
+   
   }
 
   
