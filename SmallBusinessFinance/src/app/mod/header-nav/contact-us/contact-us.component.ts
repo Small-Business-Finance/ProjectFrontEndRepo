@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { EmailSender } from 'src/app/classes/email-sender';
 import { EmailsendingService } from 'src/app/shared/emailsending.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -49,6 +50,10 @@ export class ContactUsComponent implements OnInit {
       + this.emailsender.controls['phonenumber'].value + newLine + " Thank You.";
     console.log(this.sss);
     this.cs.postQuery(this.sss).subscribe();
+  }
+  alertWithSuccess()
+  {
+    Swal.fire("Thank You...",'Your Query Submitted Successfully','success')
   }
 
 }
