@@ -13,7 +13,7 @@
       <tr *ngFor="let item of objemi | paginate: { itemsPerPage: 10, currentPage: p} ">
         <td>{{item.emiDetailsId}}</td> 
         <td>{{item.emiTenure}}</td>
-        <td>{{item.emiAmount}}</td>
+        <td>{{item.emiAmount | currency:'INR'}}</td>
         <td>{{item.emidate}}</td>
         <td>{{item.defaultorCount}}</td>
         <td><select value="item.emiStatus" (change)="modo($event.target.value)">

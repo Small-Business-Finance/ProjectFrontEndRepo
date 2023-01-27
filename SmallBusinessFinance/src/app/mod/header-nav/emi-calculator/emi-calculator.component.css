@@ -101,5 +101,5 @@
 }
 .body{
     background-color: #c8e8e9;
-    margin-top: 0%;
+    display: flex;
 }

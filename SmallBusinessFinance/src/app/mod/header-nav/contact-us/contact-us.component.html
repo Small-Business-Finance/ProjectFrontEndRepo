@@ -22,11 +22,11 @@
                 <div class="phone details">
                     <div class="topic">Helpline No</div>
                     <div class="text-one">0712 454562</div>
-                    <div class="text-two">+91 8788970207</div>
+                    <div class="text-two">+91 9870000010</div>
                 </div>
                 <div class="email details">
                     <div class="topic">Email</div>
-                    <div class="text-one">infogov@ssy.com</div>
+                    <div class="text-one">smartcapitalfinance@gmail.com</div>
                     <i class="glyphicon glyphicon-user" routerLink=""></i>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                 <div class="topic-text">HelpDesk</div>
                 <p></p>
 
-                <form [formGroup]="emailsender" (ngSubmit)="onSubmit()" >
+                <form [formGroup]="emailsender" (ngSubmit)="onSubmit();emailsender.reset();" >
                     <div class="input-box">
                         <input type="text" formControlName="fullname" placeholder="Enter your Name">
                     </div>
@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="button">
-                        <button >Send Now</button> 
+                        <button (click)="alertWithSuccess()">Send Now</button> 
                     
                     </div>
                 </form>
