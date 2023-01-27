@@ -13,13 +13,15 @@ export class CaPersonalComponent {
 
   constructor(private cs:LeaveApplicationService,public api:EmployeeService) {}
 
-  e:Employee[];
+  employee:Employee;
 
    leave:LeaveDetails[];
-  id:number=2345;
+  id:number;
 
   ngOnInit(){
 
+    this.employee = JSON.parse(sessionStorage.getItem('employee'));
+    this.id=this.employee.empId;
     this.cs.getById(this.id).subscribe((
 
       data:LeaveDetails[])=>
@@ -29,12 +31,12 @@ export class CaPersonalComponent {
       }
     )
     
-    this.api.getAllEmployees().subscribe((
-      employee:Employee[])=>
-      {
-        console.log(employee);
-      this.e=employee;
-    })
+    // this.api.getAllEmployees().subscribe((
+    //   employee:Employee[])=>
+    //   {
+    //     console.log(employee);
+    //   this.e=employee;
+    // })
     
   }
 }
