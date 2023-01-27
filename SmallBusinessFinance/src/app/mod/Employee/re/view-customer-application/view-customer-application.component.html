@@ -60,8 +60,10 @@
         <td *ngIf="c.applicationStatus=='Sanctioned'"><a>disbursement process</a></td>
         <td *ngIf="c.applicationStatus=='Registered'"><a>verification process</a></td>
         <td *ngIf="c.applicationStatus=='Disbursed'"><a>process completed</a></td>
+        
       <td><a [routerLink]="['customerfulldetails',c.applicationId]">show details</a></td>  
       <td><button (click)="updatestatus(c)">Save</button></td> 
+      
   </tr>
     </tbody>
 </table>
