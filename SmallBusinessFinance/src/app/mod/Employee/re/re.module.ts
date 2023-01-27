@@ -22,6 +22,7 @@ import { UpdateCustomerApplicationComponent } from './update-customer-applicatio
 import { SanctionLetterComponent } from '../financehead/sanction-letter/sanction-letter.component';
 import { FinanceheadRoutingModule } from '../financehead/financehead-routing.module';
 import { ViewemitableComponent } from './viewemitable/viewemitable.component';
+import { ViewemployeeleaveComponent } from './viewemployeeleave/viewemployeeleave.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { ViewemitableComponent } from './viewemitable/viewemitable.component';
     UpdateCustomerApplicationComponent,
     UpdateCustomerApplicationComponent,
     ViewLeaveDetailsComponent,
-    ViewemitableComponent
+    ViewemitableComponent,
+    ViewemployeeleaveComponent
    ],
    
   imports: [

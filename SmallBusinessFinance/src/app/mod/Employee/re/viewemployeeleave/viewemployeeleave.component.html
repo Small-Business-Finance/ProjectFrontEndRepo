@@ -1,0 +1,35 @@
+   <div class="body">  
+   <h4 style="margin-left: 300px; margin-top: 20px;">Leave Applications</h4>
+    <table class="table" style="margin-left: 300px" id="custapplications">
+      <thead>
+        <tr>
+          <th scope="col">Leave Id</th>
+          <th scope="col">Employee ID</th>
+          <th scope="col">From Date</th>
+          <th scope="col">To Date</th>
+          <th scope="col">Leave Type</th>
+          <th scope="col">Leave Application Status</th>
+          <th scope="col">Action</th>
+           
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of leavearray">
+           <td>{{c.leaveAppId}}</td>
+          <td>{{c.empId}}</td>
+          <td>{{c.fromDate}}</td>
+          <td>{{c.toDate}}</td>
+          <td>{{c.leaveType}}</td>
+          
+          <td><select value="c.leaveappstatus" (change)="modo($event.target.value)">
+             <option value="c.leaveappstatus">{{c.leaveappstatus}}*</option>
+            <option value="Approved">Approved </option>
+            <option value="Rejected">Rejected </option>
+          </select>
+            </td>
+                    
+          <td><button (click)="approval()">Save</button></td> 
+      </tr>
+        </tbody>
+    </table>      
+   </div>
