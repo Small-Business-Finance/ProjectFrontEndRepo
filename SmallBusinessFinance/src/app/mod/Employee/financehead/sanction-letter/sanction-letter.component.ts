@@ -7,6 +7,7 @@ import { EmailSender } from 'src/app/classes/email-sender';
 import { CustomerapplicationService } from 'src/app/shared/customerapplication.service';
 
 
+
 @Component({
   selector: 'app-sanction-letter',
   templateUrl: './sanction-letter.component.html',
