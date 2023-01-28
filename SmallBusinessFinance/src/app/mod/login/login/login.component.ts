@@ -64,7 +64,7 @@ employee:Employee;
       
     }, (error:HttpErrorResponse)=>{
       if (u.username === 'admin' && u.password === 'admin') {
-        this.router.navigateByUrl("viewemployee");
+        this.router.navigateByUrl("admin/viewemployee");
       }
       else{
       alert("Username or Password is not correct!!")

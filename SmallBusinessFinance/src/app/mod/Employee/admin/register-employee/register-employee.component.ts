@@ -17,6 +17,7 @@ export class RegisterEmployeeComponent {
  
 
   constructor(public cs:EmployeeService,private fb:FormBuilder,private router:Router){}
+  alert:boolean=false
   regEmployee:FormGroup;
   ngOnInit()
   {
@@ -51,9 +52,14 @@ export class RegisterEmployeeComponent {
   get k() { return this.regEmployee.controls; }
   saveemployee()
   {
-    this.cs.saveemployee(this.regEmployee.value).subscribe();
-    this.router.navigate(['viewemployee'])
+    this.cs.saveemployee(this.regEmployee.value).subscribe((result)=>{
+      this.alert=true
+    });
+   // this.router.navigate(['admin/viewemployee'])
     
+  }
+  closeAlert(){
+    this.alert=false
   }
 
   reset()
