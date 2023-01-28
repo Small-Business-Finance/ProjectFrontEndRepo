@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Employee } from 'src/app/classes/employee';
 
 @Component({
   selector: 'app-profile',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class ProfileComponent {
 
+ 
 }

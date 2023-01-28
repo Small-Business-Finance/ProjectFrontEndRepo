@@ -4,6 +4,7 @@
 
 .body{
   background-color: #c8e8e9;
+  display: flow-root;
 }
 #custapplications{
     font-family: Arial, Helvetica, sans-serif;

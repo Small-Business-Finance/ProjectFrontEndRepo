@@ -1,6 +1,6 @@
 <div class="body">
 
-    <h4 style="margin-left: 300px; margin-top: 20px;">Defaulter list</h4>
+  <h4 style="margin-left: 300px; margin-top: 30px; color: rgb(0, 145, 255);">Defaulter List : </h4><br>
     <table class="table" style="margin-left: 300px" id="custapplications">
       <thead>
         <tr>
@@ -27,7 +27,7 @@
            <td>{{c.customerLoanDetails.expectedLoanTenure}}</td>
           <td>{{c.applicationStatus}}</td>
           <td>{{c.customerLoanDetails.defaultorCount}}</td>
-          <td *ngIf="c.customerLoanDetails.defaultorCount>2"><button (click)="notice(c)">send notice</button></td>          
+          <td *ngIf="c.customerLoanDetails.defaultorCount>2"><button (click)="notice(c)">Send Notice</button></td>          
           <td *ngIf="c.applicationStatus=='Disbursed'"><button routerLink="emi" [state]="c">View Emi</button></td>
           <!-- <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generateExcel(c.applicationId)">Excel</button></td>
           <td *ngIf="c.applicationStatus=='Disbursed'"><button (click)="generatePdf(c.applicationId)">PDF</button></td> -->

@@ -1,5 +1,6 @@
 .body{
     background-color: #c8e8e9;
+    display: flow-root;
 }
 a{
     margin-left: 300px;
@@ -7,8 +8,19 @@ a{
 
 table{
    width: 1140px;
+   border: 1px;
 }
 
-th{
-    text-align: center;
+td,#custapplications th{
+    border: 1px solid #ddd;
+    padding: 8px;
 }
+#custapplications tr:nth-child(even){background-color: #f2f2f2;} 
+
+#custapplications th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #04AA6D;
+    color: white;
+  }
