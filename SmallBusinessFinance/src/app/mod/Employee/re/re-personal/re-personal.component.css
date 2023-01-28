@@ -1,5 +1,7 @@
 .body{
     background-color: #c8e8e9;
+    height: 699px;
+    display: flow-root;
 }
 #leaves{
     font-family: Arial, Helvetica, sans-serif;
@@ -22,10 +24,12 @@
   }
   .one{
     float: left;
+    font-size: large;
   }
   .two{
     float: left;
     margin-left: 400px;
+    font-size: large;
   }
   
   

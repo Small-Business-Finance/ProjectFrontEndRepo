@@ -1,5 +1,5 @@
 <div class="body">
-  <h4 style="margin-left: 300px; margin-top: 30px; color: rgb(0, 145, 255);">Employee Details : </h4>
+  <h4 style="margin-left: 300px; margin-top: 30px; color: rgb(0, 145, 255);">Employee Details : </h4><br>
   <h6 style="margin-left:300px;">
     <tr >
       <!-- *ngFor="let employee of e" -->
@@ -20,11 +20,11 @@
       </div>
     </tr>
   </h6>
-</div>
+
+<br>
 
 
-<div class="body">
-  <h4 style="margin-left: 300px; margin-top: 20px;">Leave Details</h4>
+  <h4 style="margin-left: 300px; margin-top: 30px; color: rgb(0, 145, 255);">Leave Details :</h4><br>
   <table class="table table-striped" id="leaves">
     <thead>
       <tr>
@@ -42,7 +42,7 @@
         <td>{{leaveobje.leaveappstatus}}</td>
         <!-- </tr> <td> <a routerLink="viewleavedetails">View Leave Details</a></td> -->
     </tbody>
-  </table>
+  </table><br>
   <a style="margin-left: 300px;" routerLink="registerleave"><button>Apply For Leave</button></a>
 </div>
 
