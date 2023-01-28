@@ -244,7 +244,7 @@ export const loginroutes: Routes = [
   },
 
   {
-    path: 'viewemployee', component: ViewEmployeeComponent,
+    path: 'admin/viewemployee', component: ViewEmployeeComponent,
     children: [
       {
         path: 'registeremployee', component: RegisterEmployeeComponent
