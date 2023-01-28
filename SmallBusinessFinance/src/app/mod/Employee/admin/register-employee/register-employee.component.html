@@ -2,6 +2,13 @@
   <br><br>
 <div style="background-color: #c8e8e9;">
   <h3 style="margin-left: 300px; margin-top: 20px; color: rgb(0, 145, 255);">New Employee Registration</h3><br><br>
+  <h3 style="margin-left: 300px;"> New Employee Registration </h3><br><br>
+  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong style="margin-left: 300px;">Success!</strong> Your Data has been Submitted Successfully.
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 <form [formGroup]="regEmployee" (ngSubmit)="saveemployee(); regEmployee.reset();">
 <div class="container">
 
