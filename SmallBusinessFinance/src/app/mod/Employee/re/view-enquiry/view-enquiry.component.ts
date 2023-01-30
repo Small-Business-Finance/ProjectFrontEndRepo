@@ -4,6 +4,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Enquiry } from 'src/app/classes/enquiry';
 import { EmailsendingService } from 'src/app/shared/emailsending.service';
 import { EnquiryService } from 'src/app/shared/enquiry.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-view-enquiry',
   templateUrl: './view-enquiry.component.html',
@@ -34,6 +35,7 @@ export class ViewEnquiryComponent {
   {
     console.log(c)
     this.es.sendcibilmail(c).subscribe();
+    Swal.fire("mail Sent",' ','success')
   }
 
   registercust(item:Enquiry){

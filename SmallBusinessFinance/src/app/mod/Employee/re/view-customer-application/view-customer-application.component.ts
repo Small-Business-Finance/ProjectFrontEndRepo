@@ -6,6 +6,7 @@ import { EmailsendingService } from 'src/app/shared/emailsending.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CustomerLoanDetails } from 'src/app/classes/customer-loan-details';
 import { LoanService } from 'src/app/shared/loan.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-view-customer-application',
   templateUrl: './view-customer-application.component.html',
@@ -75,7 +76,7 @@ export class ViewCustomerApplicationComponent {
     
    // this.em.toEmail=obj.customerDetails.emailId;
     this.es.sendMultipleEmail(c).subscribe();
-    //alert("mail sent")
+    Swal.fire("rejection mail Sent",' ','success')
   }
 
 date: Date = new Date();
@@ -83,7 +84,7 @@ date: Date = new Date();
   generateemi(c:CustomerApplicationForm){
   this.sss.saveemi(c.applicationId).subscribe();
   this.es.sendMultipleEmail(c).subscribe();
-  //alert("mail sent")
+  Swal.fire("mail Sent",' ','success')
   // c.applicationStatus="Disbursed";
   // this.cs.updateCustomer(c).subscribe();
   window.location.reload();
